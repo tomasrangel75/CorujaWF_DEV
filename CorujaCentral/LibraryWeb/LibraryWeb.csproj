@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B4121350-7145-4020-A146-04EBC817E25A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LibraryWeb</RootNamespace>
+    <AssemblyName>LibraryWeb</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="aluno.cs">
+      <DependentUpon>ModeloCoruja.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aplicacao.cs">
+      <DependentUpon>ModeloCoruja.tt</DependentUpon>
+    </Compile>
+    <Compile Include="area.cs">
+      <DependentUpon>ModeloCoruja.tt</DependentUpon>
+    </Compile>
+    <Compile Include="arquivo.cs">
+      <DependentUpon>ModeloCoruja.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Class1.cs" />
+    <Compile Include="disciplina.cs">
+      <DependentUpon>ModeloCoruja.tt</DependentUpon>
+    </Compile>
+    <Compile Include="evento.cs">
+      <DependentUpon>ModeloCoruja.tt</DependentUpon>
+    </Compile>
+    <Compile Include="instituicao.cs">
+      <DependentUpon>ModeloCoruja.tt</DependentUpon>
+    </Compile>
+    <Compile Include="itemarquivo.cs">
+      <DependentUpon>ModeloCoruja.tt</DependentUpon>
+    </Compile>
+    <Compile Include="itemquestao.cs">
+      <DependentUpon>ModeloCoruja.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModeloCoruja.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModeloCoruja.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModeloCoruja.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModeloCoruja.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModeloCoruja.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModeloCoruja.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="nivel.cs">
+      <DependentUpon>ModeloCoruja.tt</DependentUpon>
+    </Compile>
+    <Compile Include="papel.cs">
+      <DependentUpon>ModeloCoruja.tt</DependentUpon>
+    </Compile>
+    <Compile Include="permissao.cs">
+      <DependentUpon>ModeloCoruja.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pontuacao.cs">
+      <DependentUpon>ModeloCoruja.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="questao.cs">
+      <DependentUpon>ModeloCoruja.tt</DependentUpon>
+    </Compile>
+    <Compile Include="questionario.cs">
+      <DependentUpon>ModeloCoruja.tt</DependentUpon>
+    </Compile>
+    <Compile Include="resultado.cs">
+      <DependentUpon>ModeloCoruja.tt</DependentUpon>
+    </Compile>
+    <Compile Include="salto.cs">
+      <DependentUpon>ModeloCoruja.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tipoarquivo.cs">
+      <DependentUpon>ModeloCoruja.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tipoitem.cs">
+      <DependentUpon>ModeloCoruja.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tipoquestao.cs">
+      <DependentUpon>ModeloCoruja.tt</DependentUpon>
+    </Compile>
+    <Compile Include="turma.cs">
+      <DependentUpon>ModeloCoruja.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usuario.cs">
+      <DependentUpon>ModeloCoruja.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="ModeloCoruja.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModeloCoruja.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="ModeloCoruja.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModeloCoruja.edmx</DependentUpon>
+      <LastGenOutput>ModeloCoruja.Context.cs</LastGenOutput>
+    </None>
+    <None Include="ModeloCoruja.edmx.diagram">
+      <DependentUpon>ModeloCoruja.edmx</DependentUpon>
+    </None>
+    <None Include="ModeloCoruja.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModeloCoruja.edmx</DependentUpon>
+      <LastGenOutput>ModeloCoruja.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

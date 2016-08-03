@@ -1,0 +1,994 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{499BF9F1-D4B5-42D6-BE51-0CC539F5879B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>QuestionarioForms</RootNamespace>
+    <AssemblyName>QuestionarioForms</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>corujinha_icon2.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="MetroFramework, Version=1.3.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\WinForms-ModernUI.1.3.0.1\lib\net45\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design">
+      <HintPath>..\packages\WinForms-ModernUI.1.3.0.1\lib\net45\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts">
+      <HintPath>..\packages\WinForms-ModernUI.1.3.0.1\lib\net45\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.Types, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.11.0.2\lib\net20\Microsoft.SqlServer.Types.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.94.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Plugins\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.94.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Plugins\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Design" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Windows.Forms.Ribbon35">
+      <HintPath>..\..\..\Plugins\System.Windows.Forms.Ribbon35.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Audio\FormAudio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Audio\FormAudio.Designer.cs">
+      <DependentUpon>FormAudio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\DataSetGrupo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetGrupo.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\DataSetPsico.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetPsico.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\DataSetRepEscTurMat.cs">
+      <DependentUpon>DataSetRepEscTurMat.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\DataSetRepEscTurMat.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetRepEscTurMat.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\DataSetRepEscTurPt.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetRepEscTurPt.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\DataSetReport3.Designer.cs">
+      <DependentUpon>DataSetReport3.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="DataSets\DataSetReport2.Designer.cs">
+      <DependentUpon>DataSetReport2.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="DataSets\DataSetReport.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetReport.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\DataSetTurmaLista.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetTurmaLista.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Default.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Default.Designer.cs">
+      <DependentUpon>Default.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAlunos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAlunos.Designer.cs">
+      <DependentUpon>FormAlunos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormArea.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormArea.Designer.cs">
+      <DependentUpon>FormArea.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAuxilioQuestionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAuxilioQuestionario.Designer.cs">
+      <DependentUpon>FormAuxilioQuestionario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDiagram.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDiagram.Designer.cs">
+      <DependentUpon>FormDiagram.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEscola.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEscola.Designer.cs">
+      <DependentUpon>FormEscola.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormExportar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormExportar.Designer.cs">
+      <DependentUpon>FormExportar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormImportarProvas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormImportarProvas.Designer.cs">
+      <DependentUpon>FormImportarProvas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormImportar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormImportar.Designer.cs">
+      <DependentUpon>FormImportar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPDFEspecialista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPDFEspecialista.Designer.cs">
+      <DependentUpon>FormPDFEspecialista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPDF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPDF.Designer.cs">
+      <DependentUpon>FormPDF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormQuestao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormQuestao.Designer.cs">
+      <DependentUpon>FormQuestao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRelatorioAluno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRelatorioAluno.Designer.cs">
+      <DependentUpon>FormRelatorioAluno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRelatorioEixos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRelatorioEixos.Designer.cs">
+      <DependentUpon>FormRelatorioEixos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRelatorioPsico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRelatorioPsico.Designer.cs">
+      <DependentUpon>FormRelatorioPsico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRelatorioReportTotal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRelatorioReportTotal.Designer.cs">
+      <DependentUpon>FormRelatorioReportTotal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRelatorioReportTurma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRelatorioReportTurma.Designer.cs">
+      <DependentUpon>FormRelatorioReportTurma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRelatorioReportAluno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRelatorioReportAluno.Designer.cs">
+      <DependentUpon>FormRelatorioReportAluno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRelatorioTurma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRelatorioTurma.Designer.cs">
+      <DependentUpon>FormRelatorioTurma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTurma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTurma.Designer.cs">
+      <DependentUpon>FormTurma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GrafoQuestionario.cs" />
+    <Compile Include="ItemRelatorioAluno.cs" />
+    <Compile Include="Master.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master.Designer.cs">
+      <DependentUpon>Master.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDFEspecialistaV2.cs">
+      <DependentUpon>PDFEspecialistaV2.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PDFReporGrupoMT.cs">
+      <DependentUpon>PDFReporGrupoMT.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PDFEspecialista.cs">
+      <DependentUpon>PDFEspecialista.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PDFReporGrupo_MT.cs">
+      <DependentUpon>PDFReporGrupo_MT.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PDFReporListaTurma_Mat.cs">
+      <DependentUpon>PDFReporListaTurma_Mat.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PDFReportEscTur.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PDFReportEscTur.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PDFReportTurma.cs">
+      <DependentUpon>PDFReportTurma.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PDFReportAluno.cs">
+      <DependentUpon>PDFReportAluno.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PDFReportPsico.cs">
+      <DependentUpon>PDFReportPsico.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PDFReporGrupoPT.cs">
+      <DependentUpon>PDFReporGrupoPT.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PDFReporListaTurma.cs">
+      <DependentUpon>PDFReporListaTurma.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PDFReporListaTurmaMatematica.cs">
+      <DependentUpon>PDFReporListaTurmaMatematica.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="FormQuestionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormQuestionario.Designer.cs">
+      <DependentUpon>FormQuestionario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resource1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource1.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="Audio\FormAudio.resx">
+      <DependentUpon>FormAudio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Default.resx">
+      <DependentUpon>Default.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAlunos.resx">
+      <DependentUpon>FormAlunos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormArea.resx">
+      <DependentUpon>FormArea.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAuxilioQuestionario.resx">
+      <DependentUpon>FormAuxilioQuestionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDiagram.resx">
+      <DependentUpon>FormDiagram.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEscola.resx">
+      <DependentUpon>FormEscola.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormExportar.resx">
+      <DependentUpon>FormExportar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormImportarProvas.resx">
+      <DependentUpon>FormImportarProvas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormImportar.resx">
+      <DependentUpon>FormImportar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPDFEspecialista.resx">
+      <DependentUpon>FormPDFEspecialista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPDF.resx">
+      <DependentUpon>FormPDF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormQuestao.resx">
+      <DependentUpon>FormQuestao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRelatorioAluno.resx">
+      <DependentUpon>FormRelatorioAluno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRelatorioEixos.resx">
+      <DependentUpon>FormRelatorioEixos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRelatorioPsico.resx">
+      <DependentUpon>FormRelatorioPsico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRelatorioReportTotal.resx">
+      <DependentUpon>FormRelatorioReportTotal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRelatorioReportTurma.resx">
+      <DependentUpon>FormRelatorioReportTurma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRelatorioReportAluno.resx">
+      <DependentUpon>FormRelatorioReportAluno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRelatorioTurma.resx">
+      <DependentUpon>FormRelatorioTurma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTurma.resx">
+      <DependentUpon>FormTurma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master.resx">
+      <DependentUpon>Master.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDFEspecialistaV2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PDFEspecialistaV2.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDFReporGrupoMT.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PDFReporGrupoMT.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDFReporGrupo_MT.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PDFReporGrupo_MT.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDFReporListaTurma_Mat.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PDFReporListaTurma_Mat.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDFReportEscTur.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PDFReportEscTur.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDFReportTurma.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PDFReportTurma.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDFReportAluno.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PDFReportAluno.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDFReportPsico.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PDFReportPsico.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDFReporGrupoPT.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PDFReporGrupoPT.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDFReporListaTurma.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PDFReporListaTurma.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDFReporListaTurmaMatematica.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PDFReporListaTurmaMatematica.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="FormQuestionario.resx">
+      <DependentUpon>FormQuestionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource1.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="DataSets\DataSetGrupo.xsc">
+      <DependentUpon>DataSetGrupo.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSetGrupo.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetGrupo.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\DataSetGrupo.xss">
+      <DependentUpon>DataSetGrupo.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSetPsico.xsc">
+      <DependentUpon>DataSetPsico.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSetPsico.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetPsico.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\DataSetPsico.xss">
+      <DependentUpon>DataSetPsico.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSetRepEscTurMat.xsc">
+      <DependentUpon>DataSetRepEscTurMat.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSetRepEscTurMat.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetRepEscTurMat.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\DataSetRepEscTurMat.xss">
+      <DependentUpon>DataSetRepEscTurMat.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSetRepEscTurPt.xsc">
+      <DependentUpon>DataSetRepEscTurPt.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSetRepEscTurPt.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetRepEscTurPt.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\DataSetRepEscTurPt.xss">
+      <DependentUpon>DataSetRepEscTurPt.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSetReport3.xsc">
+      <DependentUpon>DataSetReport3.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSetReport3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetReport3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSets\DataSetReport3.xss">
+      <DependentUpon>DataSetReport3.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSetReport2.xsc">
+      <DependentUpon>DataSetReport2.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSetReport2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetReport2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSets\DataSetReport2.xss">
+      <DependentUpon>DataSetReport2.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSetReport.xsc">
+      <DependentUpon>DataSetReport.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSetReport.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetReport.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\DataSetReport.xss">
+      <DependentUpon>DataSetReport.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSetTurmaLista.xsc">
+      <DependentUpon>DataSetTurmaLista.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSetTurmaLista.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetTurmaLista.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\DataSetTurmaLista.xss">
+      <DependentUpon>DataSetTurmaLista.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <EmbeddedResource Include="PDFEspecialista.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PDFEspecialista.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\DataSources\ItemReportAluno.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\packages\Microsoft.SqlServer.Types.11.0.2\nativeBinaries\x64\msvcr100.dll">
+      <Link>SqlServerTypes\x64\msvcr100.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\packages\Microsoft.SqlServer.Types.11.0.2\nativeBinaries\x64\SqlServerSpatial110.dll">
+      <Link>SqlServerTypes\x64\SqlServerSpatial110.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\packages\Microsoft.SqlServer.Types.11.0.2\nativeBinaries\x86\msvcr100.dll">
+      <Link>SqlServerTypes\x86\msvcr100.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\packages\Microsoft.SqlServer.Types.11.0.2\nativeBinaries\x86\SqlServerSpatial110.dll">
+      <Link>SqlServerTypes\x86\SqlServerSpatial110.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="corujinha_icon.ico" />
+    <Content Include="corujinha_icon2.ico" />
+    <Content Include="Images\addons32.png" />
+    <Content Include="Images\bold16.png" />
+    <Content Include="Images\borderbottom16.png" />
+    <Content Include="Images\casing16.png" />
+    <Content Include="Images\close32.png" />
+    <Content Include="Images\copy16.png" />
+    <Content Include="Images\copyformat16.png" />
+    <Content Include="Images\cut16.png" />
+    <Content Include="Images\eraseformat16.png" />
+    <Content Include="Images\exit16.png" />
+    <Content Include="Images\fill16.png" />
+    <Content Include="Images\find32.png" />
+    <Content Include="Images\fontcolor16.png" />
+    <Content Include="Images\fontsizedecrease16.png" />
+    <Content Include="Images\fontsizeincrease16.png" />
+    <Content Include="Images\goto16.png" />
+    <Content Include="Images\hilight16.png" />
+    <Content Include="Images\indentdecrease16.png" />
+    <Content Include="Images\indentdecrease161.png" />
+    <Content Include="Images\indentincrease16.png" />
+    <Content Include="Images\invisiblechars16.png" />
+    <Content Include="Images\italic16.png" />
+    <Content Include="Images\multilevellist16.png" />
+    <Content Include="Images\newdocument32.png" />
+    <Content Include="Images\open16.png" />
+    <Content Include="Images\open32.png" />
+    <Content Include="Images\options16.png" />
+    <Content Include="Images\orderedlist16.png" />
+    <Content Include="Images\pageblank16.png" />
+    <Content Include="Images\paragraphspacing16.png" />
+    <Content Include="Images\paste16.png" />
+    <Content Include="Images\paste32.png" />
+    <Content Include="Images\paste321.png" />
+    <Content Include="Images\pastelink16.png" />
+    <Content Include="Images\pastespecial16.png" />
+    <Content Include="Images\prepare32.png" />
+    <Content Include="Images\print32.png" />
+    <Content Include="Images\print321.png" />
+    <Content Include="Images\printpreview32.png" />
+    <Content Include="Images\printquick16.png" />
+    <Content Include="Images\printquick32.png" />
+    <Content Include="Images\publish32.png" />
+    <Content Include="Images\replace16.png" />
+    <Content Include="Images\save16.png" />
+    <Content Include="Images\save32.png" />
+    <Content Include="Images\saveas32.png" />
+    <Content Include="Images\saveas321.png" />
+    <Content Include="Images\select16.png" />
+    <Content Include="Images\send32.png" />
+    <Content Include="Images\sort16.png" />
+    <Content Include="Images\strikethru16.png" />
+    <Content Include="Images\style16.png" />
+    <Content Include="Images\stylechange32.png" />
+    <Content Include="Images\styleset16.png" />
+    <Content Include="Images\subindex16.png" />
+    <Content Include="Images\superindex16.png" />
+    <Content Include="Images\textaligncenter16.png" />
+    <Content Include="Images\textalignjustify16.png" />
+    <Content Include="Images\textalignleft16.png" />
+    <Content Include="Images\textalignright16.png" />
+    <Content Include="Images\themefont.png" />
+    <Content Include="Images\underline16.png" />
+    <Content Include="Images\undo16.png" />
+    <Content Include="Images\unorderedlist16.png" />
+    <Content Include="Images\word2003doc32.png" />
+    <Content Include="Images\worddocument32.png" />
+    <Content Include="Images\wordtemplate32.png" />
+    <Content Include="Plugins\MetroFramework.dll" />
+    <Content Include="Plugins\SQLite.Interop.dll" />
+    <Content Include="Plugins\System.Data.SQLite.dll" />
+    <Content Include="Plugins\System.Data.SQLite.Linq.dll" />
+    <Content Include="Plugins\System.Windows.Forms.Ribbon35.dll" />
+    <None Include="Resources\Pos_FeedBack.bmp" />
+    <None Include="Resources\Audio7198.wav" />
+    <None Include="Resources\Audio7199.wav" />
+    <None Include="Resources\Audio7206.wav" />
+    <None Include="Resources\FeedbackPos.wav" />
+    <None Include="Resources\Audio5812.wav" />
+    <None Include="Resources\Audio7379.wav" />
+    <None Include="Resources\FeedbackNeg.wav" />
+    <None Include="Resources\Audio7392.wav" />
+    <None Include="Resources\Red_book.png" />
+    <None Include="Resources\Red_book1.png" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <None Include="Resources\errou.wav" />
+    <None Include="Resources\acertou.wav" />
+    <None Include="Resources\Red book1.png" />
+    <None Include="Resources\Comment.png" />
+    <None Include="Resources\Color.png" />
+    <None Include="Resources\Color test.png" />
+    <None Include="Resources\Color profile.png" />
+    <None Include="Resources\Color palette.png" />
+    <None Include="Resources\Color layers.png" />
+    <None Include="Resources\Color filter.png" />
+    <None Include="Resources\Color balance.png" />
+    <None Include="Resources\Coffee.png" />
+    <None Include="Resources\Coffe.png" />
+    <None Include="Resources\CMYK.png" />
+    <None Include="Resources\Close.png" />
+    <None Include="Resources\Close folder.png" />
+    <None Include="Resources\Close file.png" />
+    <None Include="Resources\Clipboard.png" />
+    <None Include="Resources\Clear.png" />
+    <None Include="Resources\Circle.png" />
+    <None Include="Resources\Check boxes.png" />
+    <None Include="Resources\Chart xy.png" />
+    <None Include="Resources\Cancel.png" />
+    <None Include="Resources\Camera.png" />
+    <None Include="Resources\Brush.png" />
+    <None Include="Resources\Brightness.png" />
+    <None Include="Resources\Bitmap editor.png" />
+    <None Include="Resources\Back.png" />
+    <None Include="Resources\Attach.png" />
+    <None Include="Resources\Arrow.png" />
+    <None Include="Resources\Arc.png" />
+    <None Include="Resources\Apply.png" />
+    <None Include="Resources\Angle.png" />
+    <None Include="Resources\Add.png" />
+    <None Include="Resources\Add folder.png" />
+    <None Include="Resources\About.png" />
+    <None Include="Resources\256 colors.png" />
+    <None Include="Resources\16 colors.png" />
+    <None Include="Resources\3d graph.png" />
+    <None Include="Resources\3d chart.png" />
+    <None Include="Resources\3d bar chart.png" />
+    <None Include="Resources\SassoonPrimary.ttf" />
+    <None Include="Resources\Zoom.png" />
+    <None Include="Resources\Zoom out.png" />
+    <None Include="Resources\Zoom in.png" />
+    <None Include="Resources\Zoom auto.png" />
+    <None Include="Resources\YUV color space.png" />
+    <None Include="Resources\Yes.png" />
+    <None Include="Resources\Wrong.png" />
+    <None Include="Resources\Writing pencil.png" />
+    <None Include="Resources\Work area.png" />
+    <None Include="Resources\Wizard.png" />
+    <None Include="Resources\Wide brush.png" />
+    <None Include="Resources\Webcam.png" />
+    <None Include="Resources\Web designer.png" />
+    <None Include="Resources\Warning.png" />
+    <None Include="Resources\Wait.png" />
+    <None Include="Resources\Upload image.png" />
+    <None Include="Resources\Up-down.png" />
+    <None Include="Resources\Up.png" />
+    <None Include="Resources\Unlock.png" />
+    <None Include="Resources\Units.png" />
+    <None Include="Resources\Undo.png" />
+    <None Include="Resources\True color.png" />
+    <None Include="Resources\Triangle.png" />
+    <None Include="Resources\Transparent color.png" />
+    <None Include="Resources\Transparent background.png" />
+    <None Include="Resources\Transparency.png" />
+    <None Include="Resources\Touch.png" />
+    <None Include="Resources\Tools.png" />
+    <None Include="Resources\To do list.png" />
+    <None Include="Resources\Tip of the day.png" />
+    <None Include="Resources\Time.png" />
+    <None Include="Resources\Text tool.png" />
+    <None Include="Resources\Text replace.png" />
+    <None Include="Resources\Text color.png" />
+    <None Include="Resources\Test line.png" />
+    <None Include="Resources\Target1.png" />
+    <None Include="Resources\Target.png" />
+    <None Include="Resources\Tag.png" />
+    <None Include="Resources\Synchronize.png" />
+    <None Include="Resources\Stop.png" />
+    <None Include="Resources\Stop playing.png" />
+    <None Include="Resources\Square.png" />
+    <None Include="Resources\Spray.png" />
+    <None Include="Resources\Spiral.png" />
+    <None Include="Resources\Spell checking.png" />
+    <None Include="Resources\Smooth.png" />
+    <None Include="Resources\Smooth line.png" />
+    <None Include="Resources\Sizes.png" />
+    <None Include="Resources\Show.png" />
+    <None Include="Resources\Sharpness.png" />
+    <None Include="Resources\Settings.png" />
+    <None Include="Resources\Selection.png" />
+    <None Include="Resources\Select gpadient.png" />
+    <None Include="Resources\Search.png" />
+    <None Include="Resources\Search text.png" />
+    <None Include="Resources\Search online.png" />
+    <None Include="Resources\Search folder.png" />
+    <None Include="Resources\Search computer.png" />
+    <None Include="Resources\Script.png" />
+    <None Include="Resources\Scenario.png" />
+    <None Include="Resources\Scanner.png" />
+    <None Include="Resources\Scan image.png" />
+    <None Include="Resources\Scan film.png" />
+    <None Include="Resources\Save.png" />
+    <None Include="Resources\Save picture.png" />
+    <None Include="Resources\Save image.png" />
+    <None Include="Resources\Save data.png" />
+    <None Include="Resources\Save color.png" />
+    <None Include="Resources\Save as.png" />
+    <None Include="Resources\Rounded rectangle.png" />
+    <None Include="Resources\Rotation.png" />
+    <None Include="Resources\Rotate right.png" />
+    <None Include="Resources\Rotate left.png" />
+    <None Include="Resources\Rotate CW.png" />
+    <None Include="Resources\Rotate CCW.png" />
+    <None Include="Resources\Right.png" />
+    <None Include="Resources\RGB.png" />
+    <None Include="Resources\Revert.png" />
+    <None Include="Resources\Restangle.png" />
+    <None Include="Resources\Resize image.png" />
+    <None Include="Resources\Replace pixels.png" />
+    <None Include="Resources\Rename.png" />
+    <None Include="Resources\Registry.png" />
+    <None Include="Resources\Registration.png" />
+    <None Include="Resources\Refresh.png" />
+    <None Include="Resources\Redo.png" />
+    <None Include="Resources\Red eye removing.png" />
+    <None Include="Resources\Red book.png" />
+    <None Include="Resources\Properties.png" />
+    <None Include="Resources\Problem.png" />
+    <None Include="Resources\Print.png" />
+    <None Include="Resources\Preview.png" />
+    <None Include="Resources\Play.png" />
+    <None Include="Resources\Pixels.png" />
+    <None Include="Resources\Pixel editor.png" />
+    <None Include="Resources\Pinion.png" />
+    <None Include="Resources\Pin.png" />
+    <None Include="Resources\Pie chart.png" />
+    <None Include="Resources\Picture.png" />
+    <None Include="Resources\Pick color.png" />
+    <None Include="Resources\Pencil.png" />
+    <None Include="Resources\Pen.png" />
+    <None Include="Resources\Paste.png" />
+    <None Include="Resources\Pantone.png" />
+    <None Include="Resources\Painter.png" />
+    <None Include="Resources\Paint over pixels.png" />
+    <None Include="Resources\Open.png" />
+    <None Include="Resources\Open v2.png" />
+    <None Include="Resources\Open file.png" />
+    <None Include="Resources\Open colors.png" />
+    <None Include="Resources\Ok.png" />
+    <None Include="Resources\Objects.png" />
+    <None Include="Resources\No.png" />
+    <None Include="Resources\New video.png" />
+    <None Include="Resources\New imagelist.png" />
+    <None Include="Resources\New image.png" />
+    <None Include="Resources\New frame1.png" />
+    <None Include="Resources\New frame.png" />
+    <None Include="Resources\New file.png" />
+    <None Include="Resources\New clip art.png" />
+    <None Include="Resources\Movie.png" />
+    <None Include="Resources\Move.png" />
+    <None Include="Resources\Mouse.png" />
+    <None Include="Resources\Mouse pointer.png" />
+    <None Include="Resources\Monitors.png" />
+    <None Include="Resources\Monitor.png" />
+    <None Include="Resources\Microsoft flag.png" />
+    <None Include="Resources\Measure.png" />
+    <None Include="Resources\Magic hat.png" />
+    <None Include="Resources\Lock.png" />
+    <None Include="Resources\Lock transparency.png" />
+    <None Include="Resources\Lock color.png" />
+    <None Include="Resources\List.png" />
+    <None Include="Resources\Line.png" />
+    <None Include="Resources\Left-right.png" />
+    <None Include="Resources\Left.png" />
+    <None Include="Resources\Layers.png" />
+    <None Include="Resources\LAB color model.png" />
+    <None Include="Resources\Knife.png" />
+    <None Include="Resources\Key.png" />
+    <None Include="Resources\Info.png" />
+    <None Include="Resources\Index.png" />
+    <None Include="Resources\Increase time.png" />
+    <None Include="Resources\Import.png" />
+    <None Include="Resources\Icon wizard.png" />
+    <None Include="Resources\Ico.png" />
+    <None Include="Resources\HSV.png" />
+    <None Include="Resources\HSL.png" />
+    <None Include="Resources\Homepage.png" />
+    <None Include="Resources\Home.png" />
+    <None Include="Resources\Hints.png" />
+    <None Include="Resources\Hint.png" />
+    <None Include="Resources\Hide.png" />
+    <None Include="Resources\Hexagon.png" />
+    <None Include="Resources\Help.png" />
+    <None Include="Resources\Help book.png" />
+    <None Include="Resources\Grid.png" />
+    <None Include="Resources\Graphic tools.png" />
+    <None Include="Resources\Graphic file.png" />
+    <None Include="Resources\Graphic designer.png" />
+    <None Include="Resources\Gpadient.png" />
+    <None Include="Resources\Go up.png" />
+    <None Include="Resources\Go down.png" />
+    <None Include="Resources\Funnel.png" />
+    <None Include="Resources\Frames.png" />
+    <None Include="Resources\Forward.png" />
+    <None Include="Resources\Form.png" />
+    <None Include="Resources\Folder.png" />
+    <None Include="Resources\Flower.png" />
+    <None Include="Resources\Flow block.png" />
+    <None Include="Resources\Flip.png" />
+    <None Include="Resources\Flip vertically.png" />
+    <None Include="Resources\Flip horizontally.png" />
+    <None Include="Resources\Fine brush.png" />
+    <None Include="Resources\Find.png" />
+    <None Include="Resources\Fill.png" />
+    <None Include="Resources\File exetension.png" />
+    <None Include="Resources\Feather.png" />
+    <None Include="Resources\Favourites.png" />
+    <None Include="Resources\Export.png" />
+    <None Include="Resources\Exit.png" />
+    <None Include="Resources\Error.png" />
+    <None Include="Resources\Eraser.png" />
+    <None Include="Resources\Erase.png" />
+    <None Include="Resources\Equipment.png" />
+    <None Include="Resources\E-mail.png" />
+    <None Include="Resources\Ellipse.png" />
+    <None Include="Resources\Edit.png" />
+    <None Include="Resources\Edit text.png" />
+    <None Include="Resources\Edit page.png" />
+    <None Include="Resources\Dropper.png" />
+    <None Include="Resources\Download.png" />
+    <None Include="Resources\Download image.png" />
+    <None Include="Resources\Down.png" />
+    <None Include="Resources\Diagram.png" />
+    <None Include="Resources\Designer.png" />
+    <None Include="Resources\Delete.png" />
+    <None Include="Resources\Delete frames.png" />
+    <None Include="Resources\Delete frame.png" />
+    <None Include="Resources\Decrease time.png" />
+    <None Include="Resources\Danger.png" />
+    <None Include="Resources\Cut.png" />
+    <None Include="Resources\Curve.png" />
+    <None Include="Resources\Curve points.png" />
+    <None Include="Resources\Critical details.png" />
+    <None Include="Resources\Create.png" />
+    <None Include="Resources\Copy.png" />
+    <None Include="Resources\Contrast.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Library\Library.csproj">
+      <Project>{f915988a-8975-4088-8ced-600e2a1750c9}</Project>
+      <Name>Library</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,75 @@
+    insert into Questionarios (Prova) values("Ano1_APR_A")
+    insert into Questionarios (Prova, Descricao) values("Ano1_APR_B", "");
+    insert into Questionarios (Prova, Descricao) values("Ano1_MAT_A", "");
+    insert into Questionarios (Prova, Descricao) values("Ano1_MAT_B", "");
+	insert into Questionarios (Prova, Descricao) values("Ano1_LP_A", "");
+    insert into Questionarios (Prova, Descricao) values("Ano1_LP_B", "");
+    insert into Questionarios (Prova, Descricao) values("Ano2_APR_A","");
+    insert into Questionarios (Prova, Descricao) values("Ano2_APR_B","");
+    insert into Questionarios (Prova, Descricao) values("Ano2_MAT_A","");
+    insert into Questionarios (Prova, Descricao) values("Ano2_MAT_B","");
+	insert into Questionarios (Prova, Descricao) values("Ano2_LP_A", "");
+    insert into Questionarios (Prova, Descricao) values("Ano2_LP_B", "");
+    
+    insert into Questionarios (Prova, Descricao) values("Ano3_APR_A","");
+    insert into Questionarios (Prova, Descricao) values("Ano3_APR_B","");
+    insert into Questionarios (Prova, Descricao) values("Ano3_MAT_A","");
+    insert into Questionarios (Prova, Descricao) values("Ano3_MAT_B", "");
+	insert into Questionarios (Prova, Descricao) values("Ano3_LP_A",  "");
+    insert into Questionarios (Prova, Descricao) values("Ano3_LP_B",  "");
+
+insert into Questionarios (Prova, Descricao) values("Ano1_LP_MAT_APR_A", "");
+
+insert into Questionarios (Prova, Descricao) values("Ano1_LP_MAT_APR_B", "");
+
+insert into Questionarios (Prova, Descricao) values("Ano1_LP_MAT_A", "");
+          
+
+insert into Questionarios (Prova, Descricao) values("Ano1_LP_MAT_B", "");
+
+
+insert into Questionarios (Prova, Descricao) values("Ano1_LP_APR_A", "");
+
+insert into Questionarios (Prova, Descricao) values("Ano1_LP_APR_B", "");
+
+
+insert into Questionarios (Prova, Descricao) values("Ano1_MAT_APR_A","");
+
+insert into Questionarios (Prova, Descricao) values("Ano1_MAT_APR_B","");
+
+insert into Questionarios (Prova, Descricao) values("Ano2_LP_MAT_APR_A", "");
+
+insert into Questionarios (Prova, Descricao) values("Ano2_LP_MAT_APR_B", "");
+
+insert into Questionarios (Prova, Descricao) values("Ano2_LP_MAT_A", "");
+
+insert into Questionarios (Prova, Descricao) values("Ano2_LP_MAT_B", "");
+
+insert into Questionarios (Prova, Descricao) values("Ano2_LP_APR_A",  "");
+           
+
+insert into Questionarios (Prova, Descricao) values("Ano2_LP_APR_B",  "");
+
+insert into Questionarios (Prova, Descricao) values("Ano2_MAT_APR_A", "");
+
+insert into Questionarios (Prova, Descricao) values("Ano2_MAT_APR_B", "");
+insert into Questionarios (Prova, Descricao) values("Ano3_LP_MAT_APR_A", "");
+
+insert into Questionarios (Prova, Descricao) values("Ano3_LP_MAT_APR_B", "");
+           
+insert into Questionarios (Prova, Descricao) values("Ano3_LP_MAT_A", "");
+           
+insert into Questionarios (Prova, Descricao) values("Ano3_LP_MAT_B", "");
+
+insert into Questionarios (Prova, Descricao) values("Ano3_LP_APR_A", "");
+
+insert into Questionarios (Prova, Descricao) values("Ano3_LP_APR_B", "");
+
+insert into Questionarios (Prova, Descricao) values("Ano3_MAT_APR_A", "");
+
+insert into Questionarios (Prova, Descricao) values("Ano3_MAT_APR_B", "");
+
+
+
+          
+         
