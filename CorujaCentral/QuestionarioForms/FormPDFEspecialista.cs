@@ -15,7 +15,7 @@ namespace QuestionarioForms
     {
         public string nomeProfessor { get; set; }
         public string ano { get; set; }
-        public string dtNasc { get; set; }
+        
 
         public FormPDFEspecialista()
         {
@@ -26,7 +26,7 @@ namespace QuestionarioForms
         {
             nomeProfessor = txtProfessor.Text;
             ano = txtano.Text;
-            dtNasc = txtDtNasc.Text;
+           
             this.Close();
         }
 

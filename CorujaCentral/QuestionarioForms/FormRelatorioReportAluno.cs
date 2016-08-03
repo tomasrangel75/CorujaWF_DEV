@@ -1524,7 +1524,7 @@ namespace QuestionarioForms
 
                     string nomeProfessor = formpdf.nomeProfessor;
                     string ano = formpdf.ano;
-
+           
 
                     SaveFileDialog dialog = new SaveFileDialog();
                     dialog.AddExtension = true;
@@ -1720,7 +1720,7 @@ namespace QuestionarioForms
                           DateTime dtNasc = ((DateTime)(comboAluno.SelectedItem as Aluno).DataNascimento);
 
                          (report.ReportHeaderSection1.ReportObjects["txtIdade"] as CrystalDecisions.CrystalReports.Engine.TextObject)
-                           .Text = (new DateTime(DateTime.Now.Subtract(dtNasc).Ticks).Year - 1).ToString();
+                           .Text = (new DateTime(DateTime.Now.Subtract(Convert.ToDateTime(dtNasc)).Ticks).Year - 1).ToString();
 
 
                          (report.ReportHeaderSection1.ReportObjects["txtOBS"] as CrystalDecisions.CrystalReports.Engine.TextObject)

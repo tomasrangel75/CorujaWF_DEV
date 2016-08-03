@@ -33,8 +33,6 @@
             this.txtProfessor = new System.Windows.Forms.TextBox();
             this.txtano = new System.Windows.Forms.TextBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.txtDtNasc = new System.Windows.Forms.TextBox();
-            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.SuspendLayout();
             // 
             // lblProfessor
@@ -87,31 +85,11 @@
             this.metroLabel1.TabIndex = 28;
             this.metroLabel1.Text = "Ano Escolar";
             // 
-            // txtDtNasc
-            // 
-            this.txtDtNasc.Location = new System.Drawing.Point(27, 182);
-            this.txtDtNasc.MaxLength = 200;
-            this.txtDtNasc.Name = "txtDtNasc";
-            this.txtDtNasc.Size = new System.Drawing.Size(118, 20);
-            this.txtDtNasc.TabIndex = 31;
-            // 
-            // metroLabel2
-            // 
-            this.metroLabel2.AutoSize = true;
-            this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel2.Location = new System.Drawing.Point(27, 160);
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(123, 19);
-            this.metroLabel2.TabIndex = 30;
-            this.metroLabel2.Text = "Data Nascimento";
-            // 
             // FormPDFEspecialista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(578, 224);
-            this.Controls.Add(this.txtDtNasc);
-            this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.txtano);
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.txtProfessor);
@@ -134,7 +112,5 @@
         private System.Windows.Forms.TextBox txtProfessor;
         private System.Windows.Forms.TextBox txtano;
         private MetroFramework.Controls.MetroLabel metroLabel1;
-        private System.Windows.Forms.TextBox txtDtNasc;
-        private MetroFramework.Controls.MetroLabel metroLabel2;
     }
 }
