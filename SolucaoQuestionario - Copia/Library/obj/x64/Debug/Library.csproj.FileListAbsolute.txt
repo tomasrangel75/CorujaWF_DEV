@@ -1,0 +1,10 @@
+C:\Users\tomas_rangel\Documents\GitHub\CorujaWF_DEV\SolucaoQuestionario - Copia\Library\bin\x64\Debug\Library.dll.config
+C:\Users\tomas_rangel\Documents\GitHub\CorujaWF_DEV\SolucaoQuestionario - Copia\Library\bin\x64\Debug\Library.dll
+C:\Users\tomas_rangel\Documents\GitHub\CorujaWF_DEV\SolucaoQuestionario - Copia\Library\bin\x64\Debug\Library.pdb
+C:\Users\tomas_rangel\Documents\GitHub\CorujaWF_DEV\SolucaoQuestionario - Copia\Library\bin\x64\Debug\EntityFramework.dll
+C:\Users\tomas_rangel\Documents\GitHub\CorujaWF_DEV\SolucaoQuestionario - Copia\Library\bin\x64\Debug\System.Data.SqlServerCe.dll
+C:\Users\tomas_rangel\Documents\GitHub\CorujaWF_DEV\SolucaoQuestionario - Copia\Library\bin\x64\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\tomas_rangel\Documents\GitHub\CorujaWF_DEV\SolucaoQuestionario - Copia\Library\bin\x64\Debug\EntityFramework.xml
+C:\Users\tomas_rangel\Documents\GitHub\CorujaWF_DEV\SolucaoQuestionario - Copia\Library\obj\x64\Debug\Library.csprojResolveAssemblyReference.cache
+C:\Users\tomas_rangel\Documents\GitHub\CorujaWF_DEV\SolucaoQuestionario - Copia\Library\obj\x64\Debug\Library.dll
+C:\Users\tomas_rangel\Documents\GitHub\CorujaWF_DEV\SolucaoQuestionario - Copia\Library\obj\x64\Debug\Library.pdb
