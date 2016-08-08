@@ -1,0 +1,15 @@
+C:\Users\tomas_rangel\Documents\GitHub\CorujaWF_DEV\SolucaoQuestionario - Copia\Prova\bin\x64\Debug\Prova.exe.config
+C:\Users\tomas_rangel\Documents\GitHub\CorujaWF_DEV\SolucaoQuestionario - Copia\Prova\obj\x64\Debug\Interop.WMPLib.dll
+C:\Users\tomas_rangel\Documents\GitHub\CorujaWF_DEV\SolucaoQuestionario - Copia\Prova\obj\x64\Debug\AxInterop.WMPLib.dll
+C:\Users\tomas_rangel\Documents\GitHub\CorujaWF_DEV\SolucaoQuestionario - Copia\Prova\obj\x64\Debug\Prova.csproj.ResolveComReference.cache
+C:\Users\tomas_rangel\Documents\GitHub\CorujaWF_DEV\SolucaoQuestionario - Copia\Prova\obj\x64\Debug\Prova.csprojResolveAssemblyReference.cache
+C:\Users\tomas_rangel\Documents\GitHub\CorujaWF_DEV\SolucaoQuestionario - Copia\Prova\obj\x64\Debug\Prova.FormAdm.resources
+C:\Users\tomas_rangel\Documents\GitHub\CorujaWF_DEV\SolucaoQuestionario - Copia\Prova\obj\x64\Debug\Prova.FormProvas.resources
+C:\Users\tomas_rangel\Documents\GitHub\CorujaWF_DEV\SolucaoQuestionario - Copia\Prova\obj\x64\Debug\Prova.FormSalvarResultado.resources
+C:\Users\tomas_rangel\Documents\GitHub\CorujaWF_DEV\SolucaoQuestionario - Copia\Prova\obj\x64\Debug\Prova.FormSenhaTeste.resources
+C:\Users\tomas_rangel\Documents\GitHub\CorujaWF_DEV\SolucaoQuestionario - Copia\Prova\obj\x64\Debug\Prova.Properties.Resources.resources
+C:\Users\tomas_rangel\Documents\GitHub\CorujaWF_DEV\SolucaoQuestionario - Copia\Prova\obj\x64\Debug\Prova.Resource1.resources
+C:\Users\tomas_rangel\Documents\GitHub\CorujaWF_DEV\SolucaoQuestionario - Copia\Prova\obj\x64\Debug\Prova.waitform.resources
+C:\Users\tomas_rangel\Documents\GitHub\CorujaWF_DEV\SolucaoQuestionario - Copia\Prova\obj\x64\Debug\Prova.WaitLoad.resources
+C:\Users\tomas_rangel\Documents\GitHub\CorujaWF_DEV\SolucaoQuestionario - Copia\Prova\obj\x64\Debug\Prova.ProvaAluno.resources
+C:\Users\tomas_rangel\Documents\GitHub\CorujaWF_DEV\SolucaoQuestionario - Copia\Prova\obj\x64\Debug\Prova.csproj.GenerateResource.Cache

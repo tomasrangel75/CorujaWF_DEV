@@ -1,0 +1,762 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QuestionarioModel.Store" Provider="System.Data.SQLite" ProviderManifestToken="ISO8601" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Aluno">
+    <Key>
+      <PropertyRef Name="idAluno" />
+    </Key>
+    <Property Name="idAluno" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="varchar" MaxLength="200" />
+    <Property Name="Turma_id" Type="integer" />
+    <Property Name="DataNascimento" Type="datetime" />
+    <Property Name="Sexo" Type="char" MaxLength="1" />
+    <Property Name="DataCadastro" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Aplicacao">
+    <Key>
+      <PropertyRef Name="idAplicacao" />
+    </Key>
+    <Property Name="idAplicacao" Type="integer" Nullable="false" />
+    <Property Name="Questionario_id" Type="integer" Nullable="false" />
+    <Property Name="Turma_id" Type="integer" Nullable="false" />
+    <Property Name="Evento_id" Type="integer" />
+    <Property Name="Data" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Area">
+    <Key>
+      <PropertyRef Name="idArea" />
+    </Key>
+    <Property Name="idArea" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="varchar" MaxLength="100" />
+    <Property Name="Disciplina_id" Type="integer" />
+  </EntityType>
+  <EntityType Name="Arquivo">
+    <Key>
+      <PropertyRef Name="idArquivo" />
+    </Key>
+    <Property Name="idArquivo" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="varchar" MaxLength="200" />
+    <Property Name="NomeFisico" Type="varchar" MaxLength="200" />
+    <Property Name="CaminhoFisico" Type="varchar" MaxLength="200" />
+    <Property Name="Extensao" Type="varchar" MaxLength="20" />
+    <Property Name="TipoArquivo_id" Type="integer" />
+  </EntityType>
+  <EntityType Name="Disciplina">
+    <Key>
+      <PropertyRef Name="idDisciplina" />
+    </Key>
+    <Property Name="idDisciplina" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="EstadoQuestionario">
+    <Key>
+      <PropertyRef Name="idEstadoQuestionario" />
+    </Key>
+    <Property Name="idEstadoQuestionario" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="varchar" MaxLength="45" />
+  </EntityType>
+  <EntityType Name="Evento">
+    <Key>
+      <PropertyRef Name="idEvento" />
+    </Key>
+    <Property Name="idEvento" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Instituicao_id" Type="integer" />
+    <Property Name="Nome" Type="varchar" MaxLength="200" />
+    <Property Name="Data" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Instituicao">
+    <Key>
+      <PropertyRef Name="idInstituicao" />
+    </Key>
+    <Property Name="idInstituicao" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="varchar" MaxLength="100" />
+    <Property Name="Descricao" Type="varchar" MaxLength="300" />
+  </EntityType>
+  <EntityType Name="ItemArquivo">
+    <Key>
+      <PropertyRef Name="ItemQuestao_id" />
+      <PropertyRef Name="Arquivo_id" />
+    </Key>
+    <Property Name="ItemQuestao_id" Type="integer" Nullable="false" />
+    <Property Name="Arquivo_id" Type="integer" Nullable="false" />
+    <Property Name="Posicao" Type="integer" />
+    <Property Name="Tamanho" Type="varchar" MaxLength="100" />
+    <Property Name="X" Type="integer" />
+    <Property Name="Y" Type="integer" />
+    <Property Name="TipoAcao" Type="integer" />
+  </EntityType>
+  <EntityType Name="ItemQuestao">
+    <Key>
+      <PropertyRef Name="idItemQuestao" />
+    </Key>
+    <Property Name="idItemQuestao" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TipoItem_id" Type="integer" Nullable="false" />
+    <Property Name="Questao_id" Type="integer" />
+    <Property Name="Titulo" Type="varchar" MaxLength="600" />
+    <Property Name="OpcaoCorreta" Type="bit" />
+    <Property Name="TransformaImagem" Type="bit" />
+    <Property Name="EPergunta" Type="bit" />
+    <Property Name="Eresposta" Type="bit" />
+    <Property Name="ETentativa" Type="bit" />
+    <Property Name="OrdemTela" Type="integer" />
+    <Property Name="OrdemResposta" Type="integer" />
+    <Property Name="ContemImagem" Type="bit" />
+    <Property Name="ContemAudio" Type="bit" />
+    <Property Name="idBase" Type="integer" />
+  </EntityType>
+  <EntityType Name="Nivel">
+    <Key>
+      <PropertyRef Name="idNivel" />
+    </Key>
+    <Property Name="idNivel" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="Pontuacao">
+    <Key>
+      <PropertyRef Name="Aluno_id" />
+      <PropertyRef Name="Questao_id" />
+    </Key>
+    <Property Name="Aluno_id" Type="integer" Nullable="false" />
+    <Property Name="Questao_id" Type="integer" Nullable="false" />
+    <Property Name="Acertou" Type="bit" />
+    <Property Name="Tentativas" Type="integer" />
+    <Property Name="Tempo" Type="real" />
+    <Property Name="Mouse" Type="varchar" MaxLength="500" />
+    <Property Name="Clicks" Type="varchar" MaxLength="500" />
+    <Property Name="DataHora" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Questao">
+    <Key>
+      <PropertyRef Name="idQuestao" />
+    </Key>
+    <Property Name="idQuestao" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Titulo" Type="varchar" MaxLength="250" />
+    <Property Name="Questionario_id" Type="integer" />
+    <Property Name="TipoQuestao_id" Type="integer" />
+    <Property Name="Proxima" Type="integer" />
+    <Property Name="Disciplina_id" Type="integer" />
+    <Property Name="QuestaoReplica" Type="integer" />
+    <Property Name="Tentativas" Type="integer" />
+    <Property Name="Cor" Type="varchar" MaxLength="45" />
+    <Property Name="Ordem" Type="integer" />
+    <Property Name="PosicaoRespostas" Type="integer" />
+    <Property Name="PosicaoPergunta" Type="integer" />
+    <Property Name="Area_id" Type="integer" />
+    <Property Name="idBase" Type="integer" />
+    <Property Name="Peso" Type="real" />
+    <Property Name="TAG" Type="varchar" MaxLength="500" />
+    <Property Name="Hint" Type="bit" />
+    <Property Name="Enfileirada" Type="bit" />
+    <Property Name="Ano" Type="integer" />
+    <Property Name="Semestre" Type="integer" />
+    <Property Name="Competencia" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Questionario">
+    <Key>
+      <PropertyRef Name="idQuestionario" />
+    </Key>
+    <Property Name="idQuestionario" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="varchar" MaxLength="300" />
+    <Property Name="Descricao" Type="varchar" MaxLength="500" />
+    <Property Name="Nivel_id" Type="integer" />
+    <Property Name="Arquivo_id" Type="integer" />
+    <Property Name="Cor" Type="varchar" MaxLength="45" />
+    <Property Name="RepetePergunta" Type="bit" />
+    <Property Name="idBase" Type="integer" />
+  </EntityType>
+  <EntityType Name="QuestionarioDisciplina">
+    <Key>
+      <PropertyRef Name="Questionario_id" />
+      <PropertyRef Name="Disciplina_id" />
+    </Key>
+    <Property Name="Questionario_id" Type="integer" Nullable="false" />
+    <Property Name="Disciplina_id" Type="integer" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Resultado">
+    <Key>
+      <PropertyRef Name="Aluno_id" />
+      <PropertyRef Name="Questionario_id" />
+    </Key>
+    <Property Name="Aluno_id" Type="integer" Nullable="false" />
+    <Property Name="Questionario_id" Type="integer" Nullable="false" />
+    <Property Name="TotalAcertos" Type="integer" />
+    <Property Name="TotalErros" Type="integer" />
+    <Property Name="Disciplina_id" Type="integer" />
+    <Property Name="EstadoQuestionario_id" Type="integer" />
+    <Property Name="UltimaQuestao_id" Type="integer" />
+  </EntityType>
+  <EntityType Name="Salto">
+    <Key>
+      <PropertyRef Name="idSalto" />
+    </Key>
+    <Property Name="idSalto" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ItemQuestao_id" Type="integer" Nullable="false" />
+    <Property Name="QuestaoDestino_id" Type="integer" Nullable="false" />
+    <Property Name="SaltarAoErrar" Type="bit" />
+    <Property Name="VoltarDoSalto" Type="bit" />
+  </EntityType>
+  <EntityType Name="TipoArquivo">
+    <Key>
+      <PropertyRef Name="idTipoArquivo" />
+    </Key>
+    <Property Name="idTipoArquivo" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="TipoItem">
+    <Key>
+      <PropertyRef Name="idTipoItem" />
+    </Key>
+    <Property Name="idTipoItem" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="TipoQuestao">
+    <Key>
+      <PropertyRef Name="idTipoQuestao" />
+    </Key>
+    <Property Name="idTipoQuestao" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Turma">
+    <Key>
+      <PropertyRef Name="idTurma" />
+    </Key>
+    <Property Name="idTurma" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="varchar" MaxLength="150" />
+    <Property Name="Instituicao_id" Type="integer" />
+    <Property Name="Nivel_id" Type="integer" />
+  </EntityType>
+  <Association Name="FK_Aluno_0_0">
+    <End Role="Turma" Type="Self.Turma" Multiplicity="0..1" />
+    <End Role="Aluno" Type="Self.Aluno" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Turma">
+        <PropertyRef Name="idTurma" />
+      </Principal>
+      <Dependent Role="Aluno">
+        <PropertyRef Name="Turma_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Aplicacao_0_0">
+    <End Role="Evento" Type="Self.Evento" Multiplicity="0..1" />
+    <End Role="Aplicacao" Type="Self.Aplicacao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Evento">
+        <PropertyRef Name="idEvento" />
+      </Principal>
+      <Dependent Role="Aplicacao">
+        <PropertyRef Name="Evento_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Aplicacao_1_0">
+    <End Role="Turma" Type="Self.Turma" Multiplicity="1" />
+    <End Role="Aplicacao" Type="Self.Aplicacao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Turma">
+        <PropertyRef Name="idTurma" />
+      </Principal>
+      <Dependent Role="Aplicacao">
+        <PropertyRef Name="Turma_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Aplicacao_2_0">
+    <End Role="Questionario" Type="Self.Questionario" Multiplicity="1" />
+    <End Role="Aplicacao" Type="Self.Aplicacao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Questionario">
+        <PropertyRef Name="idQuestionario" />
+      </Principal>
+      <Dependent Role="Aplicacao">
+        <PropertyRef Name="Questionario_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Area_0_0">
+    <End Role="Disciplina" Type="Self.Disciplina" Multiplicity="0..1" />
+    <End Role="Area" Type="Self.Area" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Disciplina">
+        <PropertyRef Name="idDisciplina" />
+      </Principal>
+      <Dependent Role="Area">
+        <PropertyRef Name="Disciplina_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Arquivo_0_0">
+    <End Role="TipoArquivo" Type="Self.TipoArquivo" Multiplicity="0..1" />
+    <End Role="Arquivo" Type="Self.Arquivo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoArquivo">
+        <PropertyRef Name="idTipoArquivo" />
+      </Principal>
+      <Dependent Role="Arquivo">
+        <PropertyRef Name="TipoArquivo_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Evento_0_0">
+    <End Role="Instituicao" Type="Self.Instituicao" Multiplicity="0..1" />
+    <End Role="Evento" Type="Self.Evento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Instituicao">
+        <PropertyRef Name="idInstituicao" />
+      </Principal>
+      <Dependent Role="Evento">
+        <PropertyRef Name="Instituicao_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ItemArquivo_0_0">
+    <End Role="Arquivo" Type="Self.Arquivo" Multiplicity="1" />
+    <End Role="ItemArquivo" Type="Self.ItemArquivo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Arquivo">
+        <PropertyRef Name="idArquivo" />
+      </Principal>
+      <Dependent Role="ItemArquivo">
+        <PropertyRef Name="Arquivo_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ItemArquivo_1_0">
+    <End Role="ItemQuestao" Type="Self.ItemQuestao" Multiplicity="1" />
+    <End Role="ItemArquivo" Type="Self.ItemArquivo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ItemQuestao">
+        <PropertyRef Name="idItemQuestao" />
+      </Principal>
+      <Dependent Role="ItemArquivo">
+        <PropertyRef Name="ItemQuestao_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ItemQuestao_0_0">
+    <End Role="TipoItem" Type="Self.TipoItem" Multiplicity="1" />
+    <End Role="ItemQuestao" Type="Self.ItemQuestao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoItem">
+        <PropertyRef Name="idTipoItem" />
+      </Principal>
+      <Dependent Role="ItemQuestao">
+        <PropertyRef Name="TipoItem_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ItemQuestao_1_0">
+    <End Role="Questao" Type="Self.Questao" Multiplicity="0..1" />
+    <End Role="ItemQuestao" Type="Self.ItemQuestao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Questao">
+        <PropertyRef Name="idQuestao" />
+      </Principal>
+      <Dependent Role="ItemQuestao">
+        <PropertyRef Name="Questao_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pontuacao_0_0">
+    <End Role="Questao" Type="Self.Questao" Multiplicity="1" />
+    <End Role="Pontuacao" Type="Self.Pontuacao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Questao">
+        <PropertyRef Name="idQuestao" />
+      </Principal>
+      <Dependent Role="Pontuacao">
+        <PropertyRef Name="Questao_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pontuacao_1_0">
+    <End Role="Aluno" Type="Self.Aluno" Multiplicity="1" />
+    <End Role="Pontuacao" Type="Self.Pontuacao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Aluno">
+        <PropertyRef Name="idAluno" />
+      </Principal>
+      <Dependent Role="Pontuacao">
+        <PropertyRef Name="Aluno_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Questao_0_0">
+    <End Role="Area" Type="Self.Area" Multiplicity="0..1" />
+    <End Role="Questao" Type="Self.Questao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Area">
+        <PropertyRef Name="idArea" />
+      </Principal>
+      <Dependent Role="Questao">
+        <PropertyRef Name="Area_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Questao_1_0">
+    <End Role="Questao" Type="Self.Questao" Multiplicity="0..1" />
+    <End Role="Questao1" Type="Self.Questao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Questao">
+        <PropertyRef Name="idQuestao" />
+      </Principal>
+      <Dependent Role="Questao1">
+        <PropertyRef Name="QuestaoReplica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Questao_2_0">
+    <End Role="Disciplina" Type="Self.Disciplina" Multiplicity="0..1" />
+    <End Role="Questao" Type="Self.Questao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Disciplina">
+        <PropertyRef Name="idDisciplina" />
+      </Principal>
+      <Dependent Role="Questao">
+        <PropertyRef Name="Disciplina_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Questao_3_0">
+    <End Role="TipoQuestao" Type="Self.TipoQuestao" Multiplicity="0..1" />
+    <End Role="Questao" Type="Self.Questao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoQuestao">
+        <PropertyRef Name="idTipoQuestao" />
+      </Principal>
+      <Dependent Role="Questao">
+        <PropertyRef Name="TipoQuestao_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Questao_4_0">
+    <End Role="Questionario" Type="Self.Questionario" Multiplicity="0..1" />
+    <End Role="Questao" Type="Self.Questao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Questionario">
+        <PropertyRef Name="idQuestionario" />
+      </Principal>
+      <Dependent Role="Questao">
+        <PropertyRef Name="Questionario_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Questao_5_0">
+    <End Role="Questao" Type="Self.Questao" Multiplicity="0..1" />
+    <End Role="Questao1" Type="Self.Questao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Questao">
+        <PropertyRef Name="idQuestao" />
+      </Principal>
+      <Dependent Role="Questao1">
+        <PropertyRef Name="Proxima" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Questionario_0_0">
+    <End Role="Arquivo" Type="Self.Arquivo" Multiplicity="0..1" />
+    <End Role="Questionario" Type="Self.Questionario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Arquivo">
+        <PropertyRef Name="idArquivo" />
+      </Principal>
+      <Dependent Role="Questionario">
+        <PropertyRef Name="Arquivo_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Questionario_1_0">
+    <End Role="Nivel" Type="Self.Nivel" Multiplicity="0..1" />
+    <End Role="Questionario" Type="Self.Questionario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Nivel">
+        <PropertyRef Name="idNivel" />
+      </Principal>
+      <Dependent Role="Questionario">
+        <PropertyRef Name="Nivel_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_QuestionarioDisciplina_0_0">
+    <End Role="Disciplina" Type="Self.Disciplina" Multiplicity="1" />
+    <End Role="QuestionarioDisciplina" Type="Self.QuestionarioDisciplina" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Disciplina">
+        <PropertyRef Name="idDisciplina" />
+      </Principal>
+      <Dependent Role="QuestionarioDisciplina">
+        <PropertyRef Name="Disciplina_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_QuestionarioDisciplina_1_0">
+    <End Role="Questionario" Type="Self.Questionario" Multiplicity="1" />
+    <End Role="QuestionarioDisciplina" Type="Self.QuestionarioDisciplina" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Questionario">
+        <PropertyRef Name="idQuestionario" />
+      </Principal>
+      <Dependent Role="QuestionarioDisciplina">
+        <PropertyRef Name="Questionario_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Resultado_0_0">
+    <End Role="Questao" Type="Self.Questao" Multiplicity="0..1" />
+    <End Role="Resultado" Type="Self.Resultado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Questao">
+        <PropertyRef Name="idQuestao" />
+      </Principal>
+      <Dependent Role="Resultado">
+        <PropertyRef Name="UltimaQuestao_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Resultado_1_0">
+    <End Role="EstadoQuestionario" Type="Self.EstadoQuestionario" Multiplicity="0..1" />
+    <End Role="Resultado" Type="Self.Resultado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EstadoQuestionario">
+        <PropertyRef Name="idEstadoQuestionario" />
+      </Principal>
+      <Dependent Role="Resultado">
+        <PropertyRef Name="EstadoQuestionario_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Resultado_2_0">
+    <End Role="Disciplina" Type="Self.Disciplina" Multiplicity="0..1" />
+    <End Role="Resultado" Type="Self.Resultado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Disciplina">
+        <PropertyRef Name="idDisciplina" />
+      </Principal>
+      <Dependent Role="Resultado">
+        <PropertyRef Name="Disciplina_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Resultado_3_0">
+    <End Role="Questionario" Type="Self.Questionario" Multiplicity="1" />
+    <End Role="Resultado" Type="Self.Resultado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Questionario">
+        <PropertyRef Name="idQuestionario" />
+      </Principal>
+      <Dependent Role="Resultado">
+        <PropertyRef Name="Questionario_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Resultado_4_0">
+    <End Role="Aluno" Type="Self.Aluno" Multiplicity="1" />
+    <End Role="Resultado" Type="Self.Resultado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Aluno">
+        <PropertyRef Name="idAluno" />
+      </Principal>
+      <Dependent Role="Resultado">
+        <PropertyRef Name="Aluno_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Salto_0_0">
+    <End Role="Questao" Type="Self.Questao" Multiplicity="1" />
+    <End Role="Salto" Type="Self.Salto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Questao">
+        <PropertyRef Name="idQuestao" />
+      </Principal>
+      <Dependent Role="Salto">
+        <PropertyRef Name="QuestaoDestino_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Salto_1_0">
+    <End Role="ItemQuestao" Type="Self.ItemQuestao" Multiplicity="1" />
+    <End Role="Salto" Type="Self.Salto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ItemQuestao">
+        <PropertyRef Name="idItemQuestao" />
+      </Principal>
+      <Dependent Role="Salto">
+        <PropertyRef Name="ItemQuestao_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Turma_0_0">
+    <End Role="Nivel" Type="Self.Nivel" Multiplicity="0..1" />
+    <End Role="Turma" Type="Self.Turma" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Nivel">
+        <PropertyRef Name="idNivel" />
+      </Principal>
+      <Dependent Role="Turma">
+        <PropertyRef Name="Nivel_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Turma_1_0">
+    <End Role="Instituicao" Type="Self.Instituicao" Multiplicity="0..1" />
+    <End Role="Turma" Type="Self.Turma" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Instituicao">
+        <PropertyRef Name="idInstituicao" />
+      </Principal>
+      <Dependent Role="Turma">
+        <PropertyRef Name="Instituicao_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="QuestionarioModelStoreContainer">
+    <EntitySet Name="Aluno" EntityType="Self.Aluno" store:Type="Tables" />
+    <EntitySet Name="Aplicacao" EntityType="Self.Aplicacao" store:Type="Tables" />
+    <EntitySet Name="Area" EntityType="Self.Area" store:Type="Tables" />
+    <EntitySet Name="Arquivo" EntityType="Self.Arquivo" store:Type="Tables" />
+    <EntitySet Name="Disciplina" EntityType="Self.Disciplina" store:Type="Tables" />
+    <EntitySet Name="EstadoQuestionario" EntityType="Self.EstadoQuestionario" store:Type="Tables" />
+    <EntitySet Name="Evento" EntityType="Self.Evento" store:Type="Tables" />
+    <EntitySet Name="Instituicao" EntityType="Self.Instituicao" store:Type="Tables" />
+    <EntitySet Name="ItemArquivo" EntityType="Self.ItemArquivo" store:Type="Tables" />
+    <EntitySet Name="ItemQuestao" EntityType="Self.ItemQuestao" store:Type="Tables" />
+    <EntitySet Name="Nivel" EntityType="Self.Nivel" store:Type="Tables" />
+    <EntitySet Name="Pontuacao" EntityType="Self.Pontuacao" store:Type="Tables" />
+    <EntitySet Name="Questao" EntityType="Self.Questao" store:Type="Tables" />
+    <EntitySet Name="Questionario" EntityType="Self.Questionario" store:Type="Tables" />
+    <EntitySet Name="QuestionarioDisciplina" EntityType="Self.QuestionarioDisciplina" store:Type="Tables" />
+    <EntitySet Name="Resultado" EntityType="Self.Resultado" store:Type="Tables" />
+    <EntitySet Name="Salto" EntityType="Self.Salto" store:Type="Tables" />
+    <EntitySet Name="TipoArquivo" EntityType="Self.TipoArquivo" store:Type="Tables" />
+    <EntitySet Name="TipoItem" EntityType="Self.TipoItem" store:Type="Tables" />
+    <EntitySet Name="TipoQuestao" EntityType="Self.TipoQuestao" store:Type="Tables" />
+    <EntitySet Name="Turma" EntityType="Self.Turma" store:Type="Tables" />
+    <AssociationSet Name="FK_Aluno_0_0" Association="Self.FK_Aluno_0_0">
+      <End Role="Turma" EntitySet="Turma" />
+      <End Role="Aluno" EntitySet="Aluno" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Aplicacao_0_0" Association="Self.FK_Aplicacao_0_0">
+      <End Role="Evento" EntitySet="Evento" />
+      <End Role="Aplicacao" EntitySet="Aplicacao" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Aplicacao_1_0" Association="Self.FK_Aplicacao_1_0">
+      <End Role="Turma" EntitySet="Turma" />
+      <End Role="Aplicacao" EntitySet="Aplicacao" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Aplicacao_2_0" Association="Self.FK_Aplicacao_2_0">
+      <End Role="Questionario" EntitySet="Questionario" />
+      <End Role="Aplicacao" EntitySet="Aplicacao" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Area_0_0" Association="Self.FK_Area_0_0">
+      <End Role="Disciplina" EntitySet="Disciplina" />
+      <End Role="Area" EntitySet="Area" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Arquivo_0_0" Association="Self.FK_Arquivo_0_0">
+      <End Role="TipoArquivo" EntitySet="TipoArquivo" />
+      <End Role="Arquivo" EntitySet="Arquivo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Evento_0_0" Association="Self.FK_Evento_0_0">
+      <End Role="Instituicao" EntitySet="Instituicao" />
+      <End Role="Evento" EntitySet="Evento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ItemArquivo_0_0" Association="Self.FK_ItemArquivo_0_0">
+      <End Role="Arquivo" EntitySet="Arquivo" />
+      <End Role="ItemArquivo" EntitySet="ItemArquivo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ItemArquivo_1_0" Association="Self.FK_ItemArquivo_1_0">
+      <End Role="ItemQuestao" EntitySet="ItemQuestao" />
+      <End Role="ItemArquivo" EntitySet="ItemArquivo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ItemQuestao_0_0" Association="Self.FK_ItemQuestao_0_0">
+      <End Role="TipoItem" EntitySet="TipoItem" />
+      <End Role="ItemQuestao" EntitySet="ItemQuestao" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ItemQuestao_1_0" Association="Self.FK_ItemQuestao_1_0">
+      <End Role="Questao" EntitySet="Questao" />
+      <End Role="ItemQuestao" EntitySet="ItemQuestao" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pontuacao_0_0" Association="Self.FK_Pontuacao_0_0">
+      <End Role="Questao" EntitySet="Questao" />
+      <End Role="Pontuacao" EntitySet="Pontuacao" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pontuacao_1_0" Association="Self.FK_Pontuacao_1_0">
+      <End Role="Aluno" EntitySet="Aluno" />
+      <End Role="Pontuacao" EntitySet="Pontuacao" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Questao_0_0" Association="Self.FK_Questao_0_0">
+      <End Role="Area" EntitySet="Area" />
+      <End Role="Questao" EntitySet="Questao" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Questao_1_0" Association="Self.FK_Questao_1_0">
+      <End Role="Questao" EntitySet="Questao" />
+      <End Role="Questao1" EntitySet="Questao" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Questao_2_0" Association="Self.FK_Questao_2_0">
+      <End Role="Disciplina" EntitySet="Disciplina" />
+      <End Role="Questao" EntitySet="Questao" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Questao_3_0" Association="Self.FK_Questao_3_0">
+      <End Role="TipoQuestao" EntitySet="TipoQuestao" />
+      <End Role="Questao" EntitySet="Questao" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Questao_4_0" Association="Self.FK_Questao_4_0">
+      <End Role="Questionario" EntitySet="Questionario" />
+      <End Role="Questao" EntitySet="Questao" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Questao_5_0" Association="Self.FK_Questao_5_0">
+      <End Role="Questao" EntitySet="Questao" />
+      <End Role="Questao1" EntitySet="Questao" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Questionario_0_0" Association="Self.FK_Questionario_0_0">
+      <End Role="Arquivo" EntitySet="Arquivo" />
+      <End Role="Questionario" EntitySet="Questionario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Questionario_1_0" Association="Self.FK_Questionario_1_0">
+      <End Role="Nivel" EntitySet="Nivel" />
+      <End Role="Questionario" EntitySet="Questionario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_QuestionarioDisciplina_0_0" Association="Self.FK_QuestionarioDisciplina_0_0">
+      <End Role="Disciplina" EntitySet="Disciplina" />
+      <End Role="QuestionarioDisciplina" EntitySet="QuestionarioDisciplina" />
+    </AssociationSet>
+    <AssociationSet Name="FK_QuestionarioDisciplina_1_0" Association="Self.FK_QuestionarioDisciplina_1_0">
+      <End Role="Questionario" EntitySet="Questionario" />
+      <End Role="QuestionarioDisciplina" EntitySet="QuestionarioDisciplina" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Resultado_0_0" Association="Self.FK_Resultado_0_0">
+      <End Role="Questao" EntitySet="Questao" />
+      <End Role="Resultado" EntitySet="Resultado" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Resultado_1_0" Association="Self.FK_Resultado_1_0">
+      <End Role="EstadoQuestionario" EntitySet="EstadoQuestionario" />
+      <End Role="Resultado" EntitySet="Resultado" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Resultado_2_0" Association="Self.FK_Resultado_2_0">
+      <End Role="Disciplina" EntitySet="Disciplina" />
+      <End Role="Resultado" EntitySet="Resultado" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Resultado_3_0" Association="Self.FK_Resultado_3_0">
+      <End Role="Questionario" EntitySet="Questionario" />
+      <End Role="Resultado" EntitySet="Resultado" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Resultado_4_0" Association="Self.FK_Resultado_4_0">
+      <End Role="Aluno" EntitySet="Aluno" />
+      <End Role="Resultado" EntitySet="Resultado" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Salto_0_0" Association="Self.FK_Salto_0_0">
+      <End Role="Questao" EntitySet="Questao" />
+      <End Role="Salto" EntitySet="Salto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Salto_1_0" Association="Self.FK_Salto_1_0">
+      <End Role="ItemQuestao" EntitySet="ItemQuestao" />
+      <End Role="Salto" EntitySet="Salto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Turma_0_0" Association="Self.FK_Turma_0_0">
+      <End Role="Nivel" EntitySet="Nivel" />
+      <End Role="Turma" EntitySet="Turma" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Turma_1_0" Association="Self.FK_Turma_1_0">
+      <End Role="Instituicao" EntitySet="Instituicao" />
+      <End Role="Turma" EntitySet="Turma" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
