@@ -288,7 +288,7 @@
             this.metroLabel5.Name = "metroLabel5";
             this.metroLabel5.Size = new System.Drawing.Size(63, 19);
             this.metroLabel5.TabIndex = 35;
-            this.metroLabel5.Text = "75 - 100";
+            this.metroLabel5.Text = "76 - 100";
             // 
             // metroLabel4
             // 
@@ -298,7 +298,7 @@
             this.metroLabel4.Name = "metroLabel4";
             this.metroLabel4.Size = new System.Drawing.Size(55, 19);
             this.metroLabel4.TabIndex = 34;
-            this.metroLabel4.Text = "50 - 75";
+            this.metroLabel4.Text = "51 - 75";
             // 
             // metroLabel3
             // 
@@ -308,7 +308,7 @@
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(55, 19);
             this.metroLabel3.TabIndex = 33;
-            this.metroLabel3.Text = "25 - 50";
+            this.metroLabel3.Text = "26 - 50";
             // 
             // metroLabel2
             // 

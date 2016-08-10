@@ -127,9 +127,9 @@ namespace QuestionarioForms
                 btnPDFMt.Enabled = true;
                 btnEspecialista.Enabled = true;
                 btnEspecRel.Enabled = true;
+
                 gridMatematica.Columns.Clear();
                 gridMatematica.Rows.Clear();
-
 
                 gridPortugues.Columns.Clear();
                 gridPortugues.Rows.Clear();
@@ -363,6 +363,60 @@ namespace QuestionarioForms
                         {
 
                             double socreFormatado = Math.Round(itemReport.score, 1);
+
+                            switch (itemReport.cor)
+                            {
+                                case 1:
+                                    //26 - 50  Amarelo
+                                    if (socreFormatado < 26) socreFormatado = 26;
+                                    if (socreFormatado > 50) socreFormatado = 50;
+                                    if (itemReport.scoreTurma < 26) itemReport.scoreTurma = 26;
+                                    if (itemReport.scoreTurma > 50) itemReport.scoreTurma = 50;
+
+
+
+                                    break;
+
+                                case 2:
+                                    //51 - 75  verde
+                                    if (socreFormatado < 51) socreFormatado = 51;
+                                    if (socreFormatado > 75) socreFormatado = 75;
+                                    if (itemReport.scoreTurma < 51) itemReport.scoreTurma = 51;
+                                    if (itemReport.scoreTurma > 75) itemReport.scoreTurma = 75;
+
+                                    break;
+
+                                case 3:
+                                    //76 - 100  azul
+                                    if (socreFormatado < 76) socreFormatado = 76;
+                                    if (socreFormatado > 100) socreFormatado = 100;
+                                    if (itemReport.scoreTurma < 76) itemReport.scoreTurma = 76;
+                                    if (itemReport.scoreTurma > 100) itemReport.scoreTurma = 100;
+                                    break;
+
+                                case 4:
+                                    // 0 - 25  vermelho
+                                    if (socreFormatado < 0) socreFormatado = 0;
+                                    if (socreFormatado > 25) socreFormatado = 25;
+                                    if (itemReport.scoreTurma < 0) itemReport.scoreTurma = 0;
+                                    if (itemReport.scoreTurma > 25) itemReport.scoreTurma = 25;
+
+                                    break;
+
+                                case 0:
+                                    //  0 - 25  vermelho
+                                    if (socreFormatado < 0) socreFormatado = 0;
+                                    if (socreFormatado > 25) socreFormatado = 25;
+                                    if (itemReport.scoreTurma < 0) itemReport.scoreTurma = 0;
+                                    if (itemReport.scoreTurma > 25) itemReport.scoreTurma = 25;
+
+                                    break;
+
+                                default:
+                                    break;
+                            }
+                            
+
                             string grafico = itemReport.cor.ToString() + ";" + socreFormatado.ToString();
                             double socreTurmaFormatado = Math.Round(itemReport.scoreTurma, 1);
 
@@ -405,6 +459,60 @@ namespace QuestionarioForms
                         if (itemReport.pontuacaoReal >= 0 && itemReport.score >= 0)
                         {
                             double socreFormatado = Math.Round(itemReport.score, 1);
+
+                            switch (itemReport.cor)
+                            {
+                                case 1:
+                                    //26 - 50  Amarelo
+                                    if (socreFormatado < 26) socreFormatado = 26;
+                                    if (socreFormatado > 50) socreFormatado = 50;
+                                    if (itemReport.scoreTurma < 26) itemReport.scoreTurma = 26;
+                                    if (itemReport.scoreTurma > 50) itemReport.scoreTurma = 50;
+
+
+
+                                    break;
+
+                                case 2:
+                                    //51 - 75  verde
+                                    if (socreFormatado < 51) socreFormatado = 51;
+                                    if (socreFormatado > 75) socreFormatado = 75;
+                                    if (itemReport.scoreTurma < 51) itemReport.scoreTurma = 51;
+                                    if (itemReport.scoreTurma > 75) itemReport.scoreTurma = 75;
+
+                                    break;
+
+                                case 3:
+                                    //76 - 100  azul
+                                    if (socreFormatado < 76) socreFormatado = 76;
+                                    if (socreFormatado > 100) socreFormatado = 100;
+                                    if (itemReport.scoreTurma < 76) itemReport.scoreTurma = 76;
+                                    if (itemReport.scoreTurma > 100) itemReport.scoreTurma = 100;
+                                    break;
+
+                                case 4:
+                                    // 0 - 25  vermelho
+                                    if (socreFormatado < 0) socreFormatado = 0;
+                                    if (socreFormatado > 25) socreFormatado = 25;
+                                    if (itemReport.scoreTurma < 0) itemReport.scoreTurma = 0;
+                                    if (itemReport.scoreTurma > 25) itemReport.scoreTurma = 25;
+
+                                    break;
+
+                                case 0:
+                                    //  0 - 25  vermelho
+                                    if (socreFormatado < 0) socreFormatado = 0;
+                                    if (socreFormatado > 25) socreFormatado = 25;
+                                    if (itemReport.scoreTurma < 0) itemReport.scoreTurma = 0;
+                                    if (itemReport.scoreTurma > 25) itemReport.scoreTurma = 25;
+
+                                    break;
+
+                                default:
+                                    break;
+                            }
+
+
                             string grafico = itemReport.cor.ToString() + ";" + socreFormatado.ToString();
                             double socreTurmaFormatado = Math.Round(itemReport.scoreTurma, 1);
 
@@ -450,6 +558,59 @@ namespace QuestionarioForms
                         {
 
                             double socreFormatado = Math.Round(itemReport.score, 1);
+
+                            switch (itemReport.cor)
+                            {
+                                case 1:
+                                    //26 - 50  Amarelo
+                                    if (socreFormatado < 26) socreFormatado = 26;
+                                    if (socreFormatado > 50) socreFormatado = 50;
+                                    if (itemReport.scoreTurma < 26) itemReport.scoreTurma = 26;
+                                    if (itemReport.scoreTurma > 50) itemReport.scoreTurma = 50;
+
+
+
+                                    break;
+
+                                case 2:
+                                    //51 - 75  verde
+                                    if (socreFormatado < 51) socreFormatado = 51;
+                                    if (socreFormatado > 75) socreFormatado = 75;
+                                    if (itemReport.scoreTurma < 51) itemReport.scoreTurma = 51;
+                                    if (itemReport.scoreTurma > 75) itemReport.scoreTurma = 75;
+
+                                    break;
+
+                                case 3:
+                                    //76 - 100  azul
+                                    if (socreFormatado < 76) socreFormatado = 76;
+                                    if (socreFormatado > 100) socreFormatado = 100;
+                                    if (itemReport.scoreTurma < 76) itemReport.scoreTurma = 76;
+                                    if (itemReport.scoreTurma > 100) itemReport.scoreTurma = 100;
+                                    break;
+
+                                case 4:
+                                    // 0 - 25  vermelho
+                                    if (socreFormatado < 0) socreFormatado = 0;
+                                    if (socreFormatado > 25) socreFormatado = 25;
+                                    if (itemReport.scoreTurma < 0) itemReport.scoreTurma = 0;
+                                    if (itemReport.scoreTurma > 25) itemReport.scoreTurma = 25;
+
+                                    break;
+
+                                case 0:
+                                    //  0 - 25  vermelho
+                                    if (socreFormatado < 0) socreFormatado = 0;
+                                    if (socreFormatado > 25) socreFormatado = 25;
+                                    if (itemReport.scoreTurma < 0) itemReport.scoreTurma = 0;
+                                    if (itemReport.scoreTurma > 25) itemReport.scoreTurma = 25;
+
+                                    break;
+
+                                default:
+                                    break;
+                            }
+
                             string grafico = itemReport.cor.ToString() + ";" + socreFormatado.ToString();
                             double socreTurmaFormatado = Math.Round(itemReport.scoreTurma, 1);
 
