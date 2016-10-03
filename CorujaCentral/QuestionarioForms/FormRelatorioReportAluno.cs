@@ -127,6 +127,8 @@ namespace QuestionarioForms
                 btnPDFMt.Enabled = true;
                 btnEspecialista.Enabled = true;
                 btnEspecRel.Enabled = true;
+                metroButton1.Enabled = true;
+                metroButton2.Enabled = true;
 
                 gridMatematica.Columns.Clear();
                 gridMatematica.Rows.Clear();
@@ -146,7 +148,7 @@ namespace QuestionarioForms
                 List<Pontuacao> vetPontuacaoAlunoPsico =
                          aluno.Pontuacao.ToList().FindAll(p => (p.Questao != null) && (p.Questao.Questionario_id.Equals(questionario.idQuestionario)) && (p.Questao.TipoQuestao_id == 4));
 
-                vetPontuacaoAlunoPsico.Sort((ps1, ps2) => DateTime.Compare((DateTime)ps1.DataHora, (DateTime)ps2.DataHora));
+              //  vetPontuacaoAlunoPsico.Sort((ps1, ps2) => DateTime.Compare((DateTime)ps1.DataHora, (DateTime)ps2.DataHora));
 
 
 
@@ -1981,6 +1983,501 @@ namespace QuestionarioForms
                         }
                     }
                 }
+            }
+        }
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+
+            // RELATORIO MATEMATICA OU APRENDIZAGEM
+
+            try
+            {
+                if ((gridMatematica.Rows.Count > 0) || (gridPortugues.Rows.Count > 0) || (gridtreino.Rows.Count > 0))
+                {
+                    string dataAplicacao = txtDtAplic.Text;
+                    string nomeAluno = "";
+                    string nomeTurma = "";
+                    string nomeQuest = "";
+                    string rootPath = "";string path = "";
+
+                    FolderBrowserDialog folderBrowserDialog1 = new FolderBrowserDialog();
+
+                    if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
+                    {
+                        rootPath = folderBrowserDialog1.SelectedPath;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Selecionar caminho");
+                        return;
+                    }
+
+                    nomeQuest = comboQuestionario.Text;
+                    nomeTurma = comboTurma.Text;
+                    nomeAluno = comboAluno.Text;
+
+                    path = rootPath + "\\" + nomeQuest + "_" + nomeTurma + "_" + nomeAluno + ".pdf";
+                    
+                  
+                        PDFAluno report = new PDFAluno();
+
+                        // Constroi DataSet
+                        DataSetReport ds = new DataSetReport();
+                        DataSetReport2 ds2 = new DataSetReport2();
+                        DataSetReport3 ds3 = new DataSetReport3();
+                        DataSetPsico dsp = new DataSetPsico();
+
+                        foreach (DataGridViewRow linha in gridPortugues.Rows)
+                        {
+                            if (linha.Cells[0].Value != null)
+                            {
+                                DataRow row = ds.DataTable1.NewRow();
+
+                                row[0] = linha.Cells[0].Value.ToString();
+
+                                int count = linha.Cells[1].Value.ToString().Length;
+
+                                try
+                                {
+                                    row[1] = "&nbsp;";
+
+                                    row[3] = linha.Cells[2].Value.ToString();
+                                    row[2] = linha.Cells[3].Value.ToString();
+
+                                    row[4] = linha.Cells[1].Value.ToString().Substring(0, 1);
+
+                                    ds.DataTable1.Rows.Add(row);
+                                }
+                                catch (Exception ex)
+                                {
+                                }
+                            }
+                        }
+
+                        if (gridPortugues.Rows.Count > 0) { (ds.DataTable1.Rows[0] as DataRow)[0] = "Escuta dos sons da Língua Portuguesa"; }
+                        if (gridPortugues.Rows.Count > 1) { (ds.DataTable1.Rows[1] as DataRow)[0] = "Escrita alfabética"; }
+                        if (gridPortugues.Rows.Count > 2) { (ds.DataTable1.Rows[3] as DataRow)[0] = "Leitura e compreensão de texto"; }
+                        if (gridPortugues.Rows.Count > 3) { (ds.DataTable1.Rows[2] as DataRow)[0] = "Planejamento do texto escrito"; }
+
+
+
+
+
+
+
+                        foreach (DataGridViewRow linha in gridMatematica.Rows)
+                        {
+                            if (linha.Cells[0].Value != null)
+                            {
+                                DataRow row = ds2.DataTable1.NewRow();
+
+                                row[0] = linha.Cells[0].Value.ToString();
+
+                                int count = linha.Cells[1].Value.ToString().Length;
+
+                                try
+                                {
+
+                                    row[1] = "&nbsp;";
+
+                                    row[2] = linha.Cells[2].Value.ToString();
+                                    row[3] = linha.Cells[3].Value.ToString();
+
+                                    row[4] = linha.Cells[1].Value.ToString().Substring(0, 1);
+
+                                    ds2.DataTable1.Rows.Add(row);
+                                }
+                                catch (Exception ex)
+                                {
+                                }
+                            }
+                        }
+
+
+                        if (gridMatematica.Rows.Count > 0) { (ds2.DataTable1.Rows[0] as DataRow)[0] = "Números"; }
+                        if (gridMatematica.Rows.Count > 1) { (ds2.DataTable1.Rows[1] as DataRow)[0] = "Operações"; }
+                        if (gridMatematica.Rows.Count > 2) { (ds2.DataTable1.Rows[2] as DataRow)[0] = "Espaço e forma"; }
+                        if (gridMatematica.Rows.Count > 3) { (ds2.DataTable1.Rows[3] as DataRow)[0] = "Grandezas e tratamento da informação"; }
+
+
+
+                        foreach (DataGridViewRow linha in gridtreino.Rows)
+                        {
+                            if (linha.Cells[0].Value != null)
+                            {
+                                DataRow row = ds3.DataTable1.NewRow();
+
+                                row[0] = linha.Cells[0].Value.ToString();
+
+                                int count = linha.Cells[1].Value.ToString().Length;
+
+                                try
+                                {
+
+                                    row[1] = "&nbsp;";
+
+                                    row[2] = linha.Cells[2].Value.ToString();
+                                    row[3] = linha.Cells[3].Value.ToString();
+
+                                    row[4] = linha.Cells[1].Value.ToString().Substring(0, 1);
+
+                                    ds3.DataTable1.Rows.Add(row);
+                                }
+                                catch (Exception ex)
+                                {
+                                }
+                            }
+                        }
+
+
+                        if (gridtreino.Rows.Count > 0) { (ds3.DataTable1.Rows[0] as DataRow)[0] = "Processamento da Informação"; }
+                        if (gridtreino.Rows.Count > 1) { (ds3.DataTable1.Rows[1] as DataRow)[0] = "Memória de Trabalho"; }
+                        if (gridtreino.Rows.Count > 2) { (ds3.DataTable1.Rows[2] as DataRow)[0] = "Linguagem - Cognição Social"; }
+                        if (gridtreino.Rows.Count > 3) { (ds3.DataTable1.Rows[3] as DataRow)[0] = "Linguagem - Vocabulário e Compreensão"; }
+
+
+                        // Psicogenese
+                        foreach (DataGridViewRow linha in gridpsico.Rows)
+                        {
+
+                            if (linha.Cells[0].Value != null)
+                            {
+                                DataRow row = dsp.DataTable1.NewRow();
+
+                                row[0] = linha.Cells[0].Value.ToString();
+                                if (linha.Cells[1].Value == null)
+                                {
+                                    row[1] = "";
+                                }
+                                else
+                                {
+                                    row[1] = linha.Cells[1].Value.ToString();
+                                }
+                                row[2] = linha.Cells[2].Value.ToString();
+
+                                dsp.DataTable1.Rows.Add(row);
+                            }
+                        }
+
+
+
+                        // Constroi Report
+                        PageMargins margem = report.PrintOptions.PageMargins;
+                        margem.bottomMargin = 0;
+                        margem.leftMargin = 0;
+                        margem.rightMargin = 0;
+                        margem.topMargin = 0;
+
+                        report.PrintOptions.ApplyPageMargins(margem);
+
+
+                        if (gridPortugues.Rows.Count > 0) { report.Subreports["subportugues"].SetDataSource(ds); }
+                        else { report.PageHeaderSection2.SectionFormat.EnableSuppress = true; }
+
+                        if (gridMatematica.Rows.Count > 0) { report.Subreports["submatematica"].SetDataSource(ds2); }
+                        else { report.PageHeaderSection3.SectionFormat.EnableSuppress = true; }
+
+                        if (gridtreino.Rows.Count > 0) { report.Subreports["subtreino"].SetDataSource(ds3); }
+                        else { report.PageHeaderSection1.SectionFormat.EnableSuppress = true; }
+
+                        if (gridpsico.Rows.Count > 0) { report.Subreports["subpsico"].SetDataSource(dsp); }
+                        else { report.Section2.SectionFormat.EnableSuppress = true; }
+
+
+                        Turma turma = (comboTurma.SelectedItem as Turma);
+                        Questionario questionario = (comboQuestionario.SelectedItem as Questionario);
+
+                        Pontuacao pontuacao =
+                            Pontuacao.obterTodos()
+                                .Find(
+                                    p =>
+                                        p.Aluno.Turma_id.Equals(turma.idTurma) &&
+                                        p.Questao.Questionario_id.Equals(questionario.idQuestionario));
+
+                        // Popula as Variaveis fixas do Report
+                        (report.ReportHeaderSection1.ReportObjects["txtProfissional"] as
+                            CrystalDecisions.CrystalReports.Engine.TextObject)
+                            .Text = turma.Nome;
+
+
+                        (report.ReportHeaderSection1.ReportObjects["txtData"] as CrystalDecisions.CrystalReports.Engine.TextObject)
+                            .Text
+                            = dataAplicacao;                            
+
+
+                        (report.ReportHeaderSection1.ReportObjects["txtAluno"] as CrystalDecisions.CrystalReports.Engine.TextObject)
+                            .Text
+                            =
+                            (comboAluno.SelectedItem as Aluno).Nome;
+
+                   
+
+                        // Exporta o Report
+                    report.ExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
+                        report.PrintOptions.PaperSize = CrystalDecisions.Shared.PaperSize.PaperA4;
+                        report.ExportToDisk(ExportFormatType.PortableDocFormat, path);
+              
+
+                     ((Master)MdiParent).MensagemSucesso("PDF Exportado!");
+                   
+                }
+                else
+                {
+                    ((Master)MdiParent).MensagemErro("Não contém resultados suficientes para gerar o relatório!");
+                }
+            }
+            catch (Exception ex)
+            {
+                ((Master)MdiParent).MensagemErro("Não foi possível gerar o PDF. Verifique se está com o programa de relatórios instalado.");
+            }
+        }
+
+        private void metroButton2_Click(object sender, EventArgs e)
+        {
+
+            // RELATORIO LINGUA PORTUGUESA E HÍBRIDOS
+
+            try
+            {
+                if ((gridMatematica.Rows.Count > 0) || (gridPortugues.Rows.Count > 0) || (gridtreino.Rows.Count > 0))
+                {
+                   
+                    string dataAplicacao = txtDtAplic.Text;
+  
+                    string nomeAluno = "";
+                    string nomeTurma = "";
+                    string nomeQuest = "";
+                    string rootPath = ""; string path = "";
+
+                    FolderBrowserDialog folderBrowserDialog1 = new FolderBrowserDialog();
+
+                    if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
+                    {
+                        rootPath = folderBrowserDialog1.SelectedPath;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Selecionar caminho");
+                        return;
+                    }
+
+                    nomeQuest = comboQuestionario.Text;
+                    nomeTurma = comboTurma.Text;
+                    nomeAluno = comboAluno.Text;
+
+                    path = rootPath + "\\" + nomeQuest + "_" + nomeTurma + "_" + nomeAluno + ".pdf";
+
+
+                    PDFAlunoLP report = new PDFAlunoLP();
+
+                        // Constroi DataSet
+                        DataSetReport ds = new DataSetReport();
+                        DataSetReport2 ds2 = new DataSetReport2();
+                        DataSetReport3 ds3 = new DataSetReport3();
+                        DataSetPsico dsp = new DataSetPsico();
+
+                        foreach (DataGridViewRow linha in gridPortugues.Rows)
+                        {
+                            if (linha.Cells[0].Value != null)
+                            {
+                                DataRow row = ds.DataTable1.NewRow();
+
+                                row[0] = linha.Cells[0].Value.ToString();
+
+                                int count = linha.Cells[1].Value.ToString().Length;
+
+                                try
+                                {
+                                    row[1] = "&nbsp;";
+
+                                    row[3] = linha.Cells[2].Value.ToString();
+                                    row[2] = linha.Cells[3].Value.ToString();
+
+                                    row[4] = linha.Cells[1].Value.ToString().Substring(0, 1);
+
+                                    ds.DataTable1.Rows.Add(row);
+                                }
+                                catch (Exception ex)
+                                {
+                                }
+                            }
+                        }
+
+                        if (gridPortugues.Rows.Count > 0) { (ds.DataTable1.Rows[0] as DataRow)[0] = "Escuta dos sons da Língua Portuguesa"; }
+                        if (gridPortugues.Rows.Count > 1) { (ds.DataTable1.Rows[1] as DataRow)[0] = "Escrita alfabética"; }
+                        if (gridPortugues.Rows.Count > 2) { (ds.DataTable1.Rows[3] as DataRow)[0] = "Leitura e compreensão de texto"; }
+                        if (gridPortugues.Rows.Count > 3) { (ds.DataTable1.Rows[2] as DataRow)[0] = "Planejamento do texto escrito"; }
+
+
+
+
+
+
+
+                        foreach (DataGridViewRow linha in gridMatematica.Rows)
+                        {
+                            if (linha.Cells[0].Value != null)
+                            {
+                                DataRow row = ds2.DataTable1.NewRow();
+
+                                row[0] = linha.Cells[0].Value.ToString();
+
+                                int count = linha.Cells[1].Value.ToString().Length;
+
+                                try
+                                {
+
+                                    row[1] = "&nbsp;";
+
+                                    row[2] = linha.Cells[2].Value.ToString();
+                                    row[3] = linha.Cells[3].Value.ToString();
+
+                                    row[4] = linha.Cells[1].Value.ToString().Substring(0, 1);
+
+                                    ds2.DataTable1.Rows.Add(row);
+                                }
+                                catch (Exception ex)
+                                {
+                                }
+                            }
+                        }
+
+
+                        if (gridMatematica.Rows.Count > 0) { (ds2.DataTable1.Rows[0] as DataRow)[0] = "Números"; }
+                        if (gridMatematica.Rows.Count > 1) { (ds2.DataTable1.Rows[1] as DataRow)[0] = "Operações"; }
+                        if (gridMatematica.Rows.Count > 2) { (ds2.DataTable1.Rows[2] as DataRow)[0] = "Espaço e forma"; }
+                        if (gridMatematica.Rows.Count > 3) { (ds2.DataTable1.Rows[3] as DataRow)[0] = "Grandezas e tratamento da informação"; }
+
+
+
+                        foreach (DataGridViewRow linha in gridtreino.Rows)
+                        {
+                            if (linha.Cells[0].Value != null)
+                            {
+                                DataRow row = ds3.DataTable1.NewRow();
+
+                                row[0] = linha.Cells[0].Value.ToString();
+
+                                int count = linha.Cells[1].Value.ToString().Length;
+
+                                try
+                                {
+
+                                    row[1] = "&nbsp;";
+
+                                    row[2] = linha.Cells[2].Value.ToString();
+                                    row[3] = linha.Cells[3].Value.ToString();
+
+                                    row[4] = linha.Cells[1].Value.ToString().Substring(0, 1);
+
+                                    ds3.DataTable1.Rows.Add(row);
+                                }
+                                catch (Exception ex)
+                                {
+                                }
+                            }
+                        }
+
+
+                        if (gridtreino.Rows.Count > 0) { (ds3.DataTable1.Rows[0] as DataRow)[0] = "Processamento da Informação"; }
+                        if (gridtreino.Rows.Count > 1) { (ds3.DataTable1.Rows[1] as DataRow)[0] = "Memória de Trabalho"; }
+                        if (gridtreino.Rows.Count > 2) { (ds3.DataTable1.Rows[2] as DataRow)[0] = "Linguagem - Cognição Social"; }
+                        if (gridtreino.Rows.Count > 3) { (ds3.DataTable1.Rows[3] as DataRow)[0] = "Linguagem - Vocabulário e Compreensão"; }
+
+
+                        // Psicogenese
+                        foreach (DataGridViewRow linha in gridpsico.Rows)
+                        {
+
+                            if (linha.Cells[0].Value != null)
+                            {
+                                DataRow row = dsp.DataTable1.NewRow();
+
+                                row[0] = linha.Cells[0].Value.ToString();
+                                if (linha.Cells[1].Value == null)
+                                {
+                                    row[1] = "";
+                                }
+                                else
+                                {
+                                    row[1] = linha.Cells[1].Value.ToString();
+                                }
+                                row[2] = linha.Cells[2].Value.ToString();
+
+                                dsp.DataTable1.Rows.Add(row);
+                            }
+                        }
+
+
+
+                        // Constroi Report
+                        PageMargins margem = report.PrintOptions.PageMargins;
+                        margem.bottomMargin = 0;
+                        margem.leftMargin = 0;
+                        margem.rightMargin = 0;
+                        margem.topMargin = 0;
+
+                        report.PrintOptions.ApplyPageMargins(margem);
+
+
+                        if (gridPortugues.Rows.Count > 0) { report.Subreports["subportugues"].SetDataSource(ds); }
+                        else { report.PageHeaderSection2.SectionFormat.EnableSuppress = true; }
+
+                        if (gridMatematica.Rows.Count > 0) { report.Subreports["submatematica"].SetDataSource(ds2); }
+                        else { report.PageHeaderSection3.SectionFormat.EnableSuppress = true; }
+
+                        if (gridtreino.Rows.Count > 0) { report.Subreports["subtreino"].SetDataSource(ds3); }
+                        else { report.PageHeaderSection1.SectionFormat.EnableSuppress = true; }
+
+                        if (gridpsico.Rows.Count > 0) { report.Subreports["subpsico"].SetDataSource(dsp); }
+                        else { report.Section2.SectionFormat.EnableSuppress = true; }
+
+
+                        Turma turma = (comboTurma.SelectedItem as Turma);
+                        Questionario questionario = (comboQuestionario.SelectedItem as Questionario);
+
+                        Pontuacao pontuacao =
+                            Pontuacao.obterTodos()
+                                .Find(
+                                    p =>
+                                        p.Aluno.Turma_id.Equals(turma.idTurma) &&
+                                        p.Questao.Questionario_id.Equals(questionario.idQuestionario));
+
+                        // Popula as Variaveis fixas do Report
+                        (report.ReportHeaderSection1.ReportObjects["txtProfissional"] as
+                            CrystalDecisions.CrystalReports.Engine.TextObject)
+                            .Text = turma.Nome;
+                    
+
+                        (report.ReportHeaderSection1.ReportObjects["txtData"] as CrystalDecisions.CrystalReports.Engine.TextObject)
+                            .Text
+                            = dataAplicacao;
+
+
+                        (report.ReportHeaderSection1.ReportObjects["txtAluno"] as CrystalDecisions.CrystalReports.Engine.TextObject)
+                            .Text
+                            =
+                            (comboAluno.SelectedItem as Aluno).Nome;
+
+
+
+                        // Exporta o Report
+                        report.ExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
+                        report.PrintOptions.PaperSize = CrystalDecisions.Shared.PaperSize.PaperA4;
+                        report.ExportToDisk(ExportFormatType.PortableDocFormat, path);
+
+                        ((Master)MdiParent).MensagemSucesso("PDF Exportado!");
+                    
+                }
+                else
+                {
+                    ((Master)MdiParent).MensagemErro("Não contém resultados suficientes para gerar o relatório!");
+                }
+            }
+            catch (Exception ex)
+            {
+                ((Master)MdiParent).MensagemErro("Não foi possível gerar o PDF. Verifique se está com o programa de relatórios instalado.");
             }
         }
     }

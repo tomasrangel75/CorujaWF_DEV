@@ -33,6 +33,8 @@
             this.txtProfessor = new System.Windows.Forms.TextBox();
             this.txtano = new System.Windows.Forms.TextBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.txtAplicacao = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblProfessor
@@ -85,12 +87,35 @@
             this.metroLabel1.TabIndex = 28;
             this.metroLabel1.Text = "Ano Escolar";
             // 
+            // metroLabel2
+            // 
+            this.metroLabel2.AutoSize = true;
+            this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel2.Location = new System.Drawing.Point(30, 162);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(110, 19);
+            this.metroLabel2.TabIndex = 28;
+            this.metroLabel2.Text = "Data Aplicacao";
+            this.metroLabel2.Click += new System.EventHandler(this.metroLabel2_Click);
+            // 
+            // txtAplicacao
+            // 
+            this.txtAplicacao.Location = new System.Drawing.Point(30, 184);
+            this.txtAplicacao.MaxLength = 200;
+            this.txtAplicacao.Name = "txtAplicacao";
+            this.txtAplicacao.Size = new System.Drawing.Size(118, 20);
+            this.txtAplicacao.TabIndex = 29;
+            this.txtAplicacao.Text = "08/09/2016";
+            this.txtAplicacao.TextChanged += new System.EventHandler(this.txtAplicacao_TextChanged);
+            // 
             // FormPDFEspecialista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(578, 224);
+            this.Controls.Add(this.txtAplicacao);
             this.Controls.Add(this.txtano);
+            this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.txtProfessor);
             this.Controls.Add(this.btnPDF);
@@ -112,5 +137,7 @@
         private System.Windows.Forms.TextBox txtProfessor;
         private System.Windows.Forms.TextBox txtano;
         private MetroFramework.Controls.MetroLabel metroLabel1;
+        private MetroFramework.Controls.MetroLabel metroLabel2;
+        private System.Windows.Forms.TextBox txtAplicacao;
     }
 }

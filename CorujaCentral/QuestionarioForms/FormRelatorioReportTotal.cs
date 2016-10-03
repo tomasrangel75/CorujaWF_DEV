@@ -341,7 +341,7 @@ namespace QuestionarioForms
                         itemRelatorio.scoreEscola = calculaResultadoEscola(vetAreaCalculada, turma, questionario, area);
 
                         // Calcula o caminho
-                        vetPontuacaoAluno.Sort((ps1, ps2) => DateTime.Compare((DateTime)ps1.DataHora, (DateTime)ps2.DataHora));
+                       // vetPontuacaoAluno.Sort((ps1, ps2) => DateTime.Compare((DateTime)ps1.DataHora, (DateTime)ps2.DataHora));
 
                         string caminhoCompleto = "";
                         string caminhoAcertos = "";

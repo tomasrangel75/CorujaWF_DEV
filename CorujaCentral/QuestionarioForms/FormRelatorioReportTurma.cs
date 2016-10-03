@@ -103,14 +103,16 @@ namespace QuestionarioForms
                 gridMatematica.Columns.Clear();
                 gridMatematica.Rows.Clear();
 
-
                 gridPortugues.Columns.Clear();
                 gridPortugues.Rows.Clear();
+
+                gridAprendizagem.Columns.Clear();
+                gridAprendizagem.Rows.Clear();
+
 
                 // Pega a turma e questionario selecionados
                 Turma turma = comboTurma.SelectedItem as Turma;
                 Questionario questionario = comboQuestionario.SelectedItem as Questionario;
-
 
                 // Computa as árvores
                 // CARRREGA AS AREAS CONTEMPLADAS NO RELATORIO
@@ -121,6 +123,8 @@ namespace QuestionarioForms
                 vetQuestoesValidas.RemoveAll(q => q.TipoQuestao_id == 4);
                 List<Area> vetAreasRelatorio = new List<Area>();
 
+
+                // PORTUGUES >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
                 List<Area> areasPortugues = new List<Area>();
 
                 vetQuestoesValidas.ForEach(q => areasPortugues.Add(q.Area));
@@ -128,6 +132,8 @@ namespace QuestionarioForms
 
                 vetAreasRelatorio.AddRange(areasPortugues);
 
+
+                // MATEMATICA >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
                 List<Area> areasMatematica = new List<Area>();
 
                 vetQuestoesValidas.ForEach(q => areasMatematica.Add(q.Area));
@@ -135,9 +141,26 @@ namespace QuestionarioForms
 
                 vetAreasRelatorio.AddRange(areasMatematica);
 
+                // APRENDIZAGEM >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+                List<Area> areasAprendizagem = new List<Area>();
+
+                vetQuestoesValidas.ForEach(q => areasAprendizagem.Add(q.Area));
+                areasAprendizagem = areasAprendizagem.ToList().FindAll(a => a.Disciplina_id == 3).Distinct().ToList();
+
+                vetAreasRelatorio.AddRange(areasAprendizagem);
+
+
+                // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
                 areasPortugues = areasPortugues.OrderBy(a => a.idArea).ToList();
                 areasMatematica = areasMatematica.OrderBy(a => a.idArea).ToList();
+                areasAprendizagem = areasAprendizagem.OrderBy(a => a.idArea).ToList();
+
+
+
                 vetAreasRelatorio = vetAreasRelatorio.OrderBy(a => a.idArea).ToList();
+
+
+
 
                 foreach (var area in vetAreasRelatorio)
                 {
@@ -211,15 +234,15 @@ namespace QuestionarioForms
 
                     vetItensRelatorio.Add(itemRelatorio);
                 }
-                
 
+
+                // PORTUGUES >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
                 gridPortugues.Columns.Clear();
                 gridPortugues.Rows.Clear();
 
                 gridPortugues.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 gridPortugues.ColumnHeadersDefaultCellStyle.Font = new Font(DataGridView.DefaultFont, FontStyle.Bold);
-
-
+                
                 gridPortugues.RowHeadersVisible = false;
                 gridPortugues.AllowUserToAddRows = false;
 
@@ -258,6 +281,8 @@ namespace QuestionarioForms
                     
                 }
 
+
+                // MATEMATICA >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
                 gridMatematica.Columns.Clear();
                 gridMatematica.Rows.Clear();
 
@@ -300,6 +325,51 @@ namespace QuestionarioForms
 
                 }
 
+                // PORTUGUES >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+                gridAprendizagem.Columns.Clear();
+                gridAprendizagem.Rows.Clear();
+
+                gridAprendizagem.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                gridAprendizagem.ColumnHeadersDefaultCellStyle.Font = new Font(DataGridView.DefaultFont, FontStyle.Bold);
+
+
+                gridAprendizagem.RowHeadersVisible = false;
+                gridAprendizagem.AllowUserToAddRows = false;
+
+                gridAprendizagem.Columns.Add("Col1", "Eixo");
+
+                DataGridViewColumn colunaGrafico3 = new DataGridViewProgressColumn();
+                colunaGrafico.HeaderText = "Gráfico";
+                colunaGrafico.Name = "Col2";
+
+                gridAprendizagem.Columns.Add(colunaGrafico3);
+                gridAprendizagem.Columns.Add("Col3", "Média Turma");
+                gridAprendizagem.Columns.Add("Col3", "Média Escola");
+
+                gridAprendizagem.Rows.Clear();
+
+                foreach (var area in areasAprendizagem)
+                {
+                    ItemReportTurma itemReport = vetItensRelatorio.Find(i => i.area.idArea == area.idArea);
+
+                    if (itemReport != null)
+                    {
+                        if (itemReport.score >= 0)
+                        {
+
+                            double socreFormatado = Math.Round(itemReport.score, 1);
+                            string grafico = itemReport.cor.ToString() + ";" + socreFormatado.ToString();
+                            double socreTurmaFormatado = Math.Round(itemReport.scoreEscola, 1);
+
+                            gridAprendizagem.Rows.Add(area.Nome, grafico, socreFormatado.ToString(), socreTurmaFormatado.ToString());
+                        }
+                        else
+                        {
+                            gridAprendizagem.Rows.Add(area.Nome, "-1", "", "");
+                        }
+                    }
+
+                }
             }
 
             btnCSV.Enabled = true;
@@ -938,8 +1008,12 @@ namespace QuestionarioForms
         {
             DataSetRepEscTurPt ds1 = new DataSetRepEscTurPt();
             DataSetRepEscTurMat ds2 = new DataSetRepEscTurMat();
+            DataSetRepEscTurApr ds3 = new DataSetRepEscTurApr();
 
-            if(gridPortugues.Rows.Count > 0)
+
+
+            // PORTUGUES >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+            if (gridPortugues.Rows.Count > 0)
             {
                 foreach (DataGridViewRow linha in gridPortugues.Rows)
                 {
@@ -974,7 +1048,9 @@ namespace QuestionarioForms
                 }
             }
 
-            if(gridMatematica.Rows.Count > 0)
+
+            // MATEMATICA >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+            if (gridMatematica.Rows.Count > 0)
             {
                 foreach (DataGridViewRow linha in gridMatematica.Rows)
                 {
@@ -1009,26 +1085,73 @@ namespace QuestionarioForms
                 }
             }
 
-            if((ds1.DataTable1.Rows.Count > 0) || (ds2.DataTable1.Rows.Count > 0))
+
+            // APRENDIZAGEM >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+            if (gridAprendizagem.Rows.Count > 0)
             {
-                FormPDF formpdf = new FormPDF();
-
-                formpdf.ShowDialog();
-
-                string nomeProfessor = formpdf.nomeProfessor;
-
-                SaveFileDialog dialog = new SaveFileDialog();
-                dialog.AddExtension = true;
-                dialog.Filter = "PDF|*.pdf";
-                dialog.DefaultExt = ".pdf";
-
-                DialogResult result = dialog.ShowDialog();
-
-                if (result.Equals(DialogResult.OK))
+                foreach (DataGridViewRow linha in gridAprendizagem.Rows)
                 {
-                    string path = dialog.FileName;
+                    DataRow row = ds3.DataTable1.NewRow();
+                    row[0] = linha.Cells[0].Value.ToString();
+                    float mediaTurma = -1;
+                    float mediaEscola = -1;
 
-                    PDFReportEscTur report = new PDFReportEscTur();
+                    if (linha.Cells.Count > 2)
+                    {
+                        string mt = linha.Cells[2].Value.ToString();
+                        if (float.TryParse(mt, out mediaTurma))
+                        {
+
+                            row[1] = getColorFromScore(mediaTurma).ToString();
+                            row[2] = mt;
+                        }
+                    }
+
+                    if (linha.Cells.Count > 3)
+                    {
+                        string me = linha.Cells[3].Value.ToString().ToString();
+                        if (float.TryParse(me, out mediaEscola))
+                        {
+
+                            row[3] = getColorFromScore(mediaEscola);
+                            row[4] = me;
+                        }
+                    }
+
+                    ds3.DataTable1.Rows.Add(row);
+                }
+            }
+                        
+
+
+            if ((ds1.DataTable1.Rows.Count > 0) || (ds2.DataTable1.Rows.Count > 0) || (ds3.DataTable1.Rows.Count > 0))
+            {
+              
+                string nomeProfessor = "";
+                string nomeTurma = "";
+                string nomeQuest = "";
+                string rootPath = ""; string path = "";
+
+
+                FolderBrowserDialog folderBrowserDialog1 = new FolderBrowserDialog();
+
+                if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    rootPath = folderBrowserDialog1.SelectedPath;
+                }
+                else
+                {
+                    MessageBox.Show("Selecionar caminho");
+                    return;
+                }
+
+                nomeQuest = comboQuestionario.Text;
+                nomeTurma = comboTurma.Text;
+                path = rootPath + "\\" + nomeQuest + "_" + nomeTurma + ".pdf";
+
+
+
+                PDFReportEscTur report = new PDFReportEscTur();
 
                 
 
@@ -1049,7 +1172,7 @@ namespace QuestionarioForms
                     (report.Section1.ReportObjects["Text4"] as CrystalDecisions.CrystalReports.Engine.TextObject)
                           .Text
                           =
-                          ((DateTime)pontuacao.DataHora).ToShortDateString();
+                          "00";
 
                     (report.Section1.ReportObjects["Text7"] as CrystalDecisions.CrystalReports.Engine.TextObject)
                           .Text
@@ -1063,17 +1186,18 @@ namespace QuestionarioForms
                     if (gridMatematica.Rows.Count > 0) { report.Subreports["RepMT"].SetDataSource(ds2); }
                     else { report.Section3.SectionFormat.EnableSuppress = true; }
 
-                    
+                    if (gridAprendizagem.Rows.Count > 0) { report.Subreports["RepMT"].SetDataSource(ds3); }
+                    else { report.Section3.SectionFormat.EnableSuppress = true; }
+
 
                     // Exporta o Report
                     report.ExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
                     report.PrintOptions.PaperSize = CrystalDecisions.Shared.PaperSize.PaperA4;
                     report.ExportToDisk(ExportFormatType.PortableDocFormat, path);
 
-                    ((Master)MdiParent).MensagemSucesso("PDF Exportado!");
 
-                }
-
+                ((Master)MdiParent).MensagemSucesso("PDF Exportado!");
+                    
 
             }
             else

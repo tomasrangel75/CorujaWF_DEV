@@ -61,6 +61,10 @@
             this.gridpsico = new System.Windows.Forms.DataGridView();
             this.btnEspecRel = new MetroFramework.Controls.MetroButton();
             this.btnTdsAlunosEscola = new MetroFramework.Controls.MetroButton();
+            this.metroButton1 = new MetroFramework.Controls.MetroButton();
+            this.metroButton2 = new MetroFramework.Controls.MetroButton();
+            this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
+            this.txtDtAplic = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridPortugues)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridMatematica)).BeginInit();
@@ -230,7 +234,7 @@
             // 
             this.gridPortugues.BackgroundColor = System.Drawing.SystemColors.Window;
             this.gridPortugues.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridPortugues.Location = new System.Drawing.Point(247, 85);
+            this.gridPortugues.Location = new System.Drawing.Point(247, 141);
             this.gridPortugues.Name = "gridPortugues";
             this.gridPortugues.Size = new System.Drawing.Size(702, 116);
             this.gridPortugues.TabIndex = 26;
@@ -239,7 +243,7 @@
             // 
             this.lblPortugues.AutoSize = true;
             this.lblPortugues.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.lblPortugues.Location = new System.Drawing.Point(247, 63);
+            this.lblPortugues.Location = new System.Drawing.Point(247, 119);
             this.lblPortugues.Name = "lblPortugues";
             this.lblPortugues.Size = new System.Drawing.Size(156, 19);
             this.lblPortugues.TabIndex = 26;
@@ -249,7 +253,7 @@
             // 
             this.lblMatematica.AutoSize = true;
             this.lblMatematica.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.lblMatematica.Location = new System.Drawing.Point(247, 210);
+            this.lblMatematica.Location = new System.Drawing.Point(247, 266);
             this.lblMatematica.Name = "lblMatematica";
             this.lblMatematica.Size = new System.Drawing.Size(88, 19);
             this.lblMatematica.TabIndex = 27;
@@ -259,7 +263,7 @@
             // 
             this.gridMatematica.BackgroundColor = System.Drawing.SystemColors.Window;
             this.gridMatematica.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridMatematica.Location = new System.Drawing.Point(247, 231);
+            this.gridMatematica.Location = new System.Drawing.Point(247, 287);
             this.gridMatematica.Name = "gridMatematica";
             this.gridMatematica.Size = new System.Drawing.Size(702, 116);
             this.gridMatematica.TabIndex = 28;
@@ -275,7 +279,7 @@
             this.pnlLegenda.Controls.Add(this.panel4);
             this.pnlLegenda.Controls.Add(this.panel3);
             this.pnlLegenda.Controls.Add(this.panel2);
-            this.pnlLegenda.Location = new System.Drawing.Point(989, 85);
+            this.pnlLegenda.Location = new System.Drawing.Point(989, 141);
             this.pnlLegenda.Name = "pnlLegenda";
             this.pnlLegenda.Size = new System.Drawing.Size(153, 149);
             this.pnlLegenda.TabIndex = 29;
@@ -360,7 +364,7 @@
             // 
             this.metroLabel1.AutoSize = true;
             this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel1.Location = new System.Drawing.Point(989, 63);
+            this.metroLabel1.Location = new System.Drawing.Point(989, 119);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(66, 19);
             this.metroLabel1.TabIndex = 30;
@@ -369,8 +373,7 @@
             // btnEspecialista
             // 
             this.btnEspecialista.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.btnEspecialista.Enabled = false;
-            this.btnEspecialista.Location = new System.Drawing.Point(9, 76);
+            this.btnEspecialista.Location = new System.Drawing.Point(9, 132);
             this.btnEspecialista.Name = "btnEspecialista";
             this.btnEspecialista.Size = new System.Drawing.Size(193, 37);
             this.btnEspecialista.TabIndex = 33;
@@ -383,7 +386,7 @@
             // 
             this.metroLabel6.AutoSize = true;
             this.metroLabel6.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel6.Location = new System.Drawing.Point(247, 356);
+            this.metroLabel6.Location = new System.Drawing.Point(247, 412);
             this.metroLabel6.Name = "metroLabel6";
             this.metroLabel6.Size = new System.Drawing.Size(213, 19);
             this.metroLabel6.TabIndex = 34;
@@ -393,7 +396,7 @@
             // 
             this.gridtreino.BackgroundColor = System.Drawing.SystemColors.Window;
             this.gridtreino.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridtreino.Location = new System.Drawing.Point(249, 379);
+            this.gridtreino.Location = new System.Drawing.Point(249, 435);
             this.gridtreino.Name = "gridtreino";
             this.gridtreino.Size = new System.Drawing.Size(702, 116);
             this.gridtreino.TabIndex = 35;
@@ -402,7 +405,7 @@
             // 
             this.gridpsico.BackgroundColor = System.Drawing.SystemColors.Window;
             this.gridpsico.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridpsico.Location = new System.Drawing.Point(23, 379);
+            this.gridpsico.Location = new System.Drawing.Point(23, 435);
             this.gridpsico.Name = "gridpsico";
             this.gridpsico.Size = new System.Drawing.Size(174, 116);
             this.gridpsico.TabIndex = 36;
@@ -411,8 +414,7 @@
             // btnEspecRel
             // 
             this.btnEspecRel.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.btnEspecRel.Enabled = false;
-            this.btnEspecRel.Location = new System.Drawing.Point(9, 192);
+            this.btnEspecRel.Location = new System.Drawing.Point(9, 248);
             this.btnEspecRel.Name = "btnEspecRel";
             this.btnEspecRel.Size = new System.Drawing.Size(193, 37);
             this.btnEspecRel.TabIndex = 37;
@@ -424,8 +426,7 @@
             // btnTdsAlunosEscola
             // 
             this.btnTdsAlunosEscola.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.btnTdsAlunosEscola.Enabled = false;
-            this.btnTdsAlunosEscola.Location = new System.Drawing.Point(9, 134);
+            this.btnTdsAlunosEscola.Location = new System.Drawing.Point(9, 190);
             this.btnTdsAlunosEscola.Name = "btnTdsAlunosEscola";
             this.btnTdsAlunosEscola.Size = new System.Drawing.Size(193, 37);
             this.btnTdsAlunosEscola.TabIndex = 38;
@@ -434,12 +435,57 @@
             this.btnTdsAlunosEscola.UseSelectable = true;
             this.btnTdsAlunosEscola.Click += new System.EventHandler(this.btnTdsAlunosEscola_Click);
             // 
+            // metroButton1
+            // 
+            this.metroButton1.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.metroButton1.Location = new System.Drawing.Point(13, 307);
+            this.metroButton1.Name = "metroButton1";
+            this.metroButton1.Size = new System.Drawing.Size(193, 37);
+            this.metroButton1.TabIndex = 37;
+            this.metroButton1.Text = "Relat Escola Aluno MAT ou APR";
+            this.metroButton1.UseCustomBackColor = true;
+            this.metroButton1.UseSelectable = true;
+            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
+            // 
+            // metroButton2
+            // 
+            this.metroButton2.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.metroButton2.Location = new System.Drawing.Point(13, 366);
+            this.metroButton2.Name = "metroButton2";
+            this.metroButton2.Size = new System.Drawing.Size(193, 37);
+            this.metroButton2.TabIndex = 37;
+            this.metroButton2.Text = "Relat Escola Aluno LP ou Híbrido";
+            this.metroButton2.UseCustomBackColor = true;
+            this.metroButton2.UseSelectable = true;
+            this.metroButton2.Click += new System.EventHandler(this.metroButton2_Click);
+            // 
+            // metroLabel7
+            // 
+            this.metroLabel7.AutoSize = true;
+            this.metroLabel7.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel7.Location = new System.Drawing.Point(9, 74);
+            this.metroLabel7.Name = "metroLabel7";
+            this.metroLabel7.Size = new System.Drawing.Size(131, 19);
+            this.metroLabel7.TabIndex = 39;
+            this.metroLabel7.Text = "Data de Aplicação";
+            // 
+            // txtDtAplic
+            // 
+            this.txtDtAplic.Location = new System.Drawing.Point(9, 97);
+            this.txtDtAplic.Name = "txtDtAplic";
+            this.txtDtAplic.Size = new System.Drawing.Size(131, 20);
+            this.txtDtAplic.TabIndex = 40;
+            // 
             // FormRelatorioReportAluno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1201, 538);
+            this.ClientSize = new System.Drawing.Size(1201, 564);
+            this.Controls.Add(this.txtDtAplic);
+            this.Controls.Add(this.metroLabel7);
             this.Controls.Add(this.btnTdsAlunosEscola);
+            this.Controls.Add(this.metroButton2);
+            this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.btnEspecRel);
             this.Controls.Add(this.gridpsico);
             this.Controls.Add(this.gridtreino);
@@ -501,5 +547,9 @@
         private System.Windows.Forms.DataGridView gridpsico;
         private MetroFramework.Controls.MetroButton btnEspecRel;
         private MetroFramework.Controls.MetroButton btnTdsAlunosEscola;
+        private MetroFramework.Controls.MetroButton metroButton1;
+        private MetroFramework.Controls.MetroButton metroButton2;
+        private MetroFramework.Controls.MetroLabel metroLabel7;
+        private System.Windows.Forms.TextBox txtDtAplic;
     }
 }

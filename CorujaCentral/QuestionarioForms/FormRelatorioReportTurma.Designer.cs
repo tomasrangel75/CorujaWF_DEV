@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.btnPDFMt = new MetroFramework.Controls.MetroButton();
             this.btnPDF = new MetroFramework.Controls.MetroButton();
             this.btnCSV = new MetroFramework.Controls.MetroButton();
@@ -40,6 +39,7 @@
             this.lblTurma = new MetroFramework.Controls.MetroLabel();
             this.comboEscola = new MetroFramework.Controls.MetroComboBox();
             this.lblEscola = new MetroFramework.Controls.MetroLabel();
+            this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.gridPortugues = new System.Windows.Forms.DataGridView();
             this.lblPortugues = new MetroFramework.Controls.MetroLabel();
             this.lblMatematica = new MetroFramework.Controls.MetroLabel();
@@ -54,10 +54,13 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.gridAprendizagem = new System.Windows.Forms.DataGridView();
+            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridPortugues)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridMatematica)).BeginInit();
             this.pnlLegenda.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridAprendizagem)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -77,19 +80,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1151, 45);
             this.panel1.TabIndex = 2;
-            // 
-            // metroButton1
-            // 
-            this.metroButton1.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.metroButton1.Enabled = false;
-            this.metroButton1.Location = new System.Drawing.Point(9, 59);
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(153, 37);
-            this.metroButton1.TabIndex = 35;
-            this.metroButton1.Text = "PDF Rel. Esc/Tur.";
-            this.metroButton1.UseCustomBackColor = true;
-            this.metroButton1.UseSelectable = true;
-            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
             // 
             // btnPDFMt
             // 
@@ -205,6 +195,19 @@
             this.lblEscola.Size = new System.Drawing.Size(50, 19);
             this.lblEscola.TabIndex = 4;
             this.lblEscola.Text = "Escola";
+            // 
+            // metroButton1
+            // 
+            this.metroButton1.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.metroButton1.Enabled = false;
+            this.metroButton1.Location = new System.Drawing.Point(9, 59);
+            this.metroButton1.Name = "metroButton1";
+            this.metroButton1.Size = new System.Drawing.Size(153, 37);
+            this.metroButton1.TabIndex = 35;
+            this.metroButton1.Text = "PDF Rel. Esc/Tur.";
+            this.metroButton1.UseCustomBackColor = true;
+            this.metroButton1.UseSelectable = true;
+            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
             // 
             // gridPortugues
             // 
@@ -346,15 +349,36 @@
             this.panel2.Size = new System.Drawing.Size(32, 23);
             this.panel2.TabIndex = 31;
             // 
+            // gridAprendizagem
+            // 
+            this.gridAprendizagem.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.gridAprendizagem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridAprendizagem.Location = new System.Drawing.Point(247, 458);
+            this.gridAprendizagem.Name = "gridAprendizagem";
+            this.gridAprendizagem.Size = new System.Drawing.Size(702, 149);
+            this.gridAprendizagem.TabIndex = 28;
+            // 
+            // metroLabel6
+            // 
+            this.metroLabel6.AutoSize = true;
+            this.metroLabel6.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel6.Location = new System.Drawing.Point(247, 436);
+            this.metroLabel6.Name = "metroLabel6";
+            this.metroLabel6.Size = new System.Drawing.Size(108, 19);
+            this.metroLabel6.TabIndex = 27;
+            this.metroLabel6.Text = "Aprendizagem";
+            // 
             // FormRelatorioReportTurma
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1165, 415);
+            this.ClientSize = new System.Drawing.Size(1165, 744);
             this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.pnlLegenda);
+            this.Controls.Add(this.metroLabel6);
             this.Controls.Add(this.lblMatematica);
+            this.Controls.Add(this.gridAprendizagem);
             this.Controls.Add(this.gridMatematica);
             this.Controls.Add(this.lblPortugues);
             this.Controls.Add(this.gridPortugues);
@@ -366,6 +390,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridMatematica)).EndInit();
             this.pnlLegenda.ResumeLayout(false);
             this.pnlLegenda.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridAprendizagem)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -399,5 +424,7 @@
         private MetroFramework.Controls.MetroButton btnPDFMt;
         private MetroFramework.Controls.MetroButton btnPDF;
         private MetroFramework.Controls.MetroButton metroButton1;
+        private System.Windows.Forms.DataGridView gridAprendizagem;
+        private MetroFramework.Controls.MetroLabel metroLabel6;
     }
 }

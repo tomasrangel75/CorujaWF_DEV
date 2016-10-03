@@ -15,7 +15,8 @@ namespace QuestionarioForms
     {
         public string nomeProfessor { get; set; }
         public string ano { get; set; }
-        
+        public string dataAplicacao { get; set; }
+
 
         public FormPDFEspecialista()
         {
@@ -26,11 +27,22 @@ namespace QuestionarioForms
         {
             nomeProfessor = txtProfessor.Text;
             ano = txtano.Text;
-           
+            dataAplicacao = txtAplicacao.Text;
+
             this.Close();
         }
 
         private void txtProfessor_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroLabel2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtAplicacao_TextChanged(object sender, EventArgs e)
         {
 
         }

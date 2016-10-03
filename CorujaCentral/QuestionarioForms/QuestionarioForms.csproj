@@ -119,6 +119,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetPsico.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSets\DataSetRepEscTurApr.cs">
+      <DependentUpon>DataSetRepEscTurApr.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\DataSetRepEscTurApr.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetRepEscTurApr.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSets\DataSetRepEscTurMat.cs">
       <DependentUpon>DataSetRepEscTurMat.xsd</DependentUpon>
     </Compile>
@@ -273,12 +281,30 @@
       <DependentUpon>FormTurma.cs</DependentUpon>
     </Compile>
     <Compile Include="GrafoQuestionario.cs" />
+    <Compile Include="ImportaProcessaDados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImportaProcessaDados.Designer.cs">
+      <DependentUpon>ImportaProcessaDados.cs</DependentUpon>
+    </Compile>
     <Compile Include="ItemRelatorioAluno.cs" />
     <Compile Include="Master.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Master.Designer.cs">
       <DependentUpon>Master.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDFAluno.cs">
+      <DependentUpon>PDFAluno.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="PDFAlunoLP.cs">
+      <DependentUpon>PDFAlunoLP.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="PDFEspecialistaV2.cs">
       <DependentUpon>PDFEspecialistaV2.rpt</DependentUpon>
@@ -429,8 +455,19 @@
     <EmbeddedResource Include="FormTurma.resx">
       <DependentUpon>FormTurma.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ImportaProcessaDados.resx">
+      <DependentUpon>ImportaProcessaDados.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Master.resx">
       <DependentUpon>Master.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDFAluno.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PDFAluno.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDFAlunoLP.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PDFAlunoLP.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="PDFEspecialistaV2.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -515,6 +552,17 @@
     </None>
     <None Include="DataSets\DataSetPsico.xss">
       <DependentUpon>DataSetPsico.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSetRepEscTurApr.xsc">
+      <DependentUpon>DataSetRepEscTurApr.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSetRepEscTurApr.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetRepEscTurApr.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\DataSetRepEscTurApr.xss">
+      <DependentUpon>DataSetRepEscTurApr.xsd</DependentUpon>
     </None>
     <None Include="DataSets\DataSetRepEscTurMat.xsc">
       <DependentUpon>DataSetRepEscTurMat.xsd</DependentUpon>

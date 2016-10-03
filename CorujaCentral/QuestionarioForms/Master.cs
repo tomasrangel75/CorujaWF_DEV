@@ -714,35 +714,11 @@ namespace QuestionarioForms
             
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        private void ribbonButton1_Click(object sender, EventArgs e)
+        {
+            ImportaProcessaDados newForm = new ImportaProcessaDados();
+            newForm.MdiParent = this;
+            newForm.Show();
+        }
     }
 }

@@ -513,3 +513,4 @@ C:\Users\tomas_rangel\Documents\GitHub\CorujaWF_DEV\CorujaCentral\QuestionarioFo
 C:\Users\tomas_rangel\Documents\GitHub\CorujaWF_DEV\CorujaCentral\QuestionarioForms\obj\Debug\QuestionarioForms.FormQuestionario.resources
 C:\Users\tomas_rangel\Documents\GitHub\CorujaWF_DEV\CorujaCentral\QuestionarioForms\obj\Debug\QuestionarioForms.Resource1.resources
 C:\Users\tomas_rangel\Documents\GitHub\CorujaWF_DEV\CorujaCentral\QuestionarioForms\obj\Debug\QuestionarioForms.csproj.GenerateResource.Cache
+C:\Users\tomas_rangel\Documents\GitHub\CorujaWF_DEV\CorujaCentral\QuestionarioForms\obj\Debug\QuestionarioForms.ImportaProcessaDados.resources

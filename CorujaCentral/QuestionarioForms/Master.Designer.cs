@@ -43,6 +43,7 @@
             this.ribbonExportacao = new System.Windows.Forms.RibbonPanel();
             this.btnExportar = new System.Windows.Forms.RibbonButton();
             this.btnImportar = new System.Windows.Forms.RibbonButton();
+            this.btnImportarBatch = new System.Windows.Forms.RibbonButton();
             this.ribbonTab2 = new System.Windows.Forms.RibbonTab();
             this.ribbonAllunos = new System.Windows.Forms.RibbonPanel();
             this.btnEscolas = new System.Windows.Forms.RibbonButton();
@@ -64,7 +65,8 @@
             this.ribbonPrint = new System.Windows.Forms.RibbonPanel();
             this.btnImprimir = new System.Windows.Forms.RibbonButton();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.btnImportarBatch = new System.Windows.Forms.RibbonButton();
+            this.ribbonPanel5 = new System.Windows.Forms.RibbonPanel();
+            this.ribbonButton1 = new System.Windows.Forms.RibbonButton();
             this.SuspendLayout();
             // 
             // ribbon1
@@ -185,6 +187,13 @@
             this.btnImportar.Text = "Importar";
             this.btnImportar.Click += new System.EventHandler(this.btnImportar_Click);
             // 
+            // btnImportarBatch
+            // 
+            this.btnImportarBatch.Image = global::QuestionarioForms.Resource1.Flip;
+            this.btnImportarBatch.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnImportarBatch.SmallImage")));
+            this.btnImportarBatch.Text = "Importar Provas";
+            this.btnImportarBatch.Click += new System.EventHandler(this.btnImportarBatch_Click);
+            // 
             // ribbonTab2
             // 
             this.ribbonTab2.Panels.Add(this.ribbonAllunos);
@@ -225,6 +234,7 @@
             this.ribbonTab3.Panels.Add(this.ribbonPanel3);
             this.ribbonTab3.Panels.Add(this.ribbonPanel4);
             this.ribbonTab3.Panels.Add(this.ribbonPrint);
+            this.ribbonTab3.Panels.Add(this.ribbonPanel5);
             this.ribbonTab3.Text = "Relatórios";
             // 
             // ribbonRelatoriosProvas
@@ -329,12 +339,16 @@
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.Visible = false;
             // 
-            // btnImportarBatch
+            // ribbonPanel5
             // 
-            this.btnImportarBatch.Image = global::QuestionarioForms.Resource1.Flip;
-            this.btnImportarBatch.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnImportarBatch.SmallImage")));
-            this.btnImportarBatch.Text = "Importar Provas";
-            this.btnImportarBatch.Click += new System.EventHandler(this.btnImportarBatch_Click);
+            this.ribbonPanel5.Items.Add(this.ribbonButton1);
+            this.ribbonPanel5.Text = "Importa Provas";
+            // 
+            // ribbonButton1
+            // 
+            this.ribbonButton1.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton1.Image")));
+            this.ribbonButton1.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton1.SmallImage")));
+            this.ribbonButton1.Click += new System.EventHandler(this.ribbonButton1_Click);
             // 
             // Master
             // 
@@ -394,6 +408,8 @@
         private System.Windows.Forms.RibbonButton btnImprimir;
         private System.Windows.Forms.RibbonButton btnReportTotal;
         private System.Windows.Forms.RibbonButton btnImportarBatch;
+        private System.Windows.Forms.RibbonPanel ribbonPanel5;
+        private System.Windows.Forms.RibbonButton ribbonButton1;
     }
 }
 
