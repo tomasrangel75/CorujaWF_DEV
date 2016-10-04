@@ -56,6 +56,11 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.gridAprendizagem = new System.Windows.Forms.DataGridView();
             this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
+            this.metroButton2 = new MetroFramework.Controls.MetroButton();
+            this.txtEscola = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtAplic = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridPortugues)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridMatematica)).BeginInit();
@@ -199,12 +204,11 @@
             // metroButton1
             // 
             this.metroButton1.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.metroButton1.Enabled = false;
             this.metroButton1.Location = new System.Drawing.Point(9, 59);
             this.metroButton1.Name = "metroButton1";
             this.metroButton1.Size = new System.Drawing.Size(153, 37);
             this.metroButton1.TabIndex = 35;
-            this.metroButton1.Text = "PDF Rel. Esc/Tur.";
+            this.metroButton1.Text = "PDF Rel. Esc/Tur. LP/MAT";
             this.metroButton1.UseCustomBackColor = true;
             this.metroButton1.UseSelectable = true;
             this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
@@ -368,11 +372,60 @@
             this.metroLabel6.TabIndex = 27;
             this.metroLabel6.Text = "Aprendizagem";
             // 
+            // metroButton2
+            // 
+            this.metroButton2.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.metroButton2.Location = new System.Drawing.Point(9, 120);
+            this.metroButton2.Name = "metroButton2";
+            this.metroButton2.Size = new System.Drawing.Size(153, 37);
+            this.metroButton2.TabIndex = 35;
+            this.metroButton2.Text = "PDF Rel. Esc/Tur. APR";
+            this.metroButton2.UseCustomBackColor = true;
+            this.metroButton2.UseSelectable = true;
+            this.metroButton2.Click += new System.EventHandler(this.metroButton2_Click);
+            // 
+            // txtEscola
+            // 
+            this.txtEscola.Location = new System.Drawing.Point(9, 192);
+            this.txtEscola.Name = "txtEscola";
+            this.txtEscola.Size = new System.Drawing.Size(153, 20);
+            this.txtEscola.TabIndex = 36;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 173);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(39, 13);
+            this.label1.TabIndex = 37;
+            this.label1.Text = "Escola";
+            // 
+            // txtAplic
+            // 
+            this.txtAplic.Location = new System.Drawing.Point(9, 240);
+            this.txtAplic.Name = "txtAplic";
+            this.txtAplic.Size = new System.Drawing.Size(153, 20);
+            this.txtAplic.TabIndex = 36;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(13, 221);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(95, 13);
+            this.label2.TabIndex = 37;
+            this.label2.Text = "Data de Aplicação";
+            // 
             // FormRelatorioReportTurma
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1165, 744);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.txtAplic);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtEscola);
+            this.Controls.Add(this.metroButton2);
             this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.pnlLegenda);
@@ -426,5 +479,10 @@
         private MetroFramework.Controls.MetroButton metroButton1;
         private System.Windows.Forms.DataGridView gridAprendizagem;
         private MetroFramework.Controls.MetroLabel metroLabel6;
+        private MetroFramework.Controls.MetroButton metroButton2;
+        private System.Windows.Forms.TextBox txtEscola;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtAplic;
+        private System.Windows.Forms.Label label2;
     }
 }

@@ -148,8 +148,7 @@ namespace QuestionarioForms
                 areasAprendizagem = areasAprendizagem.ToList().FindAll(a => a.Disciplina_id == 3).Distinct().ToList();
 
                 vetAreasRelatorio.AddRange(areasAprendizagem);
-
-
+      
                 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
                 areasPortugues = areasPortugues.OrderBy(a => a.idArea).ToList();
                 areasMatematica = areasMatematica.OrderBy(a => a.idArea).ToList();
@@ -260,6 +259,12 @@ namespace QuestionarioForms
 
                 foreach (var area in areasPortugues)
                 {
+
+                    if (area.Nome.Equals("Treino1"))
+                    {
+                        continue;
+                    };
+
                     ItemReportTurma itemReport = vetItensRelatorio.Find(i => i.area.idArea == area.idArea);
 
                     if (itemReport != null)
@@ -305,6 +310,13 @@ namespace QuestionarioForms
 
                 foreach (var area in areasMatematica)
                 {
+
+                    if (area.Nome.Equals("Treino1"))
+                    {
+                        continue;
+                    };
+
+
                     ItemReportTurma itemReport = vetItensRelatorio.Find(i => i.area.idArea == area.idArea);
 
                     if (itemReport != null)
@@ -350,6 +362,12 @@ namespace QuestionarioForms
 
                 foreach (var area in areasAprendizagem)
                 {
+                    if(area.Nome.Equals("Treino1"))
+                    {
+                        continue;
+                    };
+
+
                     ItemReportTurma itemReport = vetItensRelatorio.Find(i => i.area.idArea == area.idArea);
 
                     if (itemReport != null)
@@ -377,6 +395,7 @@ namespace QuestionarioForms
             btnPDF.Enabled = true;
             btnPDFMt.Enabled = true;
             metroButton1.Enabled = true;
+            metroButton2.Enabled = true;
         }
 
         public double calculaScore(List<AreaCalculada> vetAreaCalculada, int cor, Area area, double pontuacaoAluno)
@@ -1006,11 +1025,14 @@ namespace QuestionarioForms
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
+
+            string escola = this.txtEscola.Text;
+            string dtAplic = this.txtAplic.Text;
+
+
             DataSetRepEscTurPt ds1 = new DataSetRepEscTurPt();
             DataSetRepEscTurMat ds2 = new DataSetRepEscTurMat();
-            DataSetRepEscTurApr ds3 = new DataSetRepEscTurApr();
-
-
+         
 
             // PORTUGUES >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
             if (gridPortugues.Rows.Count > 0)
@@ -1085,49 +1107,12 @@ namespace QuestionarioForms
                 }
             }
 
-
-            // APRENDIZAGEM >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-            if (gridAprendizagem.Rows.Count > 0)
-            {
-                foreach (DataGridViewRow linha in gridAprendizagem.Rows)
-                {
-                    DataRow row = ds3.DataTable1.NewRow();
-                    row[0] = linha.Cells[0].Value.ToString();
-                    float mediaTurma = -1;
-                    float mediaEscola = -1;
-
-                    if (linha.Cells.Count > 2)
-                    {
-                        string mt = linha.Cells[2].Value.ToString();
-                        if (float.TryParse(mt, out mediaTurma))
-                        {
-
-                            row[1] = getColorFromScore(mediaTurma).ToString();
-                            row[2] = mt;
-                        }
-                    }
-
-                    if (linha.Cells.Count > 3)
-                    {
-                        string me = linha.Cells[3].Value.ToString().ToString();
-                        if (float.TryParse(me, out mediaEscola))
-                        {
-
-                            row[3] = getColorFromScore(mediaEscola);
-                            row[4] = me;
-                        }
-                    }
-
-                    ds3.DataTable1.Rows.Add(row);
-                }
-            }
-                        
+                                 
 
 
-            if ((ds1.DataTable1.Rows.Count > 0) || (ds2.DataTable1.Rows.Count > 0) || (ds3.DataTable1.Rows.Count > 0))
+            if ((ds1.DataTable1.Rows.Count > 0) || (ds2.DataTable1.Rows.Count > 0))
             {
               
-                string nomeProfessor = "";
                 string nomeTurma = "";
                 string nomeQuest = "";
                 string rootPath = ""; string path = "";
@@ -1167,31 +1152,28 @@ namespace QuestionarioForms
 
                     (report.Section1.ReportObjects["Text3"] as
                       CrystalDecisions.CrystalReports.Engine.TextObject)
-                      .Text = nomeProfessor;
+                      .Text = escola;
 
                     (report.Section1.ReportObjects["Text4"] as CrystalDecisions.CrystalReports.Engine.TextObject)
                           .Text
                           =
-                          "00";
+                          dtAplic;
 
                     (report.Section1.ReportObjects["Text7"] as CrystalDecisions.CrystalReports.Engine.TextObject)
                           .Text
                           =
                            turma.Nome;
 
-                    if (gridPortugues.Rows.Count > 0) { report.Subreports["RepPT"].SetDataSource(ds1); }
-                    else { report.Section2.SectionFormat.EnableSuppress = true; }
+                if (gridPortugues.Rows.Count > 0) { report.Subreports["RepPT"].SetDataSource(ds1); }
+                else { report.Section2.SectionFormat.EnableSuppress = true; }
 
 
-                    if (gridMatematica.Rows.Count > 0) { report.Subreports["RepMT"].SetDataSource(ds2); }
-                    else { report.Section3.SectionFormat.EnableSuppress = true; }
-
-                    if (gridAprendizagem.Rows.Count > 0) { report.Subreports["RepMT"].SetDataSource(ds3); }
-                    else { report.Section3.SectionFormat.EnableSuppress = true; }
+                if (gridMatematica.Rows.Count > 0) { report.Subreports["RepMT"].SetDataSource(ds2); }
+                else { report.Section3.SectionFormat.EnableSuppress = true; }
 
 
-                    // Exporta o Report
-                    report.ExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
+                // Exporta o Report
+                report.ExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
                     report.PrintOptions.PaperSize = CrystalDecisions.Shared.PaperSize.PaperA4;
                     report.ExportToDisk(ExportFormatType.PortableDocFormat, path);
 
@@ -1204,6 +1186,127 @@ namespace QuestionarioForms
             {
                 ((Master)MdiParent).MensagemErro("Não contém resultados suficientes para gerar o relatório!");
             }
+        }
+
+        private void metroButton2_Click(object sender, EventArgs e)
+        {
+            DataSetRepEscTurApr ds3 = new DataSetRepEscTurApr();
+
+            string escola = this.txtEscola.Text;
+            string dtAplic = this.txtAplic.Text;
+
+
+            // APRENDIZAGEM >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+            if (gridAprendizagem.Rows.Count > 0)
+            {
+                foreach (DataGridViewRow linha in gridAprendizagem.Rows)
+                {
+                    DataRow row = ds3.DataTable1.NewRow();
+                    row[0] = linha.Cells[0].Value.ToString();
+                    float mediaTurma = -1;
+                    float mediaEscola = -1;
+
+                    if (linha.Cells.Count > 2)
+                    {
+                        string mt = linha.Cells[2].Value.ToString();
+                        if (float.TryParse(mt, out mediaTurma))
+                        {
+
+                            row[1] = getColorFromScore(mediaTurma).ToString();
+                            row[2] = mt;
+                        }
+                    }
+
+                    if (linha.Cells.Count > 3)
+                    {
+                        string me = linha.Cells[3].Value.ToString().ToString();
+                        if (float.TryParse(me, out mediaEscola))
+                        {
+
+                            row[3] = getColorFromScore(mediaEscola);
+                            row[4] = me;
+                        }
+                    }
+
+                    ds3.DataTable1.Rows.Add(row);
+                }
+            }
+
+
+
+            if ((ds3.DataTable1.Rows.Count > 0))
+            {
+
+                string nomeTurma = "";
+                string nomeQuest = "";
+                string rootPath = ""; string path = "";
+
+
+                FolderBrowserDialog folderBrowserDialog1 = new FolderBrowserDialog();
+
+                if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    rootPath = folderBrowserDialog1.SelectedPath;
+                }
+                else
+                {
+                    MessageBox.Show("Selecionar caminho");
+                    return;
+                }
+
+                nomeQuest = comboQuestionario.Text;
+                nomeTurma = comboTurma.Text;
+                path = rootPath + "\\" + nomeQuest + "_" + nomeTurma + ".pdf";
+
+
+
+                PDFReportEscTurApr report = new PDFReportEscTurApr();
+
+
+
+                Turma turma = (comboTurma.SelectedItem as Turma);
+                Questionario questionario = (comboQuestionario.SelectedItem as Questionario);
+
+                Pontuacao pontuacao =
+                    Pontuacao.obterTodos()
+                        .Find(
+                            p =>
+                                p.Aluno.Turma_id.Equals(turma.idTurma) &&
+                                p.Questao.Questionario_id.Equals(questionario.idQuestionario));
+
+                (report.Section1.ReportObjects["Text3"] as
+                  CrystalDecisions.CrystalReports.Engine.TextObject)
+                  .Text = escola;
+
+                (report.Section1.ReportObjects["Text4"] as CrystalDecisions.CrystalReports.Engine.TextObject)
+                      .Text
+                      = dtAplic;
+
+                (report.Section1.ReportObjects["Text7"] as CrystalDecisions.CrystalReports.Engine.TextObject)
+                      .Text
+                      =
+                       turma.Nome;
+                
+
+                if (gridAprendizagem.Rows.Count > 0) { report.Subreports["RepMT"].SetDataSource(ds3); }
+                else { report.Section3.SectionFormat.EnableSuppress = true; }
+
+
+                // Exporta o Report
+                report.ExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
+                report.PrintOptions.PaperSize = CrystalDecisions.Shared.PaperSize.PaperA4;
+                report.ExportToDisk(ExportFormatType.PortableDocFormat, path);
+
+
+                ((Master)MdiParent).MensagemSucesso("PDF Exportado!");
+
+
+            }
+            else
+            {
+                ((Master)MdiParent).MensagemErro("Não contém resultados suficientes para gerar o relatório!");
+            }
+
         }
     }
 

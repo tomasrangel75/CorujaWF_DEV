@@ -380,3 +380,9 @@ C:\Users\tomas_rangel\Documents\GitHub\CorujaWF_DEV\SolucaoQuestionario\Prova\ob
 C:\Users\tomas_rangel\Documents\GitHub\CorujaWF_DEV\SolucaoQuestionario\Prova\obj\Debug\Prova.WaitLoad.resources
 C:\Users\tomas_rangel\Documents\GitHub\CorujaWF_DEV\SolucaoQuestionario\Prova\obj\Debug\Prova.ProvaAluno.resources
 C:\Users\tomas_rangel\Documents\GitHub\CorujaWF_DEV\SolucaoQuestionario\Prova\obj\Debug\Prova.csproj.GenerateResource.Cache
+C:\Users\tomas_rangel\Desktop\Zip\CorujaWF_DEV-master\SolucaoQuestionario\Prova\bin\Debug\Prova.exe.config
+C:\Users\tomas_rangel\Desktop\Zip\CorujaWF_DEV-master\SolucaoQuestionario\Prova\obj\Debug\Interop.WMPLib.dll
+C:\Users\tomas_rangel\Desktop\Zip\CorujaWF_DEV-master\SolucaoQuestionario\Prova\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\tomas_rangel\Desktop\Zip\CorujaWF_DEV-master\SolucaoQuestionario\Prova\obj\Debug\Prova.csproj.ResolveComReference.cache
+C:\Users\tomas_rangel\Desktop\Zip\CorujaWF_DEV-master\SolucaoQuestionario\Prova\obj\Debug\Prova.exe
+C:\Users\tomas_rangel\Desktop\Zip\CorujaWF_DEV-master\SolucaoQuestionario\Prova\obj\Debug\Prova.pdb

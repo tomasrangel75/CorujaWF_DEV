@@ -408,6 +408,8 @@ namespace QuestionarioForms
 
         private void btnPDF_Click(object sender, EventArgs e)
         {
+
+            string dtAplic = this.txtDtAplic.Text;
             try
             {
 
@@ -569,7 +571,7 @@ namespace QuestionarioForms
                         (report.Section2.ReportObjects["txtData"] as CrystalDecisions.CrystalReports.Engine.TextObject)
                             .Text
                             =
-                            ((DateTime) pontuacao.DataHora).ToShortDateString();
+                            dtAplic;
 
 
                         // Exporta o Report
@@ -611,6 +613,9 @@ namespace QuestionarioForms
 
         private void btnPDFMt_Click(object sender, EventArgs e)
         {
+
+            string dtAplic = this.txtDtAplic.Text;
+
             try
             {
 
@@ -824,9 +829,9 @@ namespace QuestionarioForms
                         (report.Section2.ReportObjects["txtData"] as CrystalDecisions.CrystalReports.Engine.TextObject)
                             .Text
                             =
-                            ((DateTime) pontuacao.DataHora).ToShortDateString();
+                            dtAplic;
 
-           
+
 
 
                         // Exporta o Report
@@ -849,6 +854,11 @@ namespace QuestionarioForms
                 ((Master) MdiParent).MensagemErro(
                     "Não foi possível gerar o PDF. Verifique se está com o programa de relatórios instalado.");
             }
+        }
+
+        private void metroLabel1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 

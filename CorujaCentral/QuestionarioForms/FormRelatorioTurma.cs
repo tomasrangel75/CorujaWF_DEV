@@ -392,6 +392,9 @@ namespace QuestionarioForms
 
         private void btnPDF_Click(object sender, EventArgs e)
         {
+
+            string dtAplic = this.txtDtAplic.Text;
+
             try
             {
 
@@ -476,7 +479,7 @@ namespace QuestionarioForms
                         (report.Section2.ReportObjects["txtData"] as CrystalDecisions.CrystalReports.Engine.TextObject)
                             .Text
                             =
-                            ((DateTime) pontuacao.DataHora).ToShortDateString();
+                           dtAplic;
 
                    
                       
@@ -524,6 +527,8 @@ namespace QuestionarioForms
 
         private void btnPDFMt_Click(object sender, EventArgs e)
         {
+
+            string dtAplic = this.txtDtAplic.Text;
             try
             {
 
@@ -633,12 +638,15 @@ namespace QuestionarioForms
                         (report.Section2.ReportObjects["txtEscola"] as CrystalDecisions.CrystalReports.Engine.TextObject)
                             .Text =
                             (comboEscola.SelectedItem as Instituicao).Nome;
+                        //(report.Section2.ReportObjects["txtData"] as CrystalDecisions.CrystalReports.Engine.TextObject)
+                        //    .Text
+                        //    =
+                        //    ((DateTime)pontuacao.DataHora).ToShortDateString();
+
                         (report.Section2.ReportObjects["txtData"] as CrystalDecisions.CrystalReports.Engine.TextObject)
                             .Text
                             =
-                            ((DateTime) pontuacao.DataHora).ToShortDateString();
-
-                 
+                            dtAplic;
 
                         // Exporta o Report
                         report.ExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;

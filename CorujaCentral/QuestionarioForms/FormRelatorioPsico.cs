@@ -284,11 +284,11 @@ namespace QuestionarioForms
                             turma.Nome;
                         (report.Section2.ReportObjects["txtEscola"] as CrystalDecisions.CrystalReports.Engine.TextObject)
                             .Text =
-                            (comboEscola.SelectedItem as Instituicao).Nome;
-                        (report.Section2.ReportObjects["txtData"] as CrystalDecisions.CrystalReports.Engine.TextObject)
-                            .Text
-                            =
-                            ((DateTime) pontuacao.DataHora).ToShortDateString();
+                        //    (comboEscola.SelectedItem as Instituicao).Nome;
+                        //(report.Section2.ReportObjects["txtData"] as CrystalDecisions.CrystalReports.Engine.TextObject)
+                        //    .Text
+                        //    =
+                        //    ((DateTime) pontuacao.DataHora).ToShortDateString();
 
                         (report.Section2.ReportObjects["txtDisciplina"] as
                             CrystalDecisions.CrystalReports.Engine.TextObject)

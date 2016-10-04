@@ -336,6 +336,12 @@
       <DesignTime>True</DesignTime>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="PDFReportEscTurApr.cs">
+      <DependentUpon>PDFReportEscTurApr.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="PDFReportEscTur.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -484,6 +490,10 @@
     <EmbeddedResource Include="PDFReporListaTurma_Mat.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>PDFReporListaTurma_Mat.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDFReportEscTurApr.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PDFReportEscTurApr.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="PDFReportEscTur.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

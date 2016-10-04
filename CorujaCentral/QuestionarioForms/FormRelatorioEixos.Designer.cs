@@ -29,7 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnPDFMt = new MetroFramework.Controls.MetroButton();
             this.comboQuestionario = new MetroFramework.Controls.MetroComboBox();
+            this.btnPDF = new MetroFramework.Controls.MetroButton();
             this.lblQuestionario = new MetroFramework.Controls.MetroLabel();
             this.btnGerarRelatorio = new MetroFramework.Controls.MetroButton();
             this.comboTurma = new MetroFramework.Controls.MetroComboBox();
@@ -56,8 +58,8 @@
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.lblMat = new MetroFramework.Controls.MetroLabel();
             this.lblPort = new MetroFramework.Controls.MetroLabel();
-            this.btnPDFMt = new MetroFramework.Controls.MetroButton();
-            this.btnPDF = new MetroFramework.Controls.MetroButton();
+            this.txtDtAplic = new System.Windows.Forms.TextBox();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.panel1.SuspendLayout();
             this.pnlPrincipal.SuspendLayout();
             this.pnlAzul.SuspendLayout();
@@ -84,6 +86,19 @@
             this.panel1.Size = new System.Drawing.Size(940, 45);
             this.panel1.TabIndex = 1;
             // 
+            // btnPDFMt
+            // 
+            this.btnPDFMt.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnPDFMt.Enabled = false;
+            this.btnPDFMt.Location = new System.Drawing.Point(880, 3);
+            this.btnPDFMt.Name = "btnPDFMt";
+            this.btnPDFMt.Size = new System.Drawing.Size(52, 37);
+            this.btnPDFMt.TabIndex = 31;
+            this.btnPDFMt.Text = "PDF-MT";
+            this.btnPDFMt.UseCustomBackColor = true;
+            this.btnPDFMt.UseSelectable = true;
+            this.btnPDFMt.Click += new System.EventHandler(this.btnPDFMt_Click);
+            // 
             // comboQuestionario
             // 
             this.comboQuestionario.Enabled = false;
@@ -94,6 +109,19 @@
             this.comboQuestionario.Size = new System.Drawing.Size(189, 29);
             this.comboQuestionario.TabIndex = 23;
             this.comboQuestionario.UseSelectable = true;
+            // 
+            // btnPDF
+            // 
+            this.btnPDF.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnPDF.Enabled = false;
+            this.btnPDF.Location = new System.Drawing.Point(826, 3);
+            this.btnPDF.Name = "btnPDF";
+            this.btnPDF.Size = new System.Drawing.Size(47, 37);
+            this.btnPDF.TabIndex = 30;
+            this.btnPDF.Text = "PDF-PT";
+            this.btnPDF.UseCustomBackColor = true;
+            this.btnPDF.UseSelectable = true;
+            this.btnPDF.Click += new System.EventHandler(this.btnPDF_Click);
             // 
             // lblQuestionario
             // 
@@ -168,7 +196,7 @@
             this.pnlPrincipal.Controls.Add(this.pnlAmarelo);
             this.pnlPrincipal.Controls.Add(this.pnlVermelho);
             this.pnlPrincipal.Controls.Add(this.pnlRadios);
-            this.pnlPrincipal.Location = new System.Drawing.Point(23, 63);
+            this.pnlPrincipal.Location = new System.Drawing.Point(23, 116);
             this.pnlPrincipal.Name = "pnlPrincipal";
             this.pnlPrincipal.Size = new System.Drawing.Size(1190, 375);
             this.pnlPrincipal.TabIndex = 2;
@@ -383,37 +411,31 @@
             this.lblPort.TabIndex = 25;
             this.lblPort.Text = "Português";
             // 
-            // btnPDFMt
+            // txtDtAplic
             // 
-            this.btnPDFMt.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.btnPDFMt.Enabled = false;
-            this.btnPDFMt.Location = new System.Drawing.Point(880, 3);
-            this.btnPDFMt.Name = "btnPDFMt";
-            this.btnPDFMt.Size = new System.Drawing.Size(52, 37);
-            this.btnPDFMt.TabIndex = 31;
-            this.btnPDFMt.Text = "PDF-MT";
-            this.btnPDFMt.UseCustomBackColor = true;
-            this.btnPDFMt.UseSelectable = true;
-            this.btnPDFMt.Click += new System.EventHandler(this.btnPDFMt_Click);
+            this.txtDtAplic.Location = new System.Drawing.Point(164, 80);
+            this.txtDtAplic.Name = "txtDtAplic";
+            this.txtDtAplic.Size = new System.Drawing.Size(100, 20);
+            this.txtDtAplic.TabIndex = 3;
             // 
-            // btnPDF
+            // metroLabel1
             // 
-            this.btnPDF.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.btnPDF.Enabled = false;
-            this.btnPDF.Location = new System.Drawing.Point(826, 3);
-            this.btnPDF.Name = "btnPDF";
-            this.btnPDF.Size = new System.Drawing.Size(47, 37);
-            this.btnPDF.TabIndex = 30;
-            this.btnPDF.Text = "PDF-PT";
-            this.btnPDF.UseCustomBackColor = true;
-            this.btnPDF.UseSelectable = true;
-            this.btnPDF.Click += new System.EventHandler(this.btnPDF_Click);
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel1.Location = new System.Drawing.Point(27, 80);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(131, 19);
+            this.metroLabel1.TabIndex = 5;
+            this.metroLabel1.Text = "Data de Aplicação";
+            this.metroLabel1.Click += new System.EventHandler(this.metroLabel1_Click);
             // 
             // FormRelatorioEixos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1224, 438);
+            this.ClientSize = new System.Drawing.Size(1224, 519);
+            this.Controls.Add(this.metroLabel1);
+            this.Controls.Add(this.txtDtAplic);
             this.Controls.Add(this.pnlPrincipal);
             this.Controls.Add(this.panel1);
             this.Name = "FormRelatorioEixos";
@@ -428,6 +450,7 @@
             this.pnlRadios.ResumeLayout(false);
             this.pnlRadios.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -463,5 +486,7 @@
         private System.Windows.Forms.ListBox listAmarelo;
         private MetroFramework.Controls.MetroButton btnPDFMt;
         private MetroFramework.Controls.MetroButton btnPDF;
+        private System.Windows.Forms.TextBox txtDtAplic;
+        private MetroFramework.Controls.MetroLabel metroLabel1;
     }
 }

@@ -45,6 +45,8 @@
             this.lblPort = new MetroFramework.Controls.MetroLabel();
             this.gridAlunos = new System.Windows.Forms.DataGridView();
             this.btnPDFMt = new MetroFramework.Controls.MetroButton();
+            this.txtDtAplic = new System.Windows.Forms.TextBox();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.panel1.SuspendLayout();
             this.pnlGrid.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -177,7 +179,7 @@
             this.pnlGrid.Controls.Add(this.panel3);
             this.pnlGrid.Controls.Add(this.panel2);
             this.pnlGrid.Controls.Add(this.gridAlunos);
-            this.pnlGrid.Location = new System.Drawing.Point(23, 56);
+            this.pnlGrid.Location = new System.Drawing.Point(23, 102);
             this.pnlGrid.Name = "pnlGrid";
             this.pnlGrid.Size = new System.Drawing.Size(1151, 414);
             this.pnlGrid.TabIndex = 1;
@@ -186,7 +188,7 @@
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.lblMat);
-            this.panel3.Location = new System.Drawing.Point(694, 4);
+            this.panel3.Location = new System.Drawing.Point(694, 50);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(441, 27);
             this.panel3.TabIndex = 2;
@@ -205,7 +207,7 @@
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.lblPort);
-            this.panel2.Location = new System.Drawing.Point(254, 4);
+            this.panel2.Location = new System.Drawing.Point(254, 50);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(442, 27);
             this.panel2.TabIndex = 1;
@@ -224,7 +226,7 @@
             // 
             this.gridAlunos.BackgroundColor = System.Drawing.Color.White;
             this.gridAlunos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridAlunos.Location = new System.Drawing.Point(3, 30);
+            this.gridAlunos.Location = new System.Drawing.Point(3, 76);
             this.gridAlunos.Name = "gridAlunos";
             this.gridAlunos.Size = new System.Drawing.Size(1143, 379);
             this.gridAlunos.TabIndex = 0;
@@ -243,14 +245,33 @@
             this.btnPDFMt.UseSelectable = true;
             this.btnPDFMt.Click += new System.EventHandler(this.btnPDFMt_Click);
             // 
+            // txtDtAplic
+            // 
+            this.txtDtAplic.Location = new System.Drawing.Point(171, 76);
+            this.txtDtAplic.Name = "txtDtAplic";
+            this.txtDtAplic.Size = new System.Drawing.Size(139, 20);
+            this.txtDtAplic.TabIndex = 27;
+            // 
+            // metroLabel1
+            // 
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel1.Location = new System.Drawing.Point(27, 76);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(131, 19);
+            this.metroLabel1.TabIndex = 4;
+            this.metroLabel1.Text = "Data de Aplicação";
+            // 
             // FormRelatorioTurma
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1197, 477);
+            this.ClientSize = new System.Drawing.Size(1197, 573);
+            this.Controls.Add(this.txtDtAplic);
             this.Controls.Add(this.btnPDFMt);
             this.Controls.Add(this.pnlGrid);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.metroLabel1);
             this.Name = "FormRelatorioTurma";
             this.Text = "Perfil Corujão";
             this.Load += new System.EventHandler(this.FormRelatorioTurma_Load);
@@ -263,6 +284,7 @@
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridAlunos)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -285,5 +307,7 @@
         private MetroFramework.Controls.MetroButton btnCSV;
         private MetroFramework.Controls.MetroButton btnPDF;
         private MetroFramework.Controls.MetroButton btnPDFMt;
+        private System.Windows.Forms.TextBox txtDtAplic;
+        private MetroFramework.Controls.MetroLabel metroLabel1;
     }
 }
