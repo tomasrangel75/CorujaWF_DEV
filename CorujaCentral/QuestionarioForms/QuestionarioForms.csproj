@@ -324,11 +324,23 @@
       <DesignTime>True</DesignTime>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="PDFReporGrupoAPR.cs">
+      <DependentUpon>PDFReporGrupoAPR.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="PDFReporGrupo_MT.cs">
       <DependentUpon>PDFReporGrupo_MT.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PDFReporListaTurma_Apr.cs">
+      <DependentUpon>PDFReporListaTurma_Apr.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="PDFReporListaTurma_Mat.cs">
       <DependentUpon>PDFReporListaTurma_Mat.rpt</DependentUpon>
@@ -483,9 +495,17 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>PDFReporGrupoMT.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="PDFReporGrupoAPR.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PDFReporGrupoAPR.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="PDFReporGrupo_MT.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>PDFReporGrupo_MT.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDFReporListaTurma_Apr.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PDFReporListaTurma_Apr.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="PDFReporListaTurma_Mat.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

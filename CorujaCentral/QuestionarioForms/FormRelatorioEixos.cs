@@ -120,6 +120,8 @@ namespace QuestionarioForms
             // CARRREGA AS AREAS CONTEMPLADAS NO RELATORIO
             vetAreasRelatorio = new List<Area>();
 
+
+            // PORTUGUES >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
             List<Area> areasPortugues = new List<Area>();
 
             List<Questao> vetQuestoesValidas = questionario.Questao.ToList();
@@ -140,6 +142,9 @@ namespace QuestionarioForms
                 vetAreasRelatorio.AddRange(areasPortugues);
             }
 
+
+
+            // MATEMATICA >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
             List<Area> areasMatematica = new List<Area>();
 
             vetQuestoesValidas.ForEach(q => areasMatematica.Add(q.Area));
@@ -157,6 +162,27 @@ namespace QuestionarioForms
                 vetAreasRelatorio.AddRange(areasMatematica);
             }
 
+            // APRENDIZAGEM >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+            List<Area> areasAprendizagem = new List<Area>();
+
+            vetQuestoesValidas.ForEach(q => areasAprendizagem.Add(q.Area));
+            areasAprendizagem = areasAprendizagem.ToList().FindAll(a => a.Disciplina_id == 3).Distinct().ToList();
+
+            if (areasAprendizagem.Count > 4)
+            {
+                for (int i = 0; i < 4; i++)
+                {
+                    vetAreasRelatorio.Add(areasAprendizagem[i]);
+                }
+            }
+            else
+            {
+                vetAreasRelatorio.AddRange(areasAprendizagem);
+            }
+
+            /// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
             List<Control> vetRadios = new List<Control>();
             foreach (Control control in pnlRadios.Controls)
             {
@@ -170,6 +196,8 @@ namespace QuestionarioForms
 
             areasMatematica = areasMatematica.OrderBy(a => a.idArea).ToList();
             areasPortugues = areasPortugues.OrderBy(a => a.idArea).ToList();
+            areasAprendizagem = areasAprendizagem.OrderBy(a => a.idArea).ToList();
+
             vetAreasRelatorio = vetAreasRelatorio.OrderBy(a => a.idArea).ToList();
 
             vetAreasRelatorio = vetAreasRelatorio.OrderBy(o => o.Disciplina_id).ToList();
@@ -180,7 +208,7 @@ namespace QuestionarioForms
             {
                 if (vetAreasRelatorio.Count > indArea)
                 {
-                    if (vetAreasRelatorio[indArea].Disciplina_id == 1 && ia <= 3)
+                    if (vetAreasRelatorio[indArea].Disciplina_id == 1 && ia <= 4)
                     {
                         if (vetAreasRelatorio[indArea].Nome.Length > 18)
                             (control as RadioButton).Text = vetAreasRelatorio[indArea].Nome.Substring(0, 18);
@@ -289,6 +317,8 @@ namespace QuestionarioForms
 
             btnPDF.Enabled = true;
             btnPDFMt.Enabled = true;
+            btnPdfApr.Enabled = true;
+
         }
 
         private void AllCheckBoxes_CheckedChanged(Object sender, EventArgs e)
@@ -659,8 +689,8 @@ namespace QuestionarioForms
                         }
 
 
-                        if (!contemDuasDisciplinas)
-                        {
+                        //if (!contemDuasDisciplinas)
+                        //{
                             foreach (var itemRelatorioAluno in vetItensRelatorio)
                             {
                                 if (itemRelatorioAluno.vetCorEixo.Count > 0)
@@ -699,48 +729,48 @@ namespace QuestionarioForms
                                     vetEixo4.Add(item4);
                                 }
                             }
-                        }
-                        else
-                        {
-                            foreach (var itemRelatorioAluno in vetItensRelatorio)
-                            {
-                                if (itemRelatorioAluno.vetCorEixo.Count > 4)
-                                {
-                                    itemPDFGrupo item1 = new itemPDFGrupo();
-                                    item1.nome = itemRelatorioAluno.aluno.Nome;
-                                    item1.corint = itemRelatorioAluno.vetCorEixo[4];
-                                    item1.cor = itemRelatorioAluno.vetCorEixo[4].ToString();
-                                    vetEixo1.Add(item1);
-                                }
+                        //}
+                        //else
+                        //{
+                        //    foreach (var itemRelatorioAluno in vetItensRelatorio)
+                        //    {
+                        //        if (itemRelatorioAluno.vetCorEixo.Count > 4)
+                        //        {
+                        //            itemPDFGrupo item1 = new itemPDFGrupo();
+                        //            item1.nome = itemRelatorioAluno.aluno.Nome;
+                        //            item1.corint = itemRelatorioAluno.vetCorEixo[4];
+                        //            item1.cor = itemRelatorioAluno.vetCorEixo[4].ToString();
+                        //            vetEixo1.Add(item1);
+                        //        }
 
-                                if (itemRelatorioAluno.vetCorEixo.Count > 5)
-                                {
-                                    itemPDFGrupo item2 = new itemPDFGrupo();
-                                    item2.nome = itemRelatorioAluno.aluno.Nome;
-                                    item2.corint = itemRelatorioAluno.vetCorEixo[5];
-                                    item2.cor = itemRelatorioAluno.vetCorEixo[5].ToString();
-                                    vetEixo2.Add(item2);
-                                }
+                        //        if (itemRelatorioAluno.vetCorEixo.Count > 5)
+                        //        {
+                        //            itemPDFGrupo item2 = new itemPDFGrupo();
+                        //            item2.nome = itemRelatorioAluno.aluno.Nome;
+                        //            item2.corint = itemRelatorioAluno.vetCorEixo[5];
+                        //            item2.cor = itemRelatorioAluno.vetCorEixo[5].ToString();
+                        //            vetEixo2.Add(item2);
+                        //        }
 
-                                if (itemRelatorioAluno.vetCorEixo.Count > 6)
-                                {
-                                    itemPDFGrupo item3 = new itemPDFGrupo();
-                                    item3.nome = itemRelatorioAluno.aluno.Nome;
-                                    item3.corint = itemRelatorioAluno.vetCorEixo[6];
-                                    item3.cor = itemRelatorioAluno.vetCorEixo[6].ToString();
-                                    vetEixo3.Add(item3);
-                                }
+                        //        if (itemRelatorioAluno.vetCorEixo.Count > 6)
+                        //        {
+                        //            itemPDFGrupo item3 = new itemPDFGrupo();
+                        //            item3.nome = itemRelatorioAluno.aluno.Nome;
+                        //            item3.corint = itemRelatorioAluno.vetCorEixo[6];
+                        //            item3.cor = itemRelatorioAluno.vetCorEixo[6].ToString();
+                        //            vetEixo3.Add(item3);
+                        //        }
 
-                                if (itemRelatorioAluno.vetCorEixo.Count > 7)
-                                {
-                                    itemPDFGrupo item4 = new itemPDFGrupo();
-                                    item4.nome = itemRelatorioAluno.aluno.Nome;
-                                    item4.corint = itemRelatorioAluno.vetCorEixo[7];
-                                    item4.cor = itemRelatorioAluno.vetCorEixo[7].ToString();
-                                    vetEixo4.Add(item4);
-                                }
-                            }
-                        }
+                        //        if (itemRelatorioAluno.vetCorEixo.Count > 7)
+                        //        {
+                        //            itemPDFGrupo item4 = new itemPDFGrupo();
+                        //            item4.nome = itemRelatorioAluno.aluno.Nome;
+                        //            item4.corint = itemRelatorioAluno.vetCorEixo[7];
+                        //            item4.cor = itemRelatorioAluno.vetCorEixo[7].ToString();
+                        //            vetEixo4.Add(item4);
+                        //        }
+                        //    }
+                        //}
 
 
 
@@ -859,6 +889,195 @@ namespace QuestionarioForms
         private void metroLabel1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnPdfApr_Click(object sender, EventArgs e)
+        {
+            string dtAplic = this.txtDtAplic.Text;
+            try
+            {
+
+                List<Area> areasAprendizagem = vetAreasRelatorio.FindAll(a => a.Disciplina_id == 3);
+
+
+                if (areasAprendizagem.Count == 4)
+                {
+
+                    FormPDF formpdf = new FormPDF();
+
+                    formpdf.ShowDialog();
+
+                    string nomeProfessor = formpdf.nomeProfessor;
+
+                    SaveFileDialog dialog = new SaveFileDialog();
+                    dialog.AddExtension = true;
+                    dialog.Filter = "PDF|*.pdf";
+                    dialog.DefaultExt = ".pdf";
+
+                    DialogResult result = dialog.ShowDialog();
+
+                    if (result.Equals(DialogResult.OK))
+                    {
+                        string path = dialog.FileName;
+
+                        PDFReporGrupoAPR report = new PDFReporGrupoAPR();
+
+                        // Cria listas para representar o relatorio pdf
+                        List<itemPDFGrupo> vetEixo1 = new List<itemPDFGrupo>();
+                        List<itemPDFGrupo> vetEixo2 = new List<itemPDFGrupo>();
+                        List<itemPDFGrupo> vetEixo3 = new List<itemPDFGrupo>();
+                        List<itemPDFGrupo> vetEixo4 = new List<itemPDFGrupo>();
+
+
+                        foreach (var itemRelatorioAluno in vetItensRelatorio)
+                        {
+                            if (itemRelatorioAluno.vetCorEixo.Count > 0)
+                            {
+                                itemPDFGrupo item1 = new itemPDFGrupo();
+                                item1.nome = itemRelatorioAluno.aluno.Nome;
+                                item1.corint = itemRelatorioAluno.vetCorEixo[0];
+                                item1.cor = itemRelatorioAluno.vetCorEixo[0].ToString();
+                                vetEixo1.Add(item1);
+                            }
+
+                            if (itemRelatorioAluno.vetCorEixo.Count > 1)
+                            {
+                                itemPDFGrupo item2 = new itemPDFGrupo();
+                                item2.nome = itemRelatorioAluno.aluno.Nome;
+                                item2.corint = itemRelatorioAluno.vetCorEixo[1];
+                                item2.cor = itemRelatorioAluno.vetCorEixo[1].ToString();
+                                vetEixo2.Add(item2);
+                            }
+
+                            if (itemRelatorioAluno.vetCorEixo.Count > 2)
+                            {
+                                itemPDFGrupo item3 = new itemPDFGrupo();
+                                item3.nome = itemRelatorioAluno.aluno.Nome;
+                                item3.corint = itemRelatorioAluno.vetCorEixo[2];
+                                item3.cor = itemRelatorioAluno.vetCorEixo[2].ToString();
+                                vetEixo3.Add(item3);
+                            }
+
+                            if (itemRelatorioAluno.vetCorEixo.Count > 3)
+                            {
+                                itemPDFGrupo item4 = new itemPDFGrupo();
+                                item4.nome = itemRelatorioAluno.aluno.Nome;
+                                item4.corint = itemRelatorioAluno.vetCorEixo[3];
+                                item4.cor = itemRelatorioAluno.vetCorEixo[3].ToString();
+                                vetEixo4.Add(item4);
+                            }
+                        }
+
+                        // ordena as listas pelas cores
+                        vetEixo1 = vetEixo1.OrderBy(l => l.corint).ToList();
+                        vetEixo2 = vetEixo2.OrderBy(l => l.corint).ToList();
+                        vetEixo3 = vetEixo3.OrderBy(l => l.corint).ToList();
+                        vetEixo4 = vetEixo4.OrderBy(l => l.corint).ToList();
+
+                        // Constroi DataSet
+                        DataSetGrupo ds = new DataSetGrupo();
+
+
+                        int i = 0;
+                        foreach (var itemRelatorioAluno in vetItensRelatorio)
+                        {
+                            DataRow row = ds.DataTable1.NewRow();
+                            bool teveLinha = false;
+
+                            if (vetEixo4.Count > i)
+                            {
+                                row[0] = "  " + vetEixo1[i].nome;
+                                row[4] = vetEixo1[i].cor;
+                                teveLinha = true;
+                            }
+
+                            if (vetEixo1.Count > i)
+                            {
+                                row[1] = "  " + vetEixo2[i].nome;
+                                row[5] = vetEixo2[i].cor;
+                                teveLinha = true;
+                            }
+
+                            if (vetEixo2.Count > i)
+                            {
+                                row[2] = "  " + vetEixo4[i].nome;
+                                row[6] = vetEixo4[i].cor;
+                                teveLinha = true;
+                            }
+
+                            if (vetEixo3.Count > i)
+                            {
+                                row[3] = "  " + vetEixo3[i].nome;
+                                row[7] = vetEixo3[i].cor;
+                                teveLinha = true;
+                            }
+
+
+                            if (teveLinha)
+                                ds.DataTable1.Rows.Add(row);
+
+                            i++;
+                        }
+
+
+                        // Constroi Report
+                        PageMargins margem = report.PrintOptions.PageMargins;
+                        margem.bottomMargin = 0;
+                        margem.leftMargin = 0;
+                        margem.rightMargin = 0;
+                        margem.topMargin = 0;
+
+                        report.PrintOptions.ApplyPageMargins(margem);
+
+                        //report.SetDataSource(ds);
+                        report.Database.Tables[0].SetDataSource(ds);
+
+                        Turma turma = (comboTurma.SelectedItem as Turma);
+                        Questionario questionario = (comboQuestionario.SelectedItem as Questionario);
+
+                        Pontuacao pontuacao =
+                            Pontuacao.obterTodos()
+                                .Find(
+                                    p =>
+                                        p.Aluno.Turma_id.Equals(turma.idTurma) &&
+                                        p.Questao.Questionario_id.Equals(questionario.idQuestionario));
+
+                        // Popula as Variaveis fixas do Report
+                        (report.Section2.ReportObjects["txtProfessor"] as
+                            CrystalDecisions.CrystalReports.Engine.TextObject)
+                            .Text = nomeProfessor;
+                        (report.Section2.ReportObjects["txtTurma"] as CrystalDecisions.CrystalReports.Engine.TextObject)
+                            .Text =
+                            turma.Nome;
+                        (report.Section2.ReportObjects["txtEscola"] as CrystalDecisions.CrystalReports.Engine.TextObject)
+                            .Text =
+                            (comboEscola.SelectedItem as Instituicao).Nome;
+                        (report.Section2.ReportObjects["txtData"] as CrystalDecisions.CrystalReports.Engine.TextObject)
+                            .Text
+                            =
+                            dtAplic;
+
+
+                        // Exporta o Report
+                        report.ExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
+                        report.PrintOptions.PaperSize = CrystalDecisions.Shared.PaperSize.PaperA4;
+                        report.ExportToDisk(ExportFormatType.PortableDocFormat, path);
+
+                        ((Master)MdiParent).MensagemSucesso("PDF Exportado!");
+                    }
+                }
+                else
+                {
+                    ((Master)MdiParent).MensagemErro(
+                        "Não contém resultados de Aprendizagem suficientes para gerar o relatório!");
+                }
+
+            }
+            catch (Exception)
+            {
+                ((Master)MdiParent).MensagemErro(
+                    "Não foi possível gerar o PDF. Verifique se está com o programa de relatórios instalado.");
+            }
         }
     }
 

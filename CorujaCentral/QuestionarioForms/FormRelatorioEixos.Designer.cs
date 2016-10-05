@@ -60,6 +60,7 @@
             this.lblPort = new MetroFramework.Controls.MetroLabel();
             this.txtDtAplic = new System.Windows.Forms.TextBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.btnPdfApr = new MetroFramework.Controls.MetroButton();
             this.panel1.SuspendLayout();
             this.pnlPrincipal.SuspendLayout();
             this.pnlAzul.SuspendLayout();
@@ -72,7 +73,10 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.btnPdfApr);
+            this.panel1.Controls.Add(this.metroLabel1);
             this.panel1.Controls.Add(this.btnPDFMt);
+            this.panel1.Controls.Add(this.txtDtAplic);
             this.panel1.Controls.Add(this.comboQuestionario);
             this.panel1.Controls.Add(this.btnPDF);
             this.panel1.Controls.Add(this.lblQuestionario);
@@ -83,7 +87,7 @@
             this.panel1.Controls.Add(this.lblEscola);
             this.panel1.Location = new System.Drawing.Point(273, 11);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(940, 45);
+            this.panel1.Size = new System.Drawing.Size(940, 89);
             this.panel1.TabIndex = 1;
             // 
             // btnPDFMt
@@ -413,7 +417,7 @@
             // 
             // txtDtAplic
             // 
-            this.txtDtAplic.Location = new System.Drawing.Point(164, 80);
+            this.txtDtAplic.Location = new System.Drawing.Point(140, 51);
             this.txtDtAplic.Name = "txtDtAplic";
             this.txtDtAplic.Size = new System.Drawing.Size(100, 20);
             this.txtDtAplic.TabIndex = 3;
@@ -422,20 +426,31 @@
             // 
             this.metroLabel1.AutoSize = true;
             this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel1.Location = new System.Drawing.Point(27, 80);
+            this.metroLabel1.Location = new System.Drawing.Point(3, 51);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(131, 19);
             this.metroLabel1.TabIndex = 5;
             this.metroLabel1.Text = "Data de Aplicação";
             this.metroLabel1.Click += new System.EventHandler(this.metroLabel1_Click);
             // 
+            // btnPdfApr
+            // 
+            this.btnPdfApr.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnPdfApr.Enabled = false;
+            this.btnPdfApr.Location = new System.Drawing.Point(754, 46);
+            this.btnPdfApr.Name = "btnPdfApr";
+            this.btnPdfApr.Size = new System.Drawing.Size(66, 37);
+            this.btnPdfApr.TabIndex = 32;
+            this.btnPdfApr.Text = "PDF-APR";
+            this.btnPdfApr.UseCustomBackColor = true;
+            this.btnPdfApr.UseSelectable = true;
+            this.btnPdfApr.Click += new System.EventHandler(this.btnPdfApr_Click);
+            // 
             // FormRelatorioEixos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1224, 519);
-            this.Controls.Add(this.metroLabel1);
-            this.Controls.Add(this.txtDtAplic);
             this.Controls.Add(this.pnlPrincipal);
             this.Controls.Add(this.panel1);
             this.Name = "FormRelatorioEixos";
@@ -450,7 +465,6 @@
             this.pnlRadios.ResumeLayout(false);
             this.pnlRadios.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -488,5 +502,6 @@
         private MetroFramework.Controls.MetroButton btnPDF;
         private System.Windows.Forms.TextBox txtDtAplic;
         private MetroFramework.Controls.MetroLabel metroLabel1;
+        private MetroFramework.Controls.MetroButton btnPdfApr;
     }
 }
