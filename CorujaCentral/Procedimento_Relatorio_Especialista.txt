@@ -1,2 +1,0 @@
-Colar a prova no C:\GeradorQuestionario\Banco
-Na ribbon = relatorio aluno especilaista 
