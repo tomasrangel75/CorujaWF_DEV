@@ -45,9 +45,9 @@
             this.lblTit.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.lblTit.Location = new System.Drawing.Point(9, 21);
             this.lblTit.Name = "lblTit";
-            this.lblTit.Size = new System.Drawing.Size(275, 25);
+            this.lblTit.Size = new System.Drawing.Size(232, 25);
             this.lblTit.TabIndex = 0;
-            this.lblTit.Text = "Exportar o resultado do Aluno:";
+            this.lblTit.Text = "Salvar resultado do Aluno";
             // 
             // txtSenha
             // 
@@ -83,7 +83,7 @@
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(113, 38);
             this.btnSalvar.TabIndex = 3;
-            this.btnSalvar.Text = "Exportar";
+            this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseCustomBackColor = true;
             this.btnSalvar.UseCustomForeColor = true;
             this.btnSalvar.UseSelectable = true;

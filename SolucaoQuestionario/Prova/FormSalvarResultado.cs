@@ -21,7 +21,7 @@ namespace Prova
         {
             InitializeComponent();
 
-            lblAlunoExportado.Text = "Exportando aluno: " + aluno;
+            lblAlunoExportado.Text = aluno;
 
             txtSenha.PasswordChar = '*';
             this.nome = nome;

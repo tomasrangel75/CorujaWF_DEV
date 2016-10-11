@@ -1536,7 +1536,7 @@ namespace Prova
                         var result = (
                             from e in esps
                             join p in pacs on e.idTurma equals p.Turma_id
-                            where e.Nome.Equals(esp) && p.Equals(pac)
+                            where e.Nome.Equals(esp) && p.Nome.Equals(pac)
                             select p.idAluno).Count();
                         var quest = (from q in qs
                                      where q.Nome.Equals(prova)
@@ -1979,6 +1979,8 @@ namespace Prova
 
                 terminouProva = true;
             }
+
+            this.BackgroundImage = Resources.BG_Final;
 
         }
 

@@ -84,3 +84,13 @@ C:\Users\tomas_rangel\Desktop\Git\CorujaWF-master\Work\SolucaoQuestionario\Libra
 C:\Users\tomas_rangel\Desktop\Git\CorujaWF-master\Work\SolucaoQuestionario\Library\obj\Debug\Library.pdb
 C:\Users\tomas_rangel\Desktop\Git\CorujaWF-master\Work\SolucaoQuestionario\Library\bin\Debug\System.Data.SqlServerCe.dll
 C:\Users\tomas_rangel\Documents\GitHub\CorujaWF\SolucaoQuestionario\Library\bin\Debug\System.Data.SqlServerCe.dll
+C:\Users\tomas_rangel\Documents\GitHub\CorujaWF_DEV\SolucaoQuestionario\Library\bin\Debug\Library.dll.config
+C:\Users\tomas_rangel\Documents\GitHub\CorujaWF_DEV\SolucaoQuestionario\Library\bin\Debug\Library.dll
+C:\Users\tomas_rangel\Documents\GitHub\CorujaWF_DEV\SolucaoQuestionario\Library\bin\Debug\Library.pdb
+C:\Users\tomas_rangel\Documents\GitHub\CorujaWF_DEV\SolucaoQuestionario\Library\bin\Debug\EntityFramework.dll
+C:\Users\tomas_rangel\Documents\GitHub\CorujaWF_DEV\SolucaoQuestionario\Library\bin\Debug\System.Data.SqlServerCe.dll
+C:\Users\tomas_rangel\Documents\GitHub\CorujaWF_DEV\SolucaoQuestionario\Library\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\tomas_rangel\Documents\GitHub\CorujaWF_DEV\SolucaoQuestionario\Library\bin\Debug\EntityFramework.xml
+C:\Users\tomas_rangel\Documents\GitHub\CorujaWF_DEV\SolucaoQuestionario\Library\obj\Debug\Library.csprojResolveAssemblyReference.cache
+C:\Users\tomas_rangel\Documents\GitHub\CorujaWF_DEV\SolucaoQuestionario\Library\obj\Debug\Library.dll
+C:\Users\tomas_rangel\Documents\GitHub\CorujaWF_DEV\SolucaoQuestionario\Library\obj\Debug\Library.pdb

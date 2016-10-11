@@ -275,6 +275,7 @@
     <None Include="Resources\81x81_PSICOGENESE_BOTAO_PRONTO_OP2.png" />
     <None Include="Resources\87x87_PSICOGENESE_BORRACHA_LISO.png" />
     <Content Include="corujinha_icon.ico" />
+    <Content Include="Resources\BG_Final.jpg" />
     <Content Include="Resources\coruja_relatorio.png" />
     <Content Include="Resources\Corujito.png" />
     <Content Include="Resources\Eraser-icon.png" />

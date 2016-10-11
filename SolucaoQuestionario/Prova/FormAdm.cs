@@ -311,13 +311,13 @@ namespace Prova
 
                     break;
 
-                case 2:
+                case 4:
                     //Aval
                     rdAvalList.Checked = true;
                     ResetAvalList();
 
                     break;
-                case 3:
+                case 2:
                     //Esp
                     LoadLstEsp();
                     rdAdicEsp.Checked = true;
@@ -325,7 +325,7 @@ namespace Prova
                     txtEsp.Text = "";
 
                     break;
-                case 4:
+                case 3:
                     //Pac
                     rdAddPac.Checked = true;
                     ResetCtrlsAdd();
@@ -742,8 +742,16 @@ namespace Prova
             ConfigurationManager.AppSettings.Set("dbquest", DBQUESTS);
         }
 
+        private void CheckDbQuest()
+        {
+
+
+        }
+        
         private void btnIniAval_Click(object sender, EventArgs e)
         {
+
+            CheckDbQuest();
 
             if (cmbEspAval.Text.Trim().Equals(""))
             {
@@ -869,8 +877,7 @@ namespace Prova
             ConfigurationManager.AppSettings.Set("sexo", sexo);
 
             ConfigurationManager.AppSettings.Set("d", d); ConfigurationManager.AppSettings.Set("m", m); ConfigurationManager.AppSettings.Set("y", y);
-
-
+            
             Close();
 
         }
@@ -966,9 +973,13 @@ namespace Prova
         }
 
 
+
         #endregion
 
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
 
+        }
     }
 
 
