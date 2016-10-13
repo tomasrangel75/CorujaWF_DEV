@@ -65,7 +65,7 @@
             this.metroButton2 = new MetroFramework.Controls.MetroButton();
             this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
             this.txtDtAplic = new System.Windows.Forms.TextBox();
-            this.btnEspecRelatApr = new MetroFramework.Controls.MetroButton();
+            this.metroButton3 = new MetroFramework.Controls.MetroButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridPortugues)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridMatematica)).BeginInit();
@@ -439,7 +439,7 @@
             // metroButton1
             // 
             this.metroButton1.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.metroButton1.Location = new System.Drawing.Point(13, 369);
+            this.metroButton1.Location = new System.Drawing.Point(10, 415);
             this.metroButton1.Name = "metroButton1";
             this.metroButton1.Size = new System.Drawing.Size(193, 37);
             this.metroButton1.TabIndex = 37;
@@ -451,7 +451,7 @@
             // metroButton2
             // 
             this.metroButton2.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.metroButton2.Location = new System.Drawing.Point(13, 428);
+            this.metroButton2.Location = new System.Drawing.Point(9, 357);
             this.metroButton2.Name = "metroButton2";
             this.metroButton2.Size = new System.Drawing.Size(193, 37);
             this.metroButton2.TabIndex = 37;
@@ -477,29 +477,29 @@
             this.txtDtAplic.Size = new System.Drawing.Size(131, 20);
             this.txtDtAplic.TabIndex = 40;
             // 
-            // btnEspecRelatApr
+            // metroButton3
             // 
-            this.btnEspecRelatApr.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.btnEspecRelatApr.Location = new System.Drawing.Point(9, 303);
-            this.btnEspecRelatApr.Name = "btnEspecRelatApr";
-            this.btnEspecRelatApr.Size = new System.Drawing.Size(193, 37);
-            this.btnEspecRelatApr.TabIndex = 41;
-            this.btnEspecRelatApr.Text = "Relatório Especialista APR";
-            this.btnEspecRelatApr.UseCustomBackColor = true;
-            this.btnEspecRelatApr.UseSelectable = true;
-            this.btnEspecRelatApr.Click += new System.EventHandler(this.btnEspecRelatApr_Click);
+            this.metroButton3.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.metroButton3.Location = new System.Drawing.Point(9, 305);
+            this.metroButton3.Name = "metroButton3";
+            this.metroButton3.Size = new System.Drawing.Size(193, 37);
+            this.metroButton3.TabIndex = 37;
+            this.metroButton3.Text = "Relatório Especialista APR";
+            this.metroButton3.UseCustomBackColor = true;
+            this.metroButton3.UseSelectable = true;
+            this.metroButton3.Click += new System.EventHandler(this.metroButton3_Click);
             // 
             // FormRelatorioReportAluno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1201, 564);
-            this.Controls.Add(this.btnEspecRelatApr);
             this.Controls.Add(this.txtDtAplic);
             this.Controls.Add(this.metroLabel7);
             this.Controls.Add(this.btnTdsAlunosEscola);
             this.Controls.Add(this.metroButton2);
             this.Controls.Add(this.metroButton1);
+            this.Controls.Add(this.metroButton3);
             this.Controls.Add(this.btnEspecRel);
             this.Controls.Add(this.gridpsico);
             this.Controls.Add(this.gridtreino);
@@ -565,6 +565,6 @@
         private MetroFramework.Controls.MetroButton metroButton2;
         private MetroFramework.Controls.MetroLabel metroLabel7;
         private System.Windows.Forms.TextBox txtDtAplic;
-        private MetroFramework.Controls.MetroButton btnEspecRelatApr;
+        private MetroFramework.Controls.MetroButton metroButton3;
     }
 }

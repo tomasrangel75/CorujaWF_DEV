@@ -93,3 +93,13 @@ C:\Users\tomas_rangel\Desktop\Zip\CorujaWF_DEV-master\CorujaCentral\Library\bin\
 C:\Users\tomas_rangel\Desktop\Zip\CorujaWF_DEV-master\CorujaCentral\Library\obj\Debug\Library.csprojResolveAssemblyReference.cache
 C:\Users\tomas_rangel\Desktop\Zip\CorujaWF_DEV-master\CorujaCentral\Library\obj\Debug\Library.dll
 C:\Users\tomas_rangel\Desktop\Zip\CorujaWF_DEV-master\CorujaCentral\Library\obj\Debug\Library.pdb
+C:\Users\tomas_rangel\Downloads\CorujaWF_DEV-master\CorujaCentral\Library\bin\Debug\Banco\DBQUEST
+C:\Users\tomas_rangel\Downloads\CorujaWF_DEV-master\CorujaCentral\Library\bin\Debug\Library.dll.config
+C:\Users\tomas_rangel\Downloads\CorujaWF_DEV-master\CorujaCentral\Library\bin\Debug\Library.dll
+C:\Users\tomas_rangel\Downloads\CorujaWF_DEV-master\CorujaCentral\Library\bin\Debug\Library.pdb
+C:\Users\tomas_rangel\Downloads\CorujaWF_DEV-master\CorujaCentral\Library\bin\Debug\EntityFramework.dll
+C:\Users\tomas_rangel\Downloads\CorujaWF_DEV-master\CorujaCentral\Library\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\tomas_rangel\Downloads\CorujaWF_DEV-master\CorujaCentral\Library\bin\Debug\EntityFramework.xml
+C:\Users\tomas_rangel\Downloads\CorujaWF_DEV-master\CorujaCentral\Library\obj\Debug\Library.csprojResolveAssemblyReference.cache
+C:\Users\tomas_rangel\Downloads\CorujaWF_DEV-master\CorujaCentral\Library\obj\Debug\Library.dll
+C:\Users\tomas_rangel\Downloads\CorujaWF_DEV-master\CorujaCentral\Library\obj\Debug\Library.pdb

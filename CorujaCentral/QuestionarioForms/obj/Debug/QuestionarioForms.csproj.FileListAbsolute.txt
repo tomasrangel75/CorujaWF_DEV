@@ -579,3 +579,6 @@ C:\Users\tomas_rangel\Desktop\Zip\CorujaWF_DEV-master\CorujaCentral\Questionario
 C:\Users\tomas_rangel\Desktop\Zip\CorujaWF_DEV-master\CorujaCentral\QuestionarioForms\obj\Debug\QuestionarioForms.FormQuestionario.resources
 C:\Users\tomas_rangel\Desktop\Zip\CorujaWF_DEV-master\CorujaCentral\QuestionarioForms\obj\Debug\QuestionarioForms.Resource1.resources
 C:\Users\tomas_rangel\Desktop\Zip\CorujaWF_DEV-master\CorujaCentral\QuestionarioForms\obj\Debug\QuestionarioForms.csproj.GenerateResource.Cache
+C:\Users\tomas_rangel\Downloads\CorujaWF_DEV-master\CorujaCentral\QuestionarioForms\bin\Debug\QuestionarioForms.exe.config
+C:\Users\tomas_rangel\Downloads\CorujaWF_DEV-master\CorujaCentral\QuestionarioForms\obj\Debug\QuestionarioForms.exe
+C:\Users\tomas_rangel\Downloads\CorujaWF_DEV-master\CorujaCentral\QuestionarioForms\obj\Debug\QuestionarioForms.pdb
