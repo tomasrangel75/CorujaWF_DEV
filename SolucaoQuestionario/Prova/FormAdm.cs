@@ -9,6 +9,7 @@ using System.Linq;
 using System.Windows.Forms;
 using System.Data.SqlServerCe;
 using Library.Persistencia_DbCentral;
+using Library.Persistencia;
 
 namespace Prova
 {
@@ -348,6 +349,53 @@ namespace Prova
 
         #region METHODS
 
+        public void CheckDbState()
+        {
+            string avalFullPath = "";
+
+           if (File.Exists(avalFullPath + "\\DBQUEST"))
+              {
+                // check for crashed db
+                string localBanco = avalFullPath + "\\DbQuest";
+                string conn = ConfigurationManager.ConnectionStrings["Banco"].ConnectionString;
+                conn = conn.Replace("#PARAMETRO#", localBanco);
+
+                QuestEntities qEntities = new QuestEntities(conn);
+                var esps = qEntities.Turma.ToList();
+                var pacs = qEntities.Aluno.ToList();
+                var qs = qEntities.Questionario.ToList();
+                var result = (
+                    from e in esps
+                    join p in pacs on e.idTurma equals p.Turma_id
+                    select p.idAluno).Count();
+                var quest = (from q in qs
+                             select q.idQuestionario).Count();
+
+                if (result != 0 || quest != 0) // SE HÁ ARQUIVO PARA SER RECUPERADO 
+                {
+                    DialogResult dialogResult = MessageBox.Show("Há um arquivo de prova que não foi salvo corretamente, deseja recuperálo", "Coruja Educação", MessageBoxButtons.YesNo,MessageBoxIcon.Exclamation);
+                    if (dialogResult == DialogResult.Yes) //RECUPERAR => - CHECK NO REGISTRO DO COMPACT E CARREGA PROVA
+                    {
+                                                
+                    }
+                    else if (dialogResult == DialogResult.No)
+                    {
+                        // DELETE DBQUEST
+                        //DELETE REG IN COMPACT
+
+
+                    }
+
+
+                }
+
+            }
+
+
+
+        }
+
+
         // LOADing Controls /////////////////////////////////////////
 
         // TAB AVALIACAO
@@ -370,7 +418,7 @@ namespace Prova
         {
             pnlAvals.Visible = true;
             rdAvalList.Checked = true;
-            pnlBtns.Location = new Point(279, 297);
+            pnlBtns.Location = new Point(279, 380);
 
             LoadCmbEspAval();
             cmbPacAval.DataSource = null;
@@ -790,7 +838,7 @@ namespace Prova
                 {
                     if (res.Equals("Iniciada"))
                     {
-                        var _prova = new Questionario();
+                        var _prova = new Library.Persistencia_DbCentral.Models.Questionario();
                         _prova.id = idPr;
                         _prova.GetQ();
                         MessageBox.Show("A Criança já tem uma prova de " + _prova.Prova + " iniciada e deve finalizá-la para iniciar uma nova", "Coruja Educação", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -838,7 +886,7 @@ namespace Prova
                 isNew = 1;
                 idAval = "0";
                 prova = cmbAval.Text;
-                var q = new Questionario();
+                var q = new Library.Persistencia_DbCentral.Models.Questionario();
                 q.Prova = prova;
                 q.GetId();
                 idTipoProva = q.id.ToString();
