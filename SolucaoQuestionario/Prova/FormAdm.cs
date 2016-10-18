@@ -9,7 +9,6 @@ using System.Linq;
 using System.Windows.Forms;
 using System.Data.SqlServerCe;
 using Library.Persistencia_DbCentral;
-using Library.Persistencia;
 
 namespace Prova
 {
@@ -314,8 +313,7 @@ namespace Prova
 
                 case 4:
                     //Aval
-                    rdAvalList.Checked = true;
-                    ResetAvalList();
+                    ResetNewAvals();
 
                     break;
                 case 2:
@@ -349,53 +347,6 @@ namespace Prova
 
         #region METHODS
 
-        public void CheckDbState()
-        {
-            string avalFullPath = "";
-
-           if (File.Exists(avalFullPath + "\\DBQUEST"))
-              {
-                // check for crashed db
-                string localBanco = avalFullPath + "\\DbQuest";
-                string conn = ConfigurationManager.ConnectionStrings["Banco"].ConnectionString;
-                conn = conn.Replace("#PARAMETRO#", localBanco);
-
-                QuestEntities qEntities = new QuestEntities(conn);
-                var esps = qEntities.Turma.ToList();
-                var pacs = qEntities.Aluno.ToList();
-                var qs = qEntities.Questionario.ToList();
-                var result = (
-                    from e in esps
-                    join p in pacs on e.idTurma equals p.Turma_id
-                    select p.idAluno).Count();
-                var quest = (from q in qs
-                             select q.idQuestionario).Count();
-
-                if (result != 0 || quest != 0) // SE HÁ ARQUIVO PARA SER RECUPERADO 
-                {
-                    DialogResult dialogResult = MessageBox.Show("Há um arquivo de prova que não foi salvo corretamente, deseja recuperálo", "Coruja Educação", MessageBoxButtons.YesNo,MessageBoxIcon.Exclamation);
-                    if (dialogResult == DialogResult.Yes) //RECUPERAR => - CHECK NO REGISTRO DO COMPACT E CARREGA PROVA
-                    {
-                                                
-                    }
-                    else if (dialogResult == DialogResult.No)
-                    {
-                        // DELETE DBQUEST
-                        //DELETE REG IN COMPACT
-
-
-                    }
-
-
-                }
-
-            }
-
-
-
-        }
-
-
         // LOADing Controls /////////////////////////////////////////
 
         // TAB AVALIACAO
@@ -418,9 +369,8 @@ namespace Prova
         {
             pnlAvals.Visible = true;
             rdAvalList.Checked = true;
-            pnlBtns.Location = new Point(279, 380);
-
-            LoadCmbEspAval();
+            pnlBtns.Location = new Point(279, 297);
+            
             cmbPacAval.DataSource = null;
             dgvAvalsPac.DataSource = null;
             cmbEspAval.Text = "";
@@ -429,7 +379,10 @@ namespace Prova
         public void ResetNewAvals()
         {
             pnlAvals.Visible = false;
+            rdNewAval.Checked = true;
             pnlBtns.Location = new Point(30, 214);
+
+            LoadCmbEspAval();
 
             cmbAval.Text = "";
             cmbPacAval.DataSource = null;
@@ -790,16 +743,48 @@ namespace Prova
             ConfigurationManager.AppSettings.Set("dbquest", DBQUESTS);
         }
 
-        private void CheckDbQuest()
+
+
+
+        private void CheckForChrash()
         {
+            
+            try
+            {
+                var mf = new ManageFile();
+                DataTable dt = new DataTable();
+                dt = mf.ListaAval();
+                if (dt == null) return;
+
+                foreach (DataRow row in dt.Rows)
+                {
+                    // MoveFile(row["filepath"], row["IdAluno"], row["NomeAluno"], row["IdProva"]);
+                    //string diretorio = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\CorujaEdu";
+
+                    File.Copy(row["filepath"].ToString() + "\\DBQUEST", row["filepath"].ToString() + "\\DbTemp\\" + row["IdAluno"].ToString() + row["NomeAluno"].ToString() + row["IdProva"].ToString(), true);
+
+                    mf.idProva = (int)row["IdProva"];
+                    mf.idAluno = (int)row["IdAluno"];
+                    mf.NomeAluno = row["NomeAluno"].ToString();
+                    mf.closeF = 1;
+                    mf.UpdClose();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message.ToString());
+            }
 
 
         }
         
         private void btnIniAval_Click(object sender, EventArgs e)
         {
+            // =============================================================================================================================
 
-            CheckDbQuest();
+            CheckForChrash();
+            // =============================================================================================================================
 
             if (cmbEspAval.Text.Trim().Equals(""))
             {
@@ -838,7 +823,7 @@ namespace Prova
                 {
                     if (res.Equals("Iniciada"))
                     {
-                        var _prova = new Library.Persistencia_DbCentral.Models.Questionario();
+                        var _prova = new Questionario();
                         _prova.id = idPr;
                         _prova.GetQ();
                         MessageBox.Show("A Criança já tem uma prova de " + _prova.Prova + " iniciada e deve finalizá-la para iniciar uma nova", "Coruja Educação", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -870,6 +855,8 @@ namespace Prova
 
             ////////////////////////////////////////////////////////
 
+						
+
             // +++++++++++++++++++++++++++++++++++++++++++++++
             string esp = cmbEspAval.Text;
             int idPac = (int)cmbPacAval.SelectedValue;
@@ -886,7 +873,7 @@ namespace Prova
                 isNew = 1;
                 idAval = "0";
                 prova = cmbAval.Text;
-                var q = new Library.Persistencia_DbCentral.Models.Questionario();
+                var q = new Questionario();
                 q.Prova = prova;
                 q.GetId();
                 idTipoProva = q.id.ToString();
@@ -898,6 +885,24 @@ namespace Prova
                 idTipoProva = dgvAvalsPac.SelectedRows[0].Cells[1].Value.ToString();
                 prova = dgvAvalsPac.SelectedRows[0].Cells[2].Value.ToString();
             }
+
+// =============================================================================================================================
+            ManageFile mf = new ManageFile();
+
+            mf.idProva = Convert.ToInt32(idTipoProva);
+            mf.idAluno = Convert.ToInt32(idPac);
+            mf.NomeAluno = pac;
+
+            if (rdNewAval.Checked == true) {
+                mf.filePath = projPath + "\\" + prova;
+                mf.AddAval();
+            }
+            else
+            {
+                mf.closeF = 0;
+                mf.UpdClose();
+            }
+ //=============================================================================================================================
 
 
             var pacDetail = new Paciente();

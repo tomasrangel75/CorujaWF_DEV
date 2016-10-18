@@ -1137,7 +1137,7 @@
             this.pnlAvals.Controls.Add(this.label19);
             this.pnlAvals.Location = new System.Drawing.Point(30, 152);
             this.pnlAvals.Name = "pnlAvals";
-            this.pnlAvals.Size = new System.Drawing.Size(523, 218);
+            this.pnlAvals.Size = new System.Drawing.Size(523, 139);
             this.pnlAvals.TabIndex = 34;
             // 
             // dgvAvalsPac
@@ -1156,7 +1156,7 @@
             this.dgvAvalsPac.MultiSelect = false;
             this.dgvAvalsPac.Name = "dgvAvalsPac";
             this.dgvAvalsPac.ReadOnly = true;
-            this.dgvAvalsPac.Size = new System.Drawing.Size(505, 187);
+            this.dgvAvalsPac.Size = new System.Drawing.Size(505, 118);
             this.dgvAvalsPac.TabIndex = 2;
             // 
             // label19
@@ -1237,7 +1237,7 @@
             // pnlBtns
             // 
             this.pnlBtns.Controls.Add(this.btnIniAval);
-            this.pnlBtns.Location = new System.Drawing.Point(279, 376);
+            this.pnlBtns.Location = new System.Drawing.Point(279, 308);
             this.pnlBtns.Name = "pnlBtns";
             this.pnlBtns.Size = new System.Drawing.Size(256, 43);
             this.pnlBtns.TabIndex = 37;

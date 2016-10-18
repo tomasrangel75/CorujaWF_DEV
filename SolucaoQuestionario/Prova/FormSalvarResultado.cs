@@ -64,12 +64,8 @@ namespace Prova
                 {
                     if (File.Exists(dbquest))
                     {
-                       File.Copy(dbquest, path + "\\Resultados\\" + nome,true);
-         
-                       File.Copy(prova + "\\DbStorage" + "\\DBQUEST", prova + "\\DBQUEST", true);
-
-
-
+                        File.Copy(dbquest, path + "\\Resultados\\" + nome,true);
+                        
                         Controlador.getControlador().apagarProvaAtual();
 
                         exportou = true;

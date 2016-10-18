@@ -94,3 +94,13 @@ C:\Users\tomas_rangel\Documents\GitHub\CorujaWF_DEV\SolucaoQuestionario\Library\
 C:\Users\tomas_rangel\Documents\GitHub\CorujaWF_DEV\SolucaoQuestionario\Library\obj\Debug\Library.csprojResolveAssemblyReference.cache
 C:\Users\tomas_rangel\Documents\GitHub\CorujaWF_DEV\SolucaoQuestionario\Library\obj\Debug\Library.dll
 C:\Users\tomas_rangel\Documents\GitHub\CorujaWF_DEV\SolucaoQuestionario\Library\obj\Debug\Library.pdb
+E:\CorujaWF_DEV-master\SolucaoQuestionario\Library\bin\Debug\Library.dll.config
+E:\CorujaWF_DEV-master\SolucaoQuestionario\Library\bin\Debug\Library.dll
+E:\CorujaWF_DEV-master\SolucaoQuestionario\Library\bin\Debug\Library.pdb
+E:\CorujaWF_DEV-master\SolucaoQuestionario\Library\bin\Debug\EntityFramework.dll
+E:\CorujaWF_DEV-master\SolucaoQuestionario\Library\bin\Debug\System.Data.SqlServerCe.dll
+E:\CorujaWF_DEV-master\SolucaoQuestionario\Library\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+E:\CorujaWF_DEV-master\SolucaoQuestionario\Library\bin\Debug\EntityFramework.xml
+E:\CorujaWF_DEV-master\SolucaoQuestionario\Library\obj\Debug\Library.csprojResolveAssemblyReference.cache
+E:\CorujaWF_DEV-master\SolucaoQuestionario\Library\obj\Debug\Library.dll
+E:\CorujaWF_DEV-master\SolucaoQuestionario\Library\obj\Debug\Library.pdb

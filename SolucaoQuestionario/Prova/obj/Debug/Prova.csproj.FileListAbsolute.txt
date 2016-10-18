@@ -386,3 +386,87 @@ C:\Users\tomas_rangel\Desktop\Zip\CorujaWF_DEV-master\SolucaoQuestionario\Prova\
 C:\Users\tomas_rangel\Desktop\Zip\CorujaWF_DEV-master\SolucaoQuestionario\Prova\obj\Debug\Prova.csproj.ResolveComReference.cache
 C:\Users\tomas_rangel\Desktop\Zip\CorujaWF_DEV-master\SolucaoQuestionario\Prova\obj\Debug\Prova.exe
 C:\Users\tomas_rangel\Desktop\Zip\CorujaWF_DEV-master\SolucaoQuestionario\Prova\obj\Debug\Prova.pdb
+E:\CorujaWF_DEV-master\SolucaoQuestionario\Prova\bin\Debug\Prova.exe.config
+E:\CorujaWF_DEV-master\SolucaoQuestionario\Prova\obj\Debug\Interop.WMPLib.dll
+E:\CorujaWF_DEV-master\SolucaoQuestionario\Prova\obj\Debug\AxInterop.WMPLib.dll
+E:\CorujaWF_DEV-master\SolucaoQuestionario\Prova\obj\Debug\Prova.csproj.ResolveComReference.cache
+E:\CorujaWF_DEV-master\SolucaoQuestionario\Prova\obj\Debug\Prova.exe
+E:\CorujaWF_DEV-master\SolucaoQuestionario\Prova\obj\Debug\Prova.pdb
+E:\CorujaWF_DEV-master\SolucaoQuestionario\Prova\bin\Debug\Resources\HelveticaRoundedLTStd-Bd.otf
+E:\CorujaWF_DEV-master\SolucaoQuestionario\Prova\bin\Debug\Tutorial_Avaliacao.pdf
+E:\CorujaWF_DEV-master\SolucaoQuestionario\Prova\bin\Debug\Resources\pular.wav
+E:\CorujaWF_DEV-master\SolucaoQuestionario\Prova\bin\Debug\Prova.exe
+E:\CorujaWF_DEV-master\SolucaoQuestionario\Prova\bin\Debug\Prova.pdb
+E:\CorujaWF_DEV-master\SolucaoQuestionario\Prova\bin\Debug\EntityFramework.dll
+E:\CorujaWF_DEV-master\SolucaoQuestionario\Prova\bin\Debug\ImageResizer.dll
+E:\CorujaWF_DEV-master\SolucaoQuestionario\Prova\bin\Debug\ImageResizer.Plugins.AnimatedGifs.dll
+E:\CorujaWF_DEV-master\SolucaoQuestionario\Prova\bin\Debug\Library.dll
+E:\CorujaWF_DEV-master\SolucaoQuestionario\Prova\bin\Debug\Microsoft.WindowsAPICodePack.dll
+E:\CorujaWF_DEV-master\SolucaoQuestionario\Prova\bin\Debug\Microsoft.WindowsAPICodePack.Shell.dll
+E:\CorujaWF_DEV-master\SolucaoQuestionario\Prova\bin\Debug\Microsoft.WindowsAPICodePack.ShellExtensions.dll
+E:\CorujaWF_DEV-master\SolucaoQuestionario\Prova\bin\Debug\System.Data.SqlServerCe.dll
+E:\CorujaWF_DEV-master\SolucaoQuestionario\Prova\bin\Debug\Library.pdb
+E:\CorujaWF_DEV-master\SolucaoQuestionario\Prova\bin\Debug\EntityFramework.xml
+E:\CorujaWF_DEV-master\SolucaoQuestionario\Prova\bin\Debug\ImageResizer.xml
+E:\CorujaWF_DEV-master\SolucaoQuestionario\Prova\bin\Debug\ImageResizer.Plugins.AnimatedGifs.xml
+E:\CorujaWF_DEV-master\SolucaoQuestionario\Prova\bin\Debug\Microsoft.WindowsAPICodePack.pdb
+E:\CorujaWF_DEV-master\SolucaoQuestionario\Prova\bin\Debug\Microsoft.WindowsAPICodePack.xml
+E:\CorujaWF_DEV-master\SolucaoQuestionario\Prova\bin\Debug\Microsoft.WindowsAPICodePack.Shell.pdb
+E:\CorujaWF_DEV-master\SolucaoQuestionario\Prova\bin\Debug\Microsoft.WindowsAPICodePack.Shell.xml
+E:\CorujaWF_DEV-master\SolucaoQuestionario\Prova\bin\Debug\Microsoft.WindowsAPICodePack.ShellExtensions.pdb
+E:\CorujaWF_DEV-master\SolucaoQuestionario\Prova\bin\Debug\Microsoft.WindowsAPICodePack.ShellExtensions.xml
+E:\CorujaWF_DEV-master\SolucaoQuestionario\Prova\bin\Debug\Interop.WMPLib.dll
+E:\CorujaWF_DEV-master\SolucaoQuestionario\Prova\bin\Debug\AxInterop.WMPLib.dll
+E:\CorujaWF_DEV-master\SolucaoQuestionario\Prova\obj\Debug\Prova.csprojResolveAssemblyReference.cache
+E:\CorujaWF_DEV-master\SolucaoQuestionario\Prova\obj\Debug\Prova.FormAdm.resources
+E:\CorujaWF_DEV-master\SolucaoQuestionario\Prova\obj\Debug\Prova.FormProvas.resources
+E:\CorujaWF_DEV-master\SolucaoQuestionario\Prova\obj\Debug\Prova.FormSalvarResultado.resources
+E:\CorujaWF_DEV-master\SolucaoQuestionario\Prova\obj\Debug\Prova.FormSenhaTeste.resources
+E:\CorujaWF_DEV-master\SolucaoQuestionario\Prova\obj\Debug\Prova.Properties.Resources.resources
+E:\CorujaWF_DEV-master\SolucaoQuestionario\Prova\obj\Debug\Prova.Resource1.resources
+E:\CorujaWF_DEV-master\SolucaoQuestionario\Prova\obj\Debug\Prova.waitform.resources
+E:\CorujaWF_DEV-master\SolucaoQuestionario\Prova\obj\Debug\Prova.WaitLoad.resources
+E:\CorujaWF_DEV-master\SolucaoQuestionario\Prova\obj\Debug\Prova.ProvaAluno.resources
+E:\CorujaWF_DEV-master\SolucaoQuestionario\Prova\obj\Debug\Prova.csproj.GenerateResource.Cache
+C:\Users\tomas_rangel\Desktop\Nova pasta\SolucaoQuestionario\Prova\bin\Debug\Prova.exe.config
+C:\Users\tomas_rangel\Desktop\Nova pasta\SolucaoQuestionario\Prova\obj\Debug\Interop.WMPLib.dll
+C:\Users\tomas_rangel\Desktop\Nova pasta\SolucaoQuestionario\Prova\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\tomas_rangel\Desktop\Nova pasta\SolucaoQuestionario\Prova\obj\Debug\Prova.csproj.ResolveComReference.cache
+C:\Users\tomas_rangel\Desktop\Nova pasta\SolucaoQuestionario\Prova\obj\Debug\Prova.exe
+C:\Users\tomas_rangel\Desktop\Nova pasta\SolucaoQuestionario\Prova\obj\Debug\Prova.pdb
+C:\Users\tomas_rangel\Desktop\Nova pasta\SolucaoQuestionario\Prova\bin\Debug\Resources\HelveticaRoundedLTStd-Bd.otf
+C:\Users\tomas_rangel\Desktop\Nova pasta\SolucaoQuestionario\Prova\bin\Debug\Tutorial_Avaliacao.pdf
+C:\Users\tomas_rangel\Desktop\Nova pasta\SolucaoQuestionario\Prova\bin\Debug\Resources\pular.wav
+C:\Users\tomas_rangel\Desktop\Nova pasta\SolucaoQuestionario\Prova\bin\Debug\Prova.exe
+C:\Users\tomas_rangel\Desktop\Nova pasta\SolucaoQuestionario\Prova\bin\Debug\Prova.pdb
+C:\Users\tomas_rangel\Desktop\Nova pasta\SolucaoQuestionario\Prova\bin\Debug\EntityFramework.dll
+C:\Users\tomas_rangel\Desktop\Nova pasta\SolucaoQuestionario\Prova\bin\Debug\ImageResizer.dll
+C:\Users\tomas_rangel\Desktop\Nova pasta\SolucaoQuestionario\Prova\bin\Debug\ImageResizer.Plugins.AnimatedGifs.dll
+C:\Users\tomas_rangel\Desktop\Nova pasta\SolucaoQuestionario\Prova\bin\Debug\Library.dll
+C:\Users\tomas_rangel\Desktop\Nova pasta\SolucaoQuestionario\Prova\bin\Debug\Microsoft.WindowsAPICodePack.dll
+C:\Users\tomas_rangel\Desktop\Nova pasta\SolucaoQuestionario\Prova\bin\Debug\Microsoft.WindowsAPICodePack.Shell.dll
+C:\Users\tomas_rangel\Desktop\Nova pasta\SolucaoQuestionario\Prova\bin\Debug\Microsoft.WindowsAPICodePack.ShellExtensions.dll
+C:\Users\tomas_rangel\Desktop\Nova pasta\SolucaoQuestionario\Prova\bin\Debug\System.Data.SqlServerCe.dll
+C:\Users\tomas_rangel\Desktop\Nova pasta\SolucaoQuestionario\Prova\bin\Debug\Library.pdb
+C:\Users\tomas_rangel\Desktop\Nova pasta\SolucaoQuestionario\Prova\bin\Debug\EntityFramework.xml
+C:\Users\tomas_rangel\Desktop\Nova pasta\SolucaoQuestionario\Prova\bin\Debug\ImageResizer.xml
+C:\Users\tomas_rangel\Desktop\Nova pasta\SolucaoQuestionario\Prova\bin\Debug\ImageResizer.Plugins.AnimatedGifs.xml
+C:\Users\tomas_rangel\Desktop\Nova pasta\SolucaoQuestionario\Prova\bin\Debug\Microsoft.WindowsAPICodePack.pdb
+C:\Users\tomas_rangel\Desktop\Nova pasta\SolucaoQuestionario\Prova\bin\Debug\Microsoft.WindowsAPICodePack.xml
+C:\Users\tomas_rangel\Desktop\Nova pasta\SolucaoQuestionario\Prova\bin\Debug\Microsoft.WindowsAPICodePack.Shell.pdb
+C:\Users\tomas_rangel\Desktop\Nova pasta\SolucaoQuestionario\Prova\bin\Debug\Microsoft.WindowsAPICodePack.Shell.xml
+C:\Users\tomas_rangel\Desktop\Nova pasta\SolucaoQuestionario\Prova\bin\Debug\Microsoft.WindowsAPICodePack.ShellExtensions.pdb
+C:\Users\tomas_rangel\Desktop\Nova pasta\SolucaoQuestionario\Prova\bin\Debug\Microsoft.WindowsAPICodePack.ShellExtensions.xml
+C:\Users\tomas_rangel\Desktop\Nova pasta\SolucaoQuestionario\Prova\bin\Debug\Interop.WMPLib.dll
+C:\Users\tomas_rangel\Desktop\Nova pasta\SolucaoQuestionario\Prova\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\tomas_rangel\Desktop\Nova pasta\SolucaoQuestionario\Prova\obj\Debug\Prova.csprojResolveAssemblyReference.cache
+C:\Users\tomas_rangel\Desktop\Nova pasta\SolucaoQuestionario\Prova\obj\Debug\Prova.FormAdm.resources
+C:\Users\tomas_rangel\Desktop\Nova pasta\SolucaoQuestionario\Prova\obj\Debug\Prova.FormProvas.resources
+C:\Users\tomas_rangel\Desktop\Nova pasta\SolucaoQuestionario\Prova\obj\Debug\Prova.FormSalvarResultado.resources
+C:\Users\tomas_rangel\Desktop\Nova pasta\SolucaoQuestionario\Prova\obj\Debug\Prova.FormSenhaTeste.resources
+C:\Users\tomas_rangel\Desktop\Nova pasta\SolucaoQuestionario\Prova\obj\Debug\Prova.Properties.Resources.resources
+C:\Users\tomas_rangel\Desktop\Nova pasta\SolucaoQuestionario\Prova\obj\Debug\Prova.Resource1.resources
+C:\Users\tomas_rangel\Desktop\Nova pasta\SolucaoQuestionario\Prova\obj\Debug\Prova.waitform.resources
+C:\Users\tomas_rangel\Desktop\Nova pasta\SolucaoQuestionario\Prova\obj\Debug\Prova.WaitLoad.resources
+C:\Users\tomas_rangel\Desktop\Nova pasta\SolucaoQuestionario\Prova\obj\Debug\Prova.ProvaAluno.resources
+C:\Users\tomas_rangel\Desktop\Nova pasta\SolucaoQuestionario\Prova\obj\Debug\Prova.csproj.GenerateResource.Cache

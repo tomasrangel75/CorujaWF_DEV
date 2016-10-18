@@ -99,11 +99,13 @@ namespace QuestionarioForms
                             cmd.CommandType = CommandType.Text;
                             cmd.CommandText = @"Select " + counter + @" as idAluno,
                                                 Questao_id,
-                                                Acertou,
-                                                Tentativas,
-                                                Tempo,
-                                                Mouse,
-                                                Clicks
+                                                 CASE Acertou WHEN Acertou = 'False' THEN
+                                                        0
+                                                    ELSE
+                                                        1
+                                                    END
+                                                 as Acertou,
+                                                Tentativas
                                              from
                                                 Pontuacao";
 
@@ -112,14 +114,11 @@ namespace QuestionarioForms
                             {
                                 while (rRes.Read())
                                 {
-                                    sql = @"Insert into Pontuacao (Aluno_id,Questao_id,Acertou,Tentativas,Tempo,Mouse,Clicks) values (" +
+                                    sql = @"Insert into Pontuacao (Aluno_id,Questao_id,Acertou,Tentativas) values (" +
                                             rRes["idAluno"] + "," +
                                             rRes["Questao_id"] + "," +
                                             rRes["Acertou"] + "," +
-                                            rRes["Tentativas"] + "," +
-                                            rRes["Tempo"] + ",'" +
-                                            rRes["Mouse"] + "','" +
-                                            rRes["Clicks"] + "')";
+                                            rRes["Tentativas"] + ")";
 
                                     ExecMainDb(cn, myFl + " Pontuacao ", sql);
 
@@ -137,10 +136,7 @@ namespace QuestionarioForms
                             cmd.CommandText = @"Select " + counter + @" as idAluno,
                                                 Questionario_id,
                                                 TotalAcertos,
-                                                TotalErros,
-                                                Disciplina_id,
-                                                EstadoQuestionario_id,
-                                                UltimaQuestao_id
+                                                TotalErros
                                              from
                                                 Resultado";
 
@@ -150,14 +146,11 @@ namespace QuestionarioForms
                                 while (rPont.Read())
                                 {
 
-                                    sql = @"Insert into Resultado (Aluno_id,Questionario_id,TotalAcertos,TotalErros,Disciplina_id,EstadoQuestionario_id,UltimaQuestao_id) values (" +
+                                    sql = @"Insert into Resultado (Aluno_id,Questionario_id,TotalAcertos,TotalErros) values (" +
                                             rPont["idAluno"] + "," +
                                             rPont["Questionario_id"] + "," +
                                             rPont["TotalAcertos"] + "," +
-                                            rPont["TotalErros"] + "," +
-                                            rPont["Disciplina_id"] + "," +
-                                            rPont["EstadoQuestionario_id"] + "," +
-                                            rPont["UltimaQuestao_id"] + ")";
+                                            rPont["TotalErros"] + ")";
 
                                     ExecMainDb(cn, myFl + " Resultado ", sql);
 

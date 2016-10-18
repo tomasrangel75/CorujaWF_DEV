@@ -2006,10 +2006,25 @@ namespace Prova
              
                     if (iniciada != 0)
                     {
+
+
+                        // =================================================================================================================
+
+                        ManageFile mf = new ManageFile();
+
+                        mf.idProva = Convert.ToInt32(idTipoProva);
+                        mf.idAluno = Convert.ToInt32(idPac);
+                        mf.NomeAluno = pac;
+                        mf.closeF = 1;
+                        mf.UpdClose();
+                       
+
+                        // =================================================================================================================
+
+
+
                         // Manda banco para o storage
                         File.Copy(avalFullPath + "\\DBQUEST", avalFullPath + "\\DbTemp" + "\\" + pacFileName);
-                        File.Copy(avalFullPath + "\\DbStorage" + "\\DBQUEST", avalFullPath + "\\DBQUEST", true);
-
                     }
 
                     this.Close();
@@ -2037,7 +2052,28 @@ namespace Prova
                 }
             }
 
-           
+            if (keyData == (Keys.Control | Keys.O))
+            {
+                //if (btnNovaTurma.Visible)
+                //{
+                //    btnNovaTurma.Visible = false;
+                //    btnNovaEscola.Visible = false;
+                //    btnNovoAluno.Visible = false;
+                //    btnApagarAluno.Visible = false;
+                //    btnApagarEscola.Visible = false;
+                //    btnApagarTurma.Visible = false;
+                //}
+                //else
+                //{
+                //    btnNovaTurma.Visible = true;
+                //    btnNovaEscola.Visible = true;
+                //    btnNovoAluno.Visible = true;
+                //    btnApagarAluno.Visible = true;
+                //    btnApagarEscola.Visible = true;
+                //    btnApagarTurma.Visible = true;
+                //}
+            }
+
             if (keyData == (Keys.Control | Keys.Q))
             {
                 if (audioTocando)
@@ -2105,6 +2141,19 @@ namespace Prova
                     aval.UpdStatus();
 
                     finalizada = 1;
+
+
+                    // =================================================================================================================
+
+                    ManageFile mf = new ManageFile();
+
+                    mf.idProva = Convert.ToInt32(idTipoProva);
+                    mf.idAluno = Convert.ToInt32(idPac);
+                    mf.NomeAluno = pac;
+                    mf.DelAval(); ;
+
+                    // =================================================================================================================
+
 
                     Application.Exit();
                 }

@@ -177,6 +177,7 @@
     <Compile Include="Persistencia_DbCentral\IclsDbOp.cs" />
     <Compile Include="Persistencia_DbCentral\Models\Especialista.cs" />
     <Compile Include="Persistencia_DbCentral\Models\Avaliacao.cs" />
+    <Compile Include="Persistencia_DbCentral\Models\ManageFile.cs" />
     <Compile Include="Persistencia_DbCentral\Models\Paciente.cs" />
     <Compile Include="Persistencia_DbCentral\Models\Questionario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
