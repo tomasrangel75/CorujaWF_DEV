@@ -20,6 +20,7 @@ namespace QuestionarioForms
     {
         List<ItemRelatorioAluno> vetItensRelatorio { get; set; }
         List<Area> vetAreasRelatorio { get; set; }
+        int myindex; int indexLP = 0; int indexMT = 0; int indexAP = 0;
 
         public FormRelatorioTurma()
         {
@@ -95,9 +96,10 @@ namespace QuestionarioForms
             }
         }
        
-
         private void btnGerarRelatorio_Click(object sender, EventArgs e)
         {
+            
+
             gridAlunos.Columns.Clear();
 
             if (comboTurma.SelectedIndex < 0)
@@ -131,13 +133,16 @@ namespace QuestionarioForms
 
             if (areasPortugues.Count > 4)
             {
-                for (int i = 0; i < 4; i++)
+                indexLP = 1;
+                for (int i = 0; i < 5; i++)
                 {
+                    if (areasPortugues[i].Nome.Equals("Treino")) continue;
                     vetAreasRelatorio.Add(areasPortugues[i]);
                 }
             }
             else
             {
+                if (areasPortugues.Count > 0) indexLP = 1;
                 vetAreasRelatorio.AddRange(areasPortugues);
             }
 
@@ -149,13 +154,16 @@ namespace QuestionarioForms
 
             if (areasMatematica.Count > 4)
             {
-                for (int i = 0; i < 4; i++)
+                indexMT = 1;
+                for (int i = 0; i < 5; i++)
                 {
+                    if (areasMatematica[i].Nome.Equals("Treino")) continue;
                     vetAreasRelatorio.Add(areasMatematica[i]);
                 }
             }
             else
             {
+                if (areasMatematica.Count > 0) indexMT = 1;
                 vetAreasRelatorio.AddRange(areasMatematica);
             }
 
@@ -169,18 +177,20 @@ namespace QuestionarioForms
 
             if (areasAprendizagem.Count > 4)
             {
-                for (int i = 0; i < 4; i++)
+                indexAP = 1;
+                for (int i = 0; i < 5; i++)
                 {
+                    if (areasAprendizagem[i].Nome.Contains("Treino")) continue;
                     vetAreasRelatorio.Add(areasAprendizagem[i]);
                 }
             }
             else
             {
+                if (areasAprendizagem.Count > 0) indexAP = 1;
                 vetAreasRelatorio.AddRange(areasAprendizagem);
             }
 
-                       
-
+            
 
             if (vetAreasRelatorio.Count > 4)
             {
@@ -418,12 +428,13 @@ namespace QuestionarioForms
 
         private void btnPDF_Click(object sender, EventArgs e)
         {
-
             string dtAplic = this.txtDtAplic.Text;
+            myindex = GetIndexGridAllunos("LP");
+            
 
             try
             {
-
+                
                 List<Area> areasPortugues = vetAreasRelatorio.FindAll(a => a.Disciplina_id == 1);
 
                 if (areasPortugues.Count == 4)
@@ -452,18 +463,20 @@ namespace QuestionarioForms
                         // Constroi DataSet
                         DataSetTurmaLista ds = new DataSetTurmaLista();
 
+                      
+
                         foreach (var itemRelatorioAluno in vetItensRelatorio)
                         {
                             DataRow row = ds.DataTable1.NewRow();
                             row[0] = itemRelatorioAluno.aluno.Nome;
-                            if (itemRelatorioAluno.vetCorEixo.Count > 0)
-                                row[1] = itemRelatorioAluno.vetCorEixo[0].ToString();
-                            if (itemRelatorioAluno.vetCorEixo.Count > 1)
-                                row[2] = itemRelatorioAluno.vetCorEixo[1].ToString();
-                            if (itemRelatorioAluno.vetCorEixo.Count > 2)
-                                row[4] = itemRelatorioAluno.vetCorEixo[2].ToString();
-                            if (itemRelatorioAluno.vetCorEixo.Count > 3)
-                                row[3] = itemRelatorioAluno.vetCorEixo[3].ToString();
+                            if (itemRelatorioAluno.vetCorEixo.Count > myindex)
+                                row[1] = itemRelatorioAluno.vetCorEixo[myindex].ToString();
+                            if (itemRelatorioAluno.vetCorEixo.Count > myindex +1)
+                                row[2] = itemRelatorioAluno.vetCorEixo[myindex + 1].ToString();
+                            if (itemRelatorioAluno.vetCorEixo.Count > myindex + 3)
+                                row[4] = itemRelatorioAluno.vetCorEixo[myindex + 3].ToString();
+                            if (itemRelatorioAluno.vetCorEixo.Count > myindex + 4)
+                                row[3] = itemRelatorioAluno.vetCorEixo[myindex + 4].ToString();
                             
 
                             ds.DataTable1.Rows.Add(row);
@@ -506,8 +519,7 @@ namespace QuestionarioForms
                             .Text
                             =
                            dtAplic;
-
-                   
+                  
                       
                         // Exporta o Report
                         report.ExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
@@ -530,8 +542,7 @@ namespace QuestionarioForms
                     "Não foi possível gerar o PDF. Verifique se está com o programa de relatórios instalado.");
             }
         }
-
-
+        
         private string getNomeEixoFormatado(string nome)
         {
             if (nome.Contains("-"))
@@ -555,6 +566,9 @@ namespace QuestionarioForms
         {
 
             string dtAplic = this.txtDtAplic.Text;
+
+             myindex = GetIndexGridAllunos("MT");
+ 
             try
             {
 
@@ -587,31 +601,33 @@ namespace QuestionarioForms
                         bool contemDuasDisciplinas = false;
                         foreach (var item in vetItensRelatorio)
                         {
-                            if(item.vetCorEixo.Count > 4)
+                            if (item.vetCorEixo.Count > 4)
                             {
                                 contemDuasDisciplinas = true;
                             }
                         }
 
 
-                        if (!contemDuasDisciplinas)
+                        //if (!contemDuasDisciplinas)
+                        //{
+                        foreach (var itemRelatorioAluno in vetItensRelatorio)
                         {
-                            foreach (var itemRelatorioAluno in vetItensRelatorio)
-                            {
-                                DataRow row = ds.DataTable1.NewRow();
-                                row[0] = itemRelatorioAluno.aluno.Nome;
-                                if (itemRelatorioAluno.vetCorEixo.Count > 0)
-                                    row[1] = itemRelatorioAluno.vetCorEixo[0].ToString();
-                                if (itemRelatorioAluno.vetCorEixo.Count > 1)
-                                    row[2] = itemRelatorioAluno.vetCorEixo[1].ToString();
-                                if (itemRelatorioAluno.vetCorEixo.Count > 2)
-                                    row[3] = itemRelatorioAluno.vetCorEixo[2].ToString();
-                                if (itemRelatorioAluno.vetCorEixo.Count > 3)
-                                    row[4] = itemRelatorioAluno.vetCorEixo[3].ToString();
+                            DataRow row = ds.DataTable1.NewRow();
+                            row[0] = itemRelatorioAluno.aluno.Nome;
+                            if (itemRelatorioAluno.vetCorEixo.Count > myindex)
+                                row[1] = itemRelatorioAluno.vetCorEixo[myindex].ToString();
+                            if (itemRelatorioAluno.vetCorEixo.Count > myindex + 1)
+                                row[2] = itemRelatorioAluno.vetCorEixo[myindex + 1].ToString();
+                            if (itemRelatorioAluno.vetCorEixo.Count > myindex + 3)
+                                row[4] = itemRelatorioAluno.vetCorEixo[myindex + 3].ToString();
+                            if (itemRelatorioAluno.vetCorEixo.Count > myindex + 2)
+                                row[3] = itemRelatorioAluno.vetCorEixo[myindex + 2].ToString();
 
-                                ds.DataTable1.Rows.Add(row);
-                            }
+
+                            ds.DataTable1.Rows.Add(row);
                         }
+
+                        //}
                         //else
                         //{
                         //    foreach (var itemRelatorioAluno in vetItensRelatorio)
@@ -679,19 +695,19 @@ namespace QuestionarioForms
                         report.PrintOptions.PaperSize = CrystalDecisions.Shared.PaperSize.PaperA4;
                         report.ExportToDisk(ExportFormatType.PortableDocFormat, path);
 
-                        ((Master) MdiParent).MensagemSucesso("PDF Exportado!");
+                        ((Master)MdiParent).MensagemSucesso("PDF Exportado!");
                     }
                 }
                 else
                 {
-                    ((Master) MdiParent).MensagemErro(
+                    ((Master)MdiParent).MensagemErro(
                         "Não contém resultados de Matemática suficientes para gerar o relatório!");
                 }
 
             }
             catch (Exception)
             {
-                ((Master) MdiParent).MensagemErro(
+                ((Master)MdiParent).MensagemErro(
                     "Não foi possível gerar o PDF. Verifique se está com o programa de relatórios instalado.");
             }
         }
@@ -699,6 +715,8 @@ namespace QuestionarioForms
         private void btnPdfApr_Click(object sender, EventArgs e)
         {
             string dtAplic = this.txtDtAplic.Text;
+            
+            myindex = GetIndexGridAllunos("AP");
 
             try
             {
@@ -735,18 +753,19 @@ namespace QuestionarioForms
                         {
                             DataRow row = ds.DataTable1.NewRow();
                             row[0] = itemRelatorioAluno.aluno.Nome;
-                            if (itemRelatorioAluno.vetCorEixo.Count > 0)
-                                row[1] = itemRelatorioAluno.vetCorEixo[0].ToString();
-                            if (itemRelatorioAluno.vetCorEixo.Count > 1)
-                                row[2] = itemRelatorioAluno.vetCorEixo[1].ToString();
-                            if (itemRelatorioAluno.vetCorEixo.Count > 2)
-                                row[4] = itemRelatorioAluno.vetCorEixo[2].ToString();
-                            if (itemRelatorioAluno.vetCorEixo.Count > 3)
-                                row[3] = itemRelatorioAluno.vetCorEixo[3].ToString();
+                            if (itemRelatorioAluno.vetCorEixo.Count > myindex)
+                                row[1] = itemRelatorioAluno.vetCorEixo[myindex].ToString();
+                            if (itemRelatorioAluno.vetCorEixo.Count > myindex + 1)
+                                row[2] = itemRelatorioAluno.vetCorEixo[myindex + 1].ToString();
+                            if (itemRelatorioAluno.vetCorEixo.Count > myindex + 3)
+                                row[4] = itemRelatorioAluno.vetCorEixo[myindex + 3].ToString();
+                            if (itemRelatorioAluno.vetCorEixo.Count > myindex + 2)
+                                row[3] = itemRelatorioAluno.vetCorEixo[myindex + 2].ToString();
 
 
                             ds.DataTable1.Rows.Add(row);
                         }
+
 
 
                         // Constroi Report
@@ -809,5 +828,67 @@ namespace QuestionarioForms
                     "Não foi possível gerar o PDF. Verifique se está com o programa de relatórios instalado.");
             }
         }
+
+        private void checkDomains()
+        {
+
+            foreach (var item in vetAreasRelatorio)
+            {
+                if (item.Nome.Equals(""))
+                {
+                    //btnPDF;
+                }
+                else if (item.Nome.Equals("")) {
+                    //btnPDF;
+                }
+                else
+                {
+                    //btnPDF;
+                }
+
+            }
+            
+        }
+
+        private int  GetIndexGridAllunos(string area)
+        {
+            int indexGrid = 0;
+
+            if (area.Equals("LP"))
+            {
+                indexGrid = 0;
+            }
+            else if (area.Equals("MT"))
+            {
+                if (indexLP == 0)
+                {
+                    indexGrid = 0;
+                }
+                else
+                {
+                    indexGrid = 4;
+                }
+
+            }
+            else
+            {
+                if (indexLP == 0 && indexMT == 0)
+                {
+                    indexGrid = 0;
+                }
+                else if ((indexLP + indexMT == 1))
+                {
+                    indexGrid = 4;
+                }
+                else
+                {
+                    indexGrid = 8;
+                }
+            }
+
+            return indexGrid;
+
+        }
+
     }
 }

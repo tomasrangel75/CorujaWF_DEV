@@ -1759,8 +1759,7 @@ namespace QuestionarioForms
         private void metroButton1_Click(object sender, EventArgs e)
         {
 
-            // RELATORIO MATEMATICA OU APRENDIZAGEM
-
+           
             try
             {
                 if ((gridMatematica.Rows.Count > 0) || (gridPortugues.Rows.Count > 0) || (gridtreino.Rows.Count > 0))
@@ -1790,7 +1789,7 @@ namespace QuestionarioForms
                     path = rootPath + "\\" + nomeQuest + "_" + nomeTurma + "_" + nomeAluno + ".pdf";
                     
                   
-                        PDFAluno report = new PDFAluno();
+                        PDFAlunoComPsicogenese report = new PDFAlunoComPsicogenese();
 
                         // Constroi DataSet
                         DataSetReport ds = new DataSetReport();
@@ -1829,11 +1828,6 @@ namespace QuestionarioForms
                         if (gridPortugues.Rows.Count > 1) { (ds.DataTable1.Rows[1] as DataRow)[0] = "Escrita alfabética"; }
                         if (gridPortugues.Rows.Count > 2) { (ds.DataTable1.Rows[3] as DataRow)[0] = "Leitura e compreensão de texto"; }
                         if (gridPortugues.Rows.Count > 3) { (ds.DataTable1.Rows[2] as DataRow)[0] = "Planejamento do texto escrito"; }
-
-
-
-
-
 
 
                         foreach (DataGridViewRow linha in gridMatematica.Rows)
@@ -1905,6 +1899,7 @@ namespace QuestionarioForms
                         if (gridtreino.Rows.Count > 1) { (ds3.DataTable1.Rows[1] as DataRow)[0] = "Memória de Trabalho"; }
                         if (gridtreino.Rows.Count > 2) { (ds3.DataTable1.Rows[2] as DataRow)[0] = "Linguagem - Cognição Social"; }
                         if (gridtreino.Rows.Count > 3) { (ds3.DataTable1.Rows[3] as DataRow)[0] = "Linguagem - Vocabulário e Compreensão"; }
+
 
 
                         // Psicogenese
@@ -1984,7 +1979,7 @@ namespace QuestionarioForms
                    
 
                         // Exporta o Report
-                    report.ExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
+                        report.ExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
                         report.PrintOptions.PaperSize = CrystalDecisions.Shared.PaperSize.PaperA4;
                         report.ExportToDisk(ExportFormatType.PortableDocFormat, path);
               
@@ -2005,8 +2000,6 @@ namespace QuestionarioForms
 
         private void metroButton2_Click(object sender, EventArgs e)
         {
-
-            // RELATORIO LINGUA PORTUGUESA E HÍBRIDOS
 
             try
             {
@@ -2039,7 +2032,7 @@ namespace QuestionarioForms
                     path = rootPath + "\\" + nomeQuest + "_" + nomeTurma + "_" + nomeAluno + ".pdf";
 
 
-                    PDFAlunoLP report = new PDFAlunoLP();
+                    PDFAluno report = new PDFAluno();
 
                         // Constroi DataSet
                         DataSetReport ds = new DataSetReport();
@@ -2078,10 +2071,6 @@ namespace QuestionarioForms
                         if (gridPortugues.Rows.Count > 1) { (ds.DataTable1.Rows[1] as DataRow)[0] = "Escrita alfabética"; }
                         if (gridPortugues.Rows.Count > 2) { (ds.DataTable1.Rows[3] as DataRow)[0] = "Leitura e compreensão de texto"; }
                         if (gridPortugues.Rows.Count > 3) { (ds.DataTable1.Rows[2] as DataRow)[0] = "Planejamento do texto escrito"; }
-
-
-
-
 
 
 
@@ -2152,32 +2141,32 @@ namespace QuestionarioForms
 
                         if (gridtreino.Rows.Count > 0) { (ds3.DataTable1.Rows[0] as DataRow)[0] = "Processamento da Informação"; }
                         if (gridtreino.Rows.Count > 1) { (ds3.DataTable1.Rows[1] as DataRow)[0] = "Memória de Trabalho"; }
-                        if (gridtreino.Rows.Count > 2) { (ds3.DataTable1.Rows[2] as DataRow)[0] = "Linguagem - Cognição Social"; }
-                        if (gridtreino.Rows.Count > 3) { (ds3.DataTable1.Rows[3] as DataRow)[0] = "Linguagem - Vocabulário e Compreensão"; }
+                        if (gridtreino.Rows.Count > 2) { (ds3.DataTable1.Rows[2] as DataRow)[0] = "Linguagem - Vocabulário e Compreensão"; }
+                        if (gridtreino.Rows.Count > 3) { (ds3.DataTable1.Rows[3] as DataRow)[0] = "Linguagem - Cognição Social"; }
 
 
-                        // Psicogenese
-                        foreach (DataGridViewRow linha in gridpsico.Rows)
-                        {
+                        //// Psicogenese
+                        //foreach (DataGridViewRow linha in gridpsico.Rows)
+                        //{
 
-                            if (linha.Cells[0].Value != null)
-                            {
-                                DataRow row = dsp.DataTable1.NewRow();
+                        //    if (linha.Cells[0].Value != null)
+                        //    {
+                        //        DataRow row = dsp.DataTable1.NewRow();
 
-                                row[0] = linha.Cells[0].Value.ToString();
-                                if (linha.Cells[1].Value == null)
-                                {
-                                    row[1] = "";
-                                }
-                                else
-                                {
-                                    row[1] = linha.Cells[1].Value.ToString();
-                                }
-                                row[2] = linha.Cells[2].Value.ToString();
+                        //        row[0] = linha.Cells[0].Value.ToString();
+                        //        if (linha.Cells[1].Value == null)
+                        //        {
+                        //            row[1] = "";
+                        //        }
+                        //        else
+                        //        {
+                        //            row[1] = linha.Cells[1].Value.ToString();
+                        //        }
+                        //        row[2] = linha.Cells[2].Value.ToString();
 
-                                dsp.DataTable1.Rows.Add(row);
-                            }
-                        }
+                        //        dsp.DataTable1.Rows.Add(row);
+                        //    }
+                        //}
 
 
 
@@ -2200,8 +2189,8 @@ namespace QuestionarioForms
                         if (gridtreino.Rows.Count > 0) { report.Subreports["subtreino"].SetDataSource(ds3); }
                         else { report.PageHeaderSection1.SectionFormat.EnableSuppress = true; }
 
-                        if (gridpsico.Rows.Count > 0) { report.Subreports["subpsico"].SetDataSource(dsp); }
-                        else { report.Section2.SectionFormat.EnableSuppress = true; }
+                        //if (gridpsico.Rows.Count > 0) { report.Subreports["subpsico"].SetDataSource(dsp); }
+                        //else { report.Section2.SectionFormat.EnableSuppress = true; }
 
 
                         Turma turma = (comboTurma.SelectedItem as Turma);

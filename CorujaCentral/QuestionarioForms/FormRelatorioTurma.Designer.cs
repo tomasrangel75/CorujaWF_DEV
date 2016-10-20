@@ -42,22 +42,18 @@
             this.comboEscola = new MetroFramework.Controls.MetroComboBox();
             this.lblEscola = new MetroFramework.Controls.MetroLabel();
             this.pnlGrid = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.lblMat = new MetroFramework.Controls.MetroLabel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.lblPort = new MetroFramework.Controls.MetroLabel();
             this.gridAlunos = new System.Windows.Forms.DataGridView();
             this.btnPDFMt = new MetroFramework.Controls.MetroButton();
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.panel1.SuspendLayout();
             this.pnlGrid.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridAlunos)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.btnPDFMt);
             this.panel1.Controls.Add(this.btnPdfApr);
             this.panel1.Controls.Add(this.btnPDF);
             this.panel1.Controls.Add(this.txtDtAplic);
@@ -79,9 +75,9 @@
             // 
             this.btnPdfApr.BackColor = System.Drawing.Color.LightSkyBlue;
             this.btnPdfApr.Enabled = false;
-            this.btnPdfApr.Location = new System.Drawing.Point(913, 44);
+            this.btnPdfApr.Location = new System.Drawing.Point(834, 44);
             this.btnPdfApr.Name = "btnPdfApr";
-            this.btnPdfApr.Size = new System.Drawing.Size(62, 37);
+            this.btnPdfApr.Size = new System.Drawing.Size(74, 37);
             this.btnPdfApr.TabIndex = 28;
             this.btnPdfApr.Text = "PDF-APR";
             this.btnPdfApr.UseCustomBackColor = true;
@@ -92,11 +88,11 @@
             // 
             this.btnPDF.BackColor = System.Drawing.Color.LightSkyBlue;
             this.btnPDF.Enabled = false;
-            this.btnPDF.Location = new System.Drawing.Point(913, 3);
+            this.btnPDF.Location = new System.Drawing.Point(669, 44);
             this.btnPDF.Name = "btnPDF";
-            this.btnPDF.Size = new System.Drawing.Size(47, 37);
+            this.btnPDF.Size = new System.Drawing.Size(74, 37);
             this.btnPDF.TabIndex = 25;
-            this.btnPDF.Text = "PDF-PT";
+            this.btnPDF.Text = "PDF-LP";
             this.btnPDF.UseCustomBackColor = true;
             this.btnPDF.UseSelectable = true;
             this.btnPDF.Click += new System.EventHandler(this.btnPDF_Click);
@@ -210,59 +206,19 @@
             // pnlGrid
             // 
             this.pnlGrid.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlGrid.Controls.Add(this.panel3);
-            this.pnlGrid.Controls.Add(this.panel2);
             this.pnlGrid.Controls.Add(this.gridAlunos);
-            this.pnlGrid.Location = new System.Drawing.Point(23, 114);
+            this.pnlGrid.Location = new System.Drawing.Point(23, 150);
             this.pnlGrid.Name = "pnlGrid";
             this.pnlGrid.Size = new System.Drawing.Size(1151, 402);
             this.pnlGrid.TabIndex = 1;
-            // 
-            // panel3
-            // 
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.lblMat);
-            this.panel3.Location = new System.Drawing.Point(694, 50);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(441, 27);
-            this.panel3.TabIndex = 2;
-            // 
-            // lblMat
-            // 
-            this.lblMat.AutoSize = true;
-            this.lblMat.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.lblMat.Location = new System.Drawing.Point(197, 3);
-            this.lblMat.Name = "lblMat";
-            this.lblMat.Size = new System.Drawing.Size(88, 19);
-            this.lblMat.TabIndex = 25;
-            this.lblMat.Text = "Matemática";
-            // 
-            // panel2
-            // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.lblPort);
-            this.panel2.Location = new System.Drawing.Point(254, 50);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(442, 27);
-            this.panel2.TabIndex = 1;
-            // 
-            // lblPort
-            // 
-            this.lblPort.AutoSize = true;
-            this.lblPort.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.lblPort.Location = new System.Drawing.Point(180, 3);
-            this.lblPort.Name = "lblPort";
-            this.lblPort.Size = new System.Drawing.Size(77, 19);
-            this.lblPort.TabIndex = 24;
-            this.lblPort.Text = "Português";
             // 
             // gridAlunos
             // 
             this.gridAlunos.BackgroundColor = System.Drawing.Color.White;
             this.gridAlunos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridAlunos.Location = new System.Drawing.Point(3, 76);
+            this.gridAlunos.Location = new System.Drawing.Point(3, 17);
             this.gridAlunos.Name = "gridAlunos";
-            this.gridAlunos.Size = new System.Drawing.Size(1143, 379);
+            this.gridAlunos.Size = new System.Drawing.Size(1143, 396);
             this.gridAlunos.TabIndex = 0;
             this.gridAlunos.CellStateChanged += new System.Windows.Forms.DataGridViewCellStateChangedEventHandler(this.gridAlunos_CellStateChanged);
             // 
@@ -270,21 +226,31 @@
             // 
             this.btnPDFMt.BackColor = System.Drawing.Color.LightSkyBlue;
             this.btnPDFMt.Enabled = false;
-            this.btnPDFMt.Location = new System.Drawing.Point(1133, 13);
+            this.btnPDFMt.Location = new System.Drawing.Point(752, 44);
             this.btnPDFMt.Name = "btnPDFMt";
-            this.btnPDFMt.Size = new System.Drawing.Size(52, 37);
+            this.btnPDFMt.Size = new System.Drawing.Size(74, 37);
             this.btnPDFMt.TabIndex = 26;
             this.btnPDFMt.Text = "PDF-MT";
             this.btnPDFMt.UseCustomBackColor = true;
             this.btnPDFMt.UseSelectable = true;
             this.btnPDFMt.Click += new System.EventHandler(this.btnPDFMt_Click);
             // 
+            // metroLabel2
+            // 
+            this.metroLabel2.AutoSize = true;
+            this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel2.Location = new System.Drawing.Point(27, 118);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(233, 19);
+            this.metroLabel2.TabIndex = 5;
+            this.metroLabel2.Text = "Ordem de Carregamento do Grid";
+            // 
             // FormRelatorioTurma
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1197, 541);
-            this.Controls.Add(this.btnPDFMt);
+            this.ClientSize = new System.Drawing.Size(1197, 574);
+            this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.pnlGrid);
             this.Controls.Add(this.panel1);
             this.Name = "FormRelatorioTurma";
@@ -293,12 +259,9 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.pnlGrid.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridAlunos)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -314,15 +277,12 @@
         private System.Windows.Forms.DataGridView gridAlunos;
         private MetroFramework.Controls.MetroComboBox comboQuestionario;
         private MetroFramework.Controls.MetroLabel lblQuestionario;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel2;
-        private MetroFramework.Controls.MetroLabel lblMat;
-        private MetroFramework.Controls.MetroLabel lblPort;
         private MetroFramework.Controls.MetroButton btnCSV;
         private MetroFramework.Controls.MetroButton btnPDF;
         private MetroFramework.Controls.MetroButton btnPDFMt;
         private System.Windows.Forms.TextBox txtDtAplic;
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroButton btnPdfApr;
+        private MetroFramework.Controls.MetroLabel metroLabel2;
     }
 }

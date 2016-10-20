@@ -105,6 +105,7 @@
             this.btnPDFMt.Text = "PDF-MT";
             this.btnPDFMt.UseCustomBackColor = true;
             this.btnPDFMt.UseSelectable = true;
+            this.btnPDFMt.Visible = false;
             this.btnPDFMt.Click += new System.EventHandler(this.btnPDFMt_Click);
             // 
             // btnCSV
@@ -131,6 +132,7 @@
             this.btnPDF.Text = "PDF-PT";
             this.btnPDF.UseCustomBackColor = true;
             this.btnPDF.UseSelectable = true;
+            this.btnPDF.Visible = false;
             this.btnPDF.Click += new System.EventHandler(this.btnPDF_Click);
             // 
             // comboAluno
@@ -376,7 +378,7 @@
             this.btnEspecialista.BackColor = System.Drawing.Color.LightSkyBlue;
             this.btnEspecialista.Location = new System.Drawing.Point(9, 132);
             this.btnEspecialista.Name = "btnEspecialista";
-            this.btnEspecialista.Size = new System.Drawing.Size(193, 37);
+            this.btnEspecialista.Size = new System.Drawing.Size(205, 37);
             this.btnEspecialista.TabIndex = 33;
             this.btnEspecialista.Text = "Relatório Escola";
             this.btnEspecialista.UseCustomBackColor = true;
@@ -417,7 +419,7 @@
             this.btnEspecRel.BackColor = System.Drawing.Color.LightSkyBlue;
             this.btnEspecRel.Location = new System.Drawing.Point(9, 248);
             this.btnEspecRel.Name = "btnEspecRel";
-            this.btnEspecRel.Size = new System.Drawing.Size(193, 37);
+            this.btnEspecRel.Size = new System.Drawing.Size(205, 37);
             this.btnEspecRel.TabIndex = 37;
             this.btnEspecRel.Text = "Relatório Especialista";
             this.btnEspecRel.UseCustomBackColor = true;
@@ -429,7 +431,7 @@
             this.btnTdsAlunosEscola.BackColor = System.Drawing.Color.LightSkyBlue;
             this.btnTdsAlunosEscola.Location = new System.Drawing.Point(9, 190);
             this.btnTdsAlunosEscola.Name = "btnTdsAlunosEscola";
-            this.btnTdsAlunosEscola.Size = new System.Drawing.Size(193, 37);
+            this.btnTdsAlunosEscola.Size = new System.Drawing.Size(205, 37);
             this.btnTdsAlunosEscola.TabIndex = 38;
             this.btnTdsAlunosEscola.Text = "Todos da Escola";
             this.btnTdsAlunosEscola.UseCustomBackColor = true;
@@ -441,9 +443,9 @@
             this.metroButton1.BackColor = System.Drawing.Color.LightSkyBlue;
             this.metroButton1.Location = new System.Drawing.Point(10, 415);
             this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(193, 37);
+            this.metroButton1.Size = new System.Drawing.Size(205, 37);
             this.metroButton1.TabIndex = 37;
-            this.metroButton1.Text = "Relat Escola Aluno MAT ou APR";
+            this.metroButton1.Text = "Relat Escola Aluno com Psicogenese";
             this.metroButton1.UseCustomBackColor = true;
             this.metroButton1.UseSelectable = true;
             this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
@@ -453,9 +455,9 @@
             this.metroButton2.BackColor = System.Drawing.Color.LightSkyBlue;
             this.metroButton2.Location = new System.Drawing.Point(9, 357);
             this.metroButton2.Name = "metroButton2";
-            this.metroButton2.Size = new System.Drawing.Size(193, 37);
+            this.metroButton2.Size = new System.Drawing.Size(205, 37);
             this.metroButton2.TabIndex = 37;
-            this.metroButton2.Text = "Relat Escola Aluno LP ou Híbrido";
+            this.metroButton2.Text = "Relat Escola Aluno Sem Psicogenese";
             this.metroButton2.UseCustomBackColor = true;
             this.metroButton2.UseSelectable = true;
             this.metroButton2.Click += new System.EventHandler(this.metroButton2_Click);
@@ -482,7 +484,7 @@
             this.metroButton3.BackColor = System.Drawing.Color.LightSkyBlue;
             this.metroButton3.Location = new System.Drawing.Point(9, 305);
             this.metroButton3.Name = "metroButton3";
-            this.metroButton3.Size = new System.Drawing.Size(193, 37);
+            this.metroButton3.Size = new System.Drawing.Size(205, 37);
             this.metroButton3.TabIndex = 37;
             this.metroButton3.Text = "Relatório Especialista APR";
             this.metroButton3.UseCustomBackColor = true;

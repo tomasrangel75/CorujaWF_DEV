@@ -300,8 +300,8 @@
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="PDFAlunoLP.cs">
-      <DependentUpon>PDFAlunoLP.rpt</DependentUpon>
+    <Compile Include="PDFAlunoComPsicogenese.cs">
+      <DependentUpon>PDFAlunoComPsicogenese.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
@@ -489,9 +489,9 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>PDFAluno.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="PDFAlunoLP.rpt">
+    <EmbeddedResource Include="PDFAlunoComPsicogenese.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>PDFAlunoLP.cs</LastGenOutput>
+      <LastGenOutput>PDFAlunoComPsicogenese.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="PDFEspecialistaV2_APR.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
